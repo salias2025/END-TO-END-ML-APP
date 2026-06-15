@@ -1,0 +1,2272 @@
+[
+    {
+  "domaine": "الرياضيات والإعلام الآلي",
+  "description": "تكوين في الرياضيات، الإعلام الآلي، الذكاء الاصطناعي، الأمن السيبراني وعلوم البيانات",
+  "filiere_bac_accessibles": ["رياضيات", "علوم تجريبية", "تقني رياضي"],
+  
+  "calcul_moyenne_ponderee": {
+    "formule": "(bac_avg × 2 + math_grade) / 3",
+    "description": "معدل البكالوريا له معامل 2، نقطة الرياضيات لها معامل 1",
+    "coefficient_bac": 2,
+    "coefficient_maths": 1
+  },
+  
+  "formations": {
+    "ens": [
+      {
+        "id": "ENS_PEM_MATHS",
+        "nom": "أستاذ التعليم المتوسط - رياضيات",
+        "acronyme": "PEM رياضيات",
+        "duree": "4 سنوات",
+        "type_recrutement": "وطني (حسب المنطقة)",
+        "entretien_requis": true,
+        "mode_calcul": {
+          "type": "معدل موزون",
+          "formule": "(bac_avg × 2 + math_grade) / 3",
+          "seuil_depot_minimum": 14.0
+        },
+        "streams_acceptes": {
+          "رياضيات": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.0},
+          "علوم تجريبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 15.0},
+          "تقني رياضي": {"priorite": "P3", "min_moyenne_ponderee_2025": 15.5}
+        },
+        "debouches": ["أستاذ رياضيات في المتوسط (CEM)"]
+      },
+      {
+        "id": "ENS_PES_MATHS",
+        "nom": "أستاذ التعليم الثانوي - رياضيات",
+        "acronyme": "PES رياضيات",
+        "duree": "5 سنوات",
+        "type_recrutement": "وطني (حسب المنطقة)",
+        "entretien_requis": true,
+        "mode_calcul": {
+          "type": "معدل موزون",
+          "formule": "(bac_avg × 2 + math_grade) / 3",
+          "seuil_depot_minimum": 14.0
+        },
+        "streams_acceptes": {
+          "رياضيات": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.0},
+          "علوم تجريبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 15.0},
+          "تقني رياضي": {"priorite": "P3", "min_moyenne_ponderee_2025": 15.5}
+        },
+        "debouches": ["أستاذ رياضيات في الثانوي"]
+      },
+      {
+        "id": "ENS_PEM_INFO",
+        "nom": "أستاذ التعليم المتوسط - إعلام آلي",
+        "acronyme": "PEM إعلام آلي",
+        "duree": "4 سنوات",
+        "type_recrutement": "وطني (حسب المنطقة)",
+        "entretien_requis": true,
+        "mode_calcul": {
+          "type": "معدل موزون",
+          "formule": "(bac_avg × 2 + math_grade) / 3",
+          "seuil_depot_minimum": 14.0
+        },
+        "streams_acceptes": {
+          "رياضيات": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.0},
+          "علوم تجريبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 15.0},
+          "تقني رياضي": {"priorite": "P3", "min_moyenne_ponderee_2025": 15.5}
+        },
+        "debouches": ["أستاذ إعلام آلي في المتوسط (CEM)"]
+      },
+      {
+        "id": "ENS_PES_INFO",
+        "nom": "أستاذ التعليم الثانوي - إعلام آلي",
+        "acronyme": "PES إعلام آلي",
+        "duree": "5 سنوات",
+        "type_recrutement": "وطني (حسب المنطقة)",
+        "entretien_requis": true,
+        "mode_calcul": {
+          "type": "معدل موزون",
+          "formule": "(bac_avg × 2 + math_grade) / 3",
+          "seuil_depot_minimum": 14.0
+        },
+        "streams_acceptes": {
+          "رياضيات": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.0},
+          "علوم تجريبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 15.0},
+          "تقني رياضي": {"priorite": "P3", "min_moyenne_ponderee_2025": 15.5}
+        },
+        "debouches": ["أستاذ إعلام آلي في الثانوي"]
+      }
+    ],
+    "ecoles_superieures": [
+      {
+        "id": "ENSIA",
+        "nom": "المدرسة الوطنية العليا للإعلام الآلي والذكاء الاصطناعي",
+        "acronyme": "ENSIA",
+        "localisation": {"wilayas": ["الجزائر"]},
+        "duree": "5 سنوات",
+        "type_recrutement": "وطني",
+        "entretien_requis": false,
+        "streams_acceptes": {
+          "رياضيات": {"priorite": "P1", "min_moyenne_ponderee_2025": 18.0},
+          "علوم تجريبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 18.5},
+          "تقني رياضي": {"priorite": "P3", "min_moyenne_ponderee_2025": 19.0}
+        },
+        "description": "تكوين مهندسين في الإعلام الآلي والذكاء الاصطناعي. الأكثر انتقائية في الجزائر.",
+        "debouches": ["مهندس ذكاء اصطناعي", "عالم بيانات", "باحث"]
+      },
+      {
+        "id": "ESI_ALGER",
+        "nom": "المدرسة الوطنية العليا للإعلام الآلي",
+        "acronyme": "ESI الجزائر",
+        "localisation": {"wilayas": ["الجزائر"]},
+        "duree": "5 سنوات",
+        "type_recrutement": "وطني",
+        "entretien_requis": false,
+        "streams_acceptes": {
+          "رياضيات": {"priorite": "P1", "min_moyenne_ponderee_2025": 17.5},
+          "علوم تجريبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 18.0},
+          "تقني رياضي": {"priorite": "P3", "min_moyenne_ponderee_2025": 18.5}
+        },
+        "description": "تكوين مهندسين في الإعلام الآلي، مدرسة مرموقة جدا في الجزائر.",
+        "debouches": ["مهندس برمجيات", "مهندس شبكات", "خبير أمن سيبراني"]
+      },
+      {
+        "id": "ENSCS",
+        "nom": "المدرسة الوطنية العليا للأمن السيبراني",
+        "acronyme": "ENSCS",
+        "localisation": {"wilayas": ["الجزائر"]},
+        "duree": "5 سنوات",
+        "type_recrutement": "وطني",
+        "entretien_requis": false,
+        "streams_acceptes": {
+          "رياضيات": {"priorite": "P1", "min_moyenne_ponderee_2025": 18.0},
+          "علوم تجريبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 18.4},
+          "تقني رياضي": {"priorite": "P3", "min_moyenne_ponderee_2025": 18.8}
+        },
+        "description": "مدرسة متخصصة في الأمن السيبراني وحماية الأنظمة المعلوماتية.",
+        "debouches": ["خبير أمن سيبراني", "محلل أمن معلوماتي", "مستشار أمن سيبراني"]
+      },
+      {
+        "id": "ESI_SBA",
+        "nom": "المدرسة العليا للإعلام الآلي",
+        "acronyme": "ESI سيدي بلعباس",
+        "localisation": {"wilayas": ["سيدي بلعباس"]},
+        "duree": "5 سنوات",
+        "type_recrutement": "وطني",
+        "entretien_requis": false,
+        "streams_acceptes": {
+          "رياضيات": {"priorite": "P1", "min_moyenne_ponderee_2025": 17.0},
+          "علوم تجريبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 17.5},
+          "تقني رياضي": {"priorite": "P3", "min_moyenne_ponderee_2025": 18.0}
+        },
+        "description": "ثاني أفضل مدرسة إعلام آلي في الجزائر.",
+        "debouches": ["مهندس تطوير", "مسؤول قواعد بيانات", "استشاري إعلام آلي"]
+      },
+      {
+        "id": "ESTIN_BEJAIA",
+        "nom": "المدرسة العليا لتكنولوجيات الإعلام الآلي والرقمي",
+        "acronyme": "ESTIN",
+        "localisation": {"wilayas": ["بجاية"]},
+        "duree": "5 سنوات",
+        "type_recrutement": "وطني",
+        "entretien_requis": false,
+        "streams_acceptes": {
+          "رياضيات": {"priorite": "P1", "min_moyenne_ponderee_2025": 16.5},
+          "علوم تجريبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 17.0},
+          "تقني رياضي": {"priorite": "P3", "min_moyenne_ponderee_2025": 17.5}
+        },
+        "description": "مدرسة متخصصة في تكنولوجيات الرقمي، البيانات الضخمة والحوسبة السحابية.",
+        "debouches": ["مهندس بيانات ضخمة", "مهندس سحابة", "DevOps"]
+      },
+      {
+        "id": "NHSM",
+        "nom": "المدرسة الوطنية العليا للرياضيات",
+        "acronyme": "NHSM",
+        "localisation": {"wilayas": ["الجزائر"]},
+        "duree": "5 سنوات",
+        "type_recrutement": "وطني",
+        "entretien_requis": true,
+        "streams_acceptes": {
+          "رياضيات": {"priorite": "P1", "min_moyenne_ponderee_2025": 17.0},
+          "علوم تجريبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 17.5},
+          "تقني رياضي": {"priorite": "P3", "min_moyenne_ponderee_2025": 18.0}
+        },
+        "description": "مدرسة متخصصة في الرياضيات البحتة والتطبيقية.",
+        "debouches": ["باحث في الرياضيات", "أستاذ باحث", "مهندس نمذجة"]
+      }
+    ],
+    "ingeniorat": [
+      {
+        "id": "INGE_INFO",
+        "nom": "مهندس دولة في الإعلام الآلي",
+        "acronyme": "مهندس إعلام آلي",
+        "localisation": {"wilayas": ["الجزائر", "وهران", "قسنطينة", "عنابة", "سطيف", "تيزي وزو", "البليدة"]},
+        "duree": "5 سنوات",
+        "type_recrutement": "محلي",
+        "entretien_requis": false,
+        "streams_acceptes": {
+          "رياضيات": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.5},
+          "علوم تجريبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 15.0},
+          "تقني رياضي": {"priorite": "P3", "min_moyenne_ponderee_2025": 15.5}
+        },
+        "description": "تكوين مهندسين في الإعلام الآلي بالجامعة.",
+        "debouches": ["مهندس برمجيات", "مطور", "مدير مشروع"]
+      },
+      {
+        "id": "INGE_MATHS",
+        "nom": "مهندس دولة في الرياضيات",
+        "acronyme": "مهندس رياضيات",
+        "localisation": {"wilayas": ["الجزائر", "وهران", "قسنطينة", "عنابة", "سطيف"]},
+        "duree": "5 سنوات",
+        "type_recrutement": "محلي",
+        "entretien_requis": false,
+        "streams_acceptes": {
+          "رياضيات": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.0},
+          "علوم تجريبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 14.5},
+          "تقني رياضي": {"priorite": "P3", "min_moyenne_ponderee_2025": 15.0}
+        },
+        "description": "تكوين مهندسين في الرياضيات التطبيقية.",
+        "debouches": ["مهندس نمذجة", "محلل بيانات", "باحث"]
+      },
+      {
+        "id": "INGE_MI",
+        "nom": "مهندس دولة في الرياضيات والإعلام الآلي",
+        "acronyme": "مهندس م.إ",
+        "localisation": {"wilayas": ["الجزائر", "وهران", "قسنطينة", "عنابة", "سطيف"]},
+        "duree": "5 سنوات",
+        "type_recrutement": "محلي",
+        "entretien_requis": false,
+        "streams_acceptes": {
+          "رياضيات": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.0},
+          "علوم تجريبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 14.5},
+          "تقني رياضي": {"priorite": "P3", "min_moyenne_ponderee_2025": 15.0}
+        },
+        "description": "تكوين مزدوج في الرياضيات والإعلام الآلي.",
+        "debouches": ["عالم بيانات", "مهندس ذكاء اصطناعي", "باحث"]
+      }
+    ],
+    "lmd": [
+      {
+        "id": "LICENCE_INFO",
+        "nom": "ليسانس إعلام آلي",
+        "acronyme": "LMD إعلام آلي",
+        "localisation": {"wilayas": "جميع الولايات"},
+        "duree": "3 سنوات",
+        "type_recrutement": "محلي",
+        "entretien_requis": false,
+        "streams_acceptes": {
+          "رياضيات": {"priorite": "P1", "min_moyenne_ponderee_2025": 12.0},
+          "علوم تجريبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 12.2},
+          "تقني رياضي": {"priorite": "P3", "min_moyenne_ponderee_2025": 12.5}
+        },
+        "description": "ليسانس في الإعلام الآلي، متوفرة في جميع الجامعات.",
+        "debouches": ["مطور", "ماستر ثم مهندس", "تقني"]
+      },
+      {
+        "id": "LICENCE_MATHS",
+        "nom": "ليسانس رياضيات",
+        "acronyme": "LMD رياضيات",
+        "localisation": {"wilayas": "جميع الولايات"},
+        "duree": "3 سنوات",
+        "type_recrutement": "محلي",
+        "entretien_requis": false,
+        "streams_acceptes": {
+          "رياضيات": {"priorite": "P1", "min_moyenne_ponderee_2025": 11.0},
+          "علوم تجريبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 11.5},
+          "تقني رياضي": {"priorite": "P3", "min_moyenne_ponderee_2025": 12.0}
+        },
+        "description": "ليسانس في الرياضيات الأساسية أو التطبيقية.",
+        "debouches": ["أستاذ", "ماستر ثم باحث", "عالم بيانات"]
+      }
+    ]
+  }
+}
+,
+
+{
+  "domaine": "العلوم والتكنولوجيا (ST)",
+  "description": "تكوين مهندسين، ليسانس وماستر في المجالات الصناعية والتكنولوجية والبناء والابتكار.",
+  "filiere_bac_accessibles": ["تقني رياضي", "رياضيات", "علوم تجريبية"],
+  
+  "calcul_moyenne_ponderee": {
+    "formule": "(bac_avg × 2 + math_grade + physique_grade) / 4",
+    "description": "معدل البكالوريا له معامل 2، الرياضيات معامل 1، الفيزياء معامل 1",
+    "coefficient_bac": 2,
+    "coefficient_maths": 1,
+    "coefficient_physique": 1
+  },
+  
+  "formations": {
+    "ens": [
+      {
+        "id": "ENS_PEM_PHYSIQUE",
+        "nom": "أستاذ التعليم المتوسط - فيزياء",
+        "acronyme": "PEM فيزياء",
+        "duree": "4 سنوات",
+        "type_recrutement": "وطني (حسب المنطقة)",
+        "entretien_requis": true,
+        "mode_calcul": {
+          "type": "معدل موزون",
+          "formule": "(bac_avg × 2 + physique_grade) / 3",
+          "seuil_depot_minimum": 14.0
+        },
+        "streams_acceptes": {
+          "علوم تجريبية": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.0},
+          "رياضيات": {"priorite": "P2", "min_moyenne_ponderee_2025": 14.5},
+          "تقني رياضي": {"priorite": "P2", "min_moyenne_ponderee_2025": 14.5}
+        },
+        "debouches": ["أستاذ فيزياء في المتوسط (CEM)"]
+      },
+      {
+        "id": "ENS_PES_PHYSIQUE",
+        "nom": "أستاذ التعليم الثانوي - فيزياء",
+        "acronyme": "PES فيزياء",
+        "duree": "5 سنوات",
+        "type_recrutement": "وطني (حسب المنطقة)",
+        "entretien_requis": true,
+        "mode_calcul": {
+          "type": "معدل موزون",
+          "formule": "(bac_avg × 2 + physique_grade) / 3",
+          "seuil_depot_minimum": 14.0
+        },
+        "streams_acceptes": {
+          "علوم تجريبية": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.0},
+          "رياضيات": {"priorite": "P2", "min_moyenne_ponderee_2025": 14.5},
+          "تقني رياضي": {"priorite": "P2", "min_moyenne_ponderee_2025": 14.5}
+        },
+        "debouches": ["أستاذ فيزياء في الثانوي"]
+      },
+      {
+        "id": "ENS_PES_GENIE_CIVIL",
+        "nom": "أستاذ التعليم الثانوي - هندسة مدنية",
+        "acronyme": "PES هندسة مدنية",
+        "duree": "5 سنوات",
+        "type_recrutement": "وطني (حسب المنطقة)",
+        "entretien_requis": true,
+        "mode_calcul": {
+          "type": "معدل موزون",
+          "formule": "(bac_avg × 2 + math_grade) / 3",
+          "seuil_depot_minimum": 14.0
+        },
+        "streams_acceptes": {
+          "تقني رياضي": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.0},
+          "رياضيات": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.0},
+          "علوم تجريبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 15.0}
+        },
+        "debouches": ["أستاذ هندسة مدنية في الثانوي (فروع تقني رياضي)"]
+      },
+      {
+        "id": "ENS_PES_GENIE_MECANIQUE",
+        "nom": "أستاذ التعليم الثانوي - هندسة ميكانيكية",
+        "acronyme": "PES هندسة ميكانيكية",
+        "duree": "5 سنوات",
+        "type_recrutement": "وطني (حسب المنطقة)",
+        "entretien_requis": true,
+        "mode_calcul": {
+          "type": "معدل موزون",
+          "formule": "(bac_avg × 2 + math_grade) / 3",
+          "seuil_depot_minimum": 14.0
+        },
+        "streams_acceptes": {
+          "تقني رياضي": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.0},
+          "رياضيات": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.0},
+          "علوم تجريبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 15.0}
+        },
+        "debouches": ["أستاذ هندسة ميكانيكية في الثانوي (فروع تقني رياضي)"]
+      },
+      {
+        "id": "ENS_PES_GENIE_ELECTRIQUE",
+        "nom": "أستاذ التعليم الثانوي - هندسة كهربائية",
+        "acronyme": "PES هندسة كهربائية",
+        "duree": "5 سنوات",
+        "type_recrutement": "وطني (حسب المنطقة)",
+        "entretien_requis": true,
+        "mode_calcul": {
+          "type": "معدل موزون",
+          "formule": "(bac_avg × 2 + math_grade) / 3",
+          "seuil_depot_minimum": 14.0
+        },
+        "streams_acceptes": {
+          "تقني رياضي": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.0},
+          "رياضيات": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.0},
+          "علوم تجريبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 15.0}
+        },
+        "debouches": ["أستاذ هندسة كهربائية في الثانوي (فروع تقني رياضي)"]
+      },
+      {
+        "id": "ENS_PES_GENIE_PROCEDES",
+        "nom": "أستاذ التعليم الثانوي - هندسة الطرائق",
+        "acronyme": "PES هندسة الطرائق",
+        "duree": "5 سنوات",
+        "type_recrutement": "وطني (حسب المنطقة)",
+        "entretien_requis": true,
+        "mode_calcul": {
+          "type": "معدل موزون",
+          "formule": "(bac_avg × 2 + math_grade) / 3",
+          "seuil_depot_minimum": 14.0
+        },
+        "streams_acceptes": {
+          "تقني رياضي": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.0},
+          "رياضيات": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.0},
+          "علوم تجريبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 15.0}
+        },
+        "debouches": ["أستاذ هندسة الطرائق في الثانوي (فروع تقني رياضي)"]
+      }
+    ],
+    "ecoles_superieures": [
+      {
+        "id": "ENSTSA",
+        "nom": "المدرسة الوطنية العليا لتكنولوجيات الأنظمة الذاتية",
+        "acronyme": "ENSTSA",
+        "localisation": {"wilayas": ["الجزائر"]},
+        "duree": "5 سنوات",
+        "type_recrutement": "وطني",
+        "entretien_requis": true,
+        "streams_acceptes": {
+          "تقني رياضي": {"priorite": "P1", "min_moyenne_ponderee_2025": 17.5},
+          "رياضيات": {"priorite": "P1", "min_moyenne_ponderee_2025": 17.5},
+          "علوم تجريبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 18.0}
+        },
+        "focus": "الروبوتيك، الطائرات بدون طيار، الأنظمة المدمجة، الذكاء الاصطناعي المدمج، الأتمتة.",
+        "debouches": ["مهندس روبوتيك", "خبير إنترنت الأشياء", "مصمم أنظمة توجيه"]
+      },
+      {
+        "id": "ENSSNN",
+        "nom": "المدرسة الوطنية العليا للعلوم النانوية وتقنيات النانو",
+        "acronyme": "ENSSNN",
+        "localisation": {"wilayas": ["الجزائر"]},
+        "duree": "5 سنوات",
+        "type_recrutement": "وطني",
+        "entretien_requis": true,
+        "streams_acceptes": {
+          "تقني رياضي": {"priorite": "P1", "min_moyenne_ponderee_2025": 17.5},
+          "رياضيات": {"priorite": "P1", "min_moyenne_ponderee_2025": 17.5},
+          "علوم تجريبية": {"priorite": "P1", "min_moyenne_ponderee_2025": 17.5}
+        },
+        "focus": "المواد النانوية، الإلكترونيات الدقيقة والنانوية، أشباه الموصلات، الفيزياء الكمية التطبيقية.",
+        "debouches": ["مهندس بحث وتطوير في الإلكترونيات الدقيقة", "باحث في المواد النانوية"]
+      },
+      {
+        "id": "ENP_ALGER",
+        "nom": "المدرسة الوطنية المتعددة التقنيات",
+        "acronyme": "ENP الجزائر",
+        "localisation": {"wilayas": ["الجزائر"]},
+        "duree": "5 سنوات",
+        "type_recrutement": "وطني",
+        "entretien_requis": false,
+        "streams_acceptes": {
+          "تقني رياضي": {"priorite": "P1", "min_moyenne_ponderee_2025": 16.5},
+          "رياضيات": {"priorite": "P1", "min_moyenne_ponderee_2025": 16.5},
+          "علوم تجريبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 17.5}
+        },
+        "specialites": ["الأتمتة", "الهندسة الكيميائية", "الهندسة المدنية", "الهندسة الكهربائية", "الهندسة الميكانيكية", "الهيدروليك", "المناجم", "الهندسة النووية", "البيئة"],
+        "debouches": ["مهندس دولة في التخصص المختار", "باحث", "إطار صناعي"]
+      },
+      {
+        "id": "ENPO_ORAN",
+        "nom": "المدرسة الوطنية المتعددة التقنيات بوهران",
+        "acronyme": "ENPO وهران",
+        "localisation": {"wilayas": ["وهران"]},
+        "duree": "5 سنوات",
+        "type_recrutement": "وطني",
+        "entretien_requis": false,
+        "streams_acceptes": {
+          "تقني رياضي": {"priorite": "P1", "min_moyenne_ponderee_2025": 15.5},
+          "رياضيات": {"priorite": "P1", "min_moyenne_ponderee_2025": 15.5},
+          "علوم تجريبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 16.5}
+        },
+        "specialites": ["الأتمتة", "الهندسة الكيميائية", "الهندسة المدنية", "الهندسة الكهربائية", "الهندسة الميكانيكية", "الهيدروليك", "المناجم"],
+        "debouches": ["مهندس دولة"]
+      },
+      {
+        "id": "ENPC_CONSTANTINE",
+        "nom": "المدرسة الوطنية المتعددة التقنيات بقسنطينة",
+        "acronyme": "ENPC قسنطينة",
+        "localisation": {"wilayas": ["قسنطينة"]},
+        "duree": "5 سنوات",
+        "type_recrutement": "وطني",
+        "entretien_requis": false,
+        "streams_acceptes": {
+          "تقني رياضي": {"priorite": "P1", "min_moyenne_ponderee_2025": 15.5},
+          "رياضيات": {"priorite": "P1", "min_moyenne_ponderee_2025": 15.5},
+          "علوم تجريبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 16.5}
+        },
+        "specialites": ["الهندسة المدنية", "الهندسة الميكانيكية", "الهندسة الكهربائية", "هندسة الطرائق"],
+        "debouches": ["مهندس دولة"]
+      },
+      {
+        "id": "ENSTA_ALGER",
+        "nom": "المدرسة الوطنية العليا للتقنيات المتقدمة",
+        "acronyme": "ENSTA الجزائر",
+        "localisation": {"wilayas": ["الجزائر"]},
+        "duree": "5 سنوات",
+        "type_recrutement": "وطني",
+        "entretien_requis": false,
+        "streams_acceptes": {
+          "تقني رياضي": {"priorite": "P1", "min_moyenne_ponderee_2025": 16.0},
+          "رياضيات": {"priorite": "P1", "min_moyenne_ponderee_2025": 16.0},
+          "علوم تجريبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 17.0}
+        },
+        "specialites": ["الجر الكهربائي", "الطاقات المتجددة وتخزين الطاقة", "تسيير وهندسة الصيانة الصناعية", "هندسة سلسلة اللوجستيك", "أنظمة الاتصالات"],
+        "debouches": ["مهندس متخصص"]
+      },
+      {
+        "id": "ENSH_BLIDA",
+        "nom": "المدرسة الوطنية العليا للهيدروليك",
+        "acronyme": "ENSH البليدة",
+        "localisation": {"wilayas": ["البليدة"]},
+        "duree": "5 سنوات",
+        "type_recrutement": "وطني",
+        "entretien_requis": false,
+        "streams_acceptes": {
+          "تقني رياضي": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.5},
+          "رياضيات": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.5},
+          "علوم تجريبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 15.5}
+        },
+        "focus": "التجهيزات الهيدروليكية، السدود، تسيير المياه.",
+        "debouches": ["مهندس في الهيدروليك"]
+      },
+      {
+        "id": "ENST_ALGER",
+        "nom": "المدرسة الوطنية العليا للتكنولوجيا",
+        "acronyme": "ENST الجزائر",
+        "localisation": {"wilayas": ["الجزائر"]},
+        "duree": "5 سنوات",
+        "type_recrutement": "وطني",
+        "entretien_requis": false,
+        "streams_acceptes": {
+          "تقني رياضي": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.5},
+          "رياضيات": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.5},
+          "علوم تجريبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 15.5}
+        },
+        "focus": "الهندسة الصناعية، اللوجستيك، الميكانيك الإنتاجي.",
+        "debouches": ["مهندس في الهندسة الصناعية"]
+      },
+      {
+        "id": "ESSA_ALGER",
+        "nom": "المدرسة العليا للعلوم التطبيقية",
+        "acronyme": "ESSA الجزائر",
+        "localisation": {"wilayas": ["الجزائر"]},
+        "duree": "5 سنوات",
+        "type_recrutement": "وطني",
+        "entretien_requis": false,
+        "streams_acceptes": {
+          "تقني رياضي": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.5},
+          "رياضيات": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.5},
+          "علوم تجريبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 15.5}
+        },
+        "specialites": ["الكهروتقني", "الأتمتة"],
+        "debouches": ["مهندس دولة"]
+      },
+      {
+        "id": "ESSA_TLEMCEN",
+        "nom": "المدرسة العليا للعلوم التطبيقية",
+        "acronyme": "ESSA تلمسان",
+        "localisation": {"wilayas": ["تلمسان"]},
+        "duree": "5 سنوات",
+        "type_recrutement": "وطني",
+        "entretien_requis": false,
+        "streams_acceptes": {
+          "تقني رياضي": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.0},
+          "رياضيات": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.0},
+          "علوم تجريبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 15.0}
+        },
+        "specialites": ["الكهروتقني", "الأتمتة", "الهندسة الميكانيكية"],
+        "debouches": ["مهندس دولة"]
+      }
+    ],
+    "ingeniorat": [
+      {
+        "id": "INGE_ST",
+        "nom": "مهندس دولة في العلوم والتكنولوجيا",
+        "acronyme": "مهندس ST",
+        "localisation": {"wilayas": ["الجزائر", "وهران", "قسنطينة", "عنابة", "البليدة", "سطيف", "باتنة"]},
+        "duree": "5 سنوات",
+        "type_recrutement": "محلي (أولوية الولاية)",
+        "entretien_requis": false,
+        "streams_acceptes": {
+          "تقني رياضي": {"priorite": "P1", "min_moyenne_ponderee_2025": 13.5},
+          "رياضيات": {"priorite": "P1", "min_moyenne_ponderee_2025": 13.5},
+          "علوم تجريبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 14.5}
+        },
+        "description": "السنة الأولى جذع مشترك ST. اختيار التخصص في نهاية السنة الأولى.",
+        "specialites": [
+          "الهندسة المدنية والأشغال العمومية",
+          "الهندسة الميكانيكية والسيارات",
+          "الهندسة الكهربائية والإلكترونيك",
+          "الكهروتقني",
+          "هندسة الطرائق",
+          "الهيدروليك"
+        ],
+        "debouches": ["مهندس دولة في التخصص المختار"]
+      }
+    ],
+    "lmd": [
+      {
+        "id": "LICENCE_ST",
+        "nom": "ليسانس علوم وتكنولوجيا",
+        "acronyme": "LMD ST",
+        "localisation": {"wilayas": "جميع الولايات"},
+        "duree": "3 سنوات",
+        "type_recrutement": "محلي",
+        "entretien_requis": false,
+        "streams_acceptes": {
+          "تقني رياضي": {"priorite": "P1", "min_moyenne_ponderee_2025": 10.0},
+          "رياضيات": {"priorite": "P1", "min_moyenne_ponderee_2025": 10.0},
+          "علوم تجريبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 11.0}
+        },
+        "description": "السنة الأولى جذع مشترك ST. 14 تخصصا وطنيا متاحا.",
+        "specialites": [
+          "الأتمتة",
+          "الإلكترونيك",
+          "الكهروتقني",
+          "الاتصالات",
+          "الهندسة المدنية",
+          "الهندسة الميكانيكية",
+          "هندسة الطرائق",
+          "الهيدروليك",
+          "الأشغال العمومية",
+          "الهندسة الصناعية",
+          "الهندسة البحرية",
+          "الطيران",
+          "المناجم",
+          "النظافة والأمن الصناعي (HSI)"
+        ],
+        "debouches": ["ماستر", "إدماج مهني"]
+      }
+    ]
+  }
+},
+{
+  "domaine": "علوم الطبيعة والحياة (SNV)",
+  "description": "تكوين مخصص لدراسة الكائنات الحية، البيولوجيا الجزيئية، النظم البيئية، العلوم الفلاحية والصحة الحيوانية.",
+  "filiere_bac_accessibles": ["علوم تجريبية", "رياضيات"],
+  
+  "calcul_moyenne_ponderee": {
+    "formule_ecoles": "(bac_avg × 2 + science_grade) / 3",
+    "formule_universite": "bac_avg",
+    "description": "المدارس العليا: معدل البكالوريا له معامل 2، نقطة العلوم لها معامل 1. الجامعة: معدل عام فقط.",
+    "coefficient_bac": 2,
+    "coefficient_sciences": 1
+  },
+  
+  "formations": {
+    "ens": [
+      {
+        "id": "ENS_PEM_SVT",
+        "nom": "أستاذ التعليم المتوسط - علوم طبيعية",
+        "acronyme": "PEM علوم طبيعية",
+        "duree": "4 سنوات",
+        "type_recrutement": "وطني (حسب المنطقة)",
+        "entretien_requis": true,
+        "mode_calcul": {
+          "type": "معدل موزون",
+          "formule": "(bac_avg × 2 + science_grade) / 3",
+          "seuil_depot_minimum": 14.0
+        },
+        "streams_acceptes": {
+          "علوم تجريبية": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.0},
+          "رياضيات": {"priorite": "P2", "min_moyenne_ponderee_2025": 14.5}
+        },
+        "debouches": ["أستاذ علوم طبيعية في المتوسط (CEM)"]
+      },
+      {
+        "id": "ENS_PES_SVT",
+        "nom": "أستاذ التعليم الثانوي - علوم طبيعية",
+        "acronyme": "PES علوم طبيعية",
+        "duree": "5 سنوات",
+        "type_recrutement": "وطني (حسب المنطقة)",
+        "entretien_requis": true,
+        "mode_calcul": {
+          "type": "معدل موزون",
+          "formule": "(bac_avg × 2 + science_grade) / 3",
+          "seuil_depot_minimum": 14.0
+        },
+        "streams_acceptes": {
+          "علوم تجريبية": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.0},
+          "رياضيات": {"priorite": "P2", "min_moyenne_ponderee_2025": 14.5}
+        },
+        "debouches": ["أستاذ علوم طبيعية في الثانوي"]
+      }
+    ],
+    "ecoles_superieures": [
+      {
+        "id": "ENSA_ALGER",
+        "nom": "المدرسة الوطنية العليا للعلوم الفلاحية",
+        "acronyme": "ENSA الجزائر",
+        "localisation": {"wilayas": ["الجزائر"]},
+        "duree": "5 سنوات",
+        "type_recrutement": "وطني",
+        "entretien_requis": true,
+        "streams_acceptes": {
+          "علوم تجريبية": {"priorite": "P1", "min_moyenne_ponderee_2025": 15.5},
+          "رياضيات": {"priorite": "P2", "min_moyenne_ponderee_2025": 16.5}
+        },
+        "specialites": ["الاقتصاد الريفي", "الهندسة الريفية", "الصيد البحري", "إنتاج النبات", "إنتاج الحيوان", "وقاية النباتات", "تكنولوجيا الأغذية"],
+        "description": "المرجع التاريخي في العلوم الفلاحية في الجزائر.",
+        "debouches": ["مهندس فلاحي", "خبير في تسيير المياه والتربة", "استشاري في الصناعة الغذائية"]
+      },
+      {
+        "id": "ENSB_CONSTANTINE",
+        "nom": "المدرسة الوطنية العليا للتكنولوجيا الحيوية",
+        "acronyme": "ENSB قسنطينة",
+        "localisation": {"wilayas": ["قسنطينة"]},
+        "duree": "5 سنوات",
+        "type_recrutement": "وطني",
+        "entretien_requis": true,
+        "streams_acceptes": {
+          "علوم تجريبية": {"priorite": "P1", "min_moyenne_ponderee_2025": 16.0},
+          "رياضيات": {"priorite": "P2", "min_moyenne_ponderee_2025": 17.0}
+        },
+        "specialites": ["التكنولوجيا الحيوية والصحة", "التكنولوجيا الحيوية الصيدلانية", "التكنولوجيا الحيوية الميكروبية", "التكنولوجيا الحيوية النباتية والبيئية"],
+        "description": "قطب حديث جدا موجه نحو البحث والتكنولوجيا الحيوية المتطورة.",
+        "debouches": ["معلوماتي حيوي", "باحث في الصناعة الصيدلانية", "مهندس في الهندسة الوراثية"]
+      },
+      {
+        "id": "ENSV_ALGER",
+        "nom": "المدرسة الوطنية العليا للبيطرة",
+        "acronyme": "ENSV الجزائر",
+        "localisation": {"wilayas": ["الجزائر"]},
+        "duree": "5 سنوات",
+        "type_recrutement": "وطني",
+        "entretien_requis": true,
+        "streams_acceptes": {
+          "علوم تجريبية": {"priorite": "P1", "min_moyenne_ponderee_2025": 15.5},
+          "رياضيات": {"priorite": "P2", "min_moyenne_ponderee_2025": 16.5}
+        },
+        "description": "المدرسة الوحيدة التي تكوّن أطباء بياطرة مباشرة.",
+        "debouches": ["طبيب بيطري", "مفتش صحة غذائية", "باحث في الصحة الحيوانية"]
+      }
+    ],
+    "lmd": [
+      {
+        "id": "LICENCE_SNV",
+        "nom": "ليسانس علوم الطبيعة والحياة",
+        "acronyme": "LMD SNV",
+        "localisation": {"wilayas": "جميع الولايات"},
+        "duree": "3 سنوات",
+        "type_recrutement": "محلي",
+        "entretien_requis": false,
+        "description": "السنة الأولى جذع مشترك SNV. تخصصان وطنيان متاحان بعد السنة الأولى.",
+        "streams_acceptes": {
+          "علوم تجريبية": {"priorite": "P1", "min_moyenne_ponderee_2025": 10.0},
+          "رياضيات": {"priorite": "P2", "min_moyenne_ponderee_2025": 11.0}
+        },
+        "filieres_lmd": [
+          {
+            "nom": "العلوم البيولوجية",
+            "description": "تكوين في البيولوجيا العامة، الصحة والمخابر.",
+            "specialites": ["الكيمياء الحيوية", "علم الأحياء الدقيقة", "علم الوراثة", "البيولوجيا الجزيئية والخلوية", "الفيزيولوجيا الحيوانية", "الفيزيولوجيا النباتية"],
+            "debouches": ["بيولوجي في مخابر التحاليل الطبية", "مندوب طبي", "مراقب جودة في الصناعات التجميلية أو الغذائية"]
+          },
+          {
+            "nom": "العلوم الفلاحية والغذائية",
+            "description": "تكوين موجه نحو الأرض، الإنتاج والتغذية.",
+            "specialites": ["علوم الأغذية", "الإنتاج النباتي", "الإنتاج الحيواني", "وقاية النباتات", "الغابات"],
+            "debouches": ["مسؤول إنتاج غذائي", "مدير مزارع فلاحية", "مهندس ميداني"]
+          }
+        ]
+      },
+      {
+        "id": "LICENCE_ECOLOGIE",
+        "nom": "ليسانس الإيكولوجيا والبيئة",
+        "acronyme": "LMD إيكولوجيا",
+        "localisation": {"wilayas": ["الجزائر", "عنابة", "تيزي وزو", "بجاية"]},
+        "duree": "3 سنوات",
+        "type_recrutement": "محلي",
+        "entretien_requis": false,
+        "description": "تخصص فرعي في بعض الجامعات، موجه نحو البيئة.",
+        "streams_acceptes": {
+          "علوم تجريبية": {"priorite": "P1", "min_moyenne_ponderee_2025": 11.0},
+          "رياضيات": {"priorite": "P2", "min_moyenne_ponderee_2025": 12.0}
+        },
+        "specialites": ["الهيدروبيولوجيا البحرية", "التنوع البيولوجي", "تسيير المخاطر البيئية"],
+        "debouches": ["إيكولوجي", "مكلف بالدراسات البيئية", "مدير الفضاءات الطبيعية"]
+      }
+    ]
+  }
+}
+,
+{
+  "domaine": "الطب والطب المساعد (العلوم الطبية)",
+  "description": "تكوين في علوم الصحة البشرية، علم الأدوية، التمريض وإعادة التأهيل.",
+  "filiere_bac_accessibles": ["علوم تجريبية", "رياضيات"],
+  
+  "formations": {
+    "cycle_long": [
+      {
+        "id": "MEDECINE",
+        "nom": "دكتوراه دولة في الطب",
+        "acronyme": "طب",
+        "duree": "7 سنوات",
+        "type_recrutement": "جهوي حسب الولاية",
+        "possede_annexes_locales": true,
+        "mode_calcul": {
+          "type": "معدل موزون",
+          "formule_sciences_ex": "((bac_avg × 2) + science_grade) / 3",
+          "formule_maths": "((bac_avg × 2) + math_grade) / 3",
+          "seuil_depot_fiche_voeux": 16.0
+        },
+        "streams_acceptes": {
+          "علوم تجريبية": {"priorite": "P1", "min_moyenne_ponderee_2025": 16.5},
+          "رياضيات": {"priorite": "P2", "min_moyenne_ponderee_2025": 17.0}
+        },
+        "debouches": ["طبيب عام", "طبيب مختص (عن طريق مسابقة الإقامة)", "باحث طبي"]
+      },
+      {
+        "id": "PHARMACIE",
+        "nom": "دكتوراه دولة في الصيدلة",
+        "acronyme": "صيدلة",
+        "duree": "6 سنوات",
+        "type_recrutement": "جهوي حسب الولاية",
+        "possede_annexes_locales": false,
+        "mode_calcul": {
+          "type": "معدل موزون",
+          "seuil_depot_fiche_voeux": 16.0
+        },
+        "streams_acceptes": {
+          "علوم تجريبية": {"priorite": "P1", "min_moyenne_ponderee_2025": 16.0},
+          "رياضيات": {"priorite": "P2", "min_moyenne_ponderee_2025": 16.5}
+        },
+        "debouches": ["صيدلي في صيدلية خاصة", "صيدلي صناعي", "بيولوجي طبي"]
+      },
+      {
+        "id": "DENTAIRE",
+        "nom": "دكتوراه دولة في طب الأسنان",
+        "acronyme": "طب أسنان",
+        "duree": "6 سنوات",
+        "type_recrutement": "جهوي حسب الولاية",
+        "possede_annexes_locales": false,
+        "mode_calcul": {
+          "type": "معدل موزون",
+          "seuil_depot_fiche_voeux": 16.0
+        },
+        "streams_acceptes": {
+          "علوم تجريبية": {"priorite": "P1", "min_moyenne_ponderee_2025": 16.2},
+          "رياضيات": {"priorite": "P2", "min_moyenne_ponderee_2025": 16.7}
+        },
+        "debouches": ["جراح أسنان"]
+      }
+    ],
+    "paramedical": [
+      {
+        "id": "SAGE_FEMME",
+        "nom": "قابلة للصحة العمومية",
+        "duree": "5 سنوات",
+        "type_recrutement": "محلي صارم (نفس الولاية)",
+        "restriction_genre": "نسائي",
+        "mode_calcul": {
+          "type": "معدل عام",
+          "seuil_depot_minimum": 12.0
+        },
+        "streams_acceptes": {
+          "علوم تجريبية": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.0},
+          "رياضيات": {"priorite": "P2", "min_moyenne_ponderee_2025": 14.5}
+        },
+        "debouches": ["قابلة (توظيف مباشر في الوظيف العمومي)"]
+      },
+      {
+        "id": "INFIRMIER",
+        "nom": "ممرن للصحة العمومية",
+        "duree": "3 سنوات",
+        "type_recrutement": "محلي صارم (نفس الولاية)",
+        "restriction_genre": "بدون تمييز",
+        "mode_calcul": {
+          "type": "معدل عام",
+          "seuil_depot_minimum": 11.0
+        },
+        "streams_acceptes": {
+          "علوم تجريبية": {"priorite": "P1", "min_moyenne_ponderee_2025": 13.5},
+          "رياضيات": {"priorite": "P2", "min_moyenne_ponderee_2025": 14.0}
+        },
+        "debouches": ["ممرن للصحة العمومية (توظيف مباشر في الوظيف العمومي)"]
+      },
+      {
+        "id": "MANIPULATEUR_RADIO",
+        "nom": "مناول في التصوير الطبي",
+        "duree": "3 سنوات",
+        "type_recrutement": "محلي صارم (نفس الولاية)",
+        "restriction_genre": "بدون تمييز",
+        "mode_calcul": {
+          "type": "معدل عام",
+          "seuil_depot_minimum": 11.0
+        },
+        "streams_acceptes": {
+          "علوم تجريبية": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.0},
+          "رياضيات": {"priorite": "P2", "min_moyenne_ponderee_2025": 14.5}
+        },
+        "debouches": ["مناول تصوير طبي (توظيف مباشر)"]
+      },
+      {
+        "id": "KINESITHERAPEUTE",
+        "nom": "أخصائي إعادة تأهيل (الحركة)",
+        "duree": "3 سنوات",
+        "type_recrutement": "محلي صارم (نفس الولاية)",
+        "restriction_genre": "بدون تمييز",
+        "mode_calcul": {
+          "type": "معدل عام",
+          "seuil_depot_minimum": 11.0
+        },
+        "streams_acceptes": {
+          "علوم تجريبية": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.5},
+          "رياضيات": {"priorite": "P2", "min_moyenne_ponderee_2025": 15.0}
+        },
+        "debouches": ["أخصائي إعادة تأهيل (توظيف مباشر)"]
+      },
+      {
+        "id": "LABORANTIN",
+        "nom": "تقني مخبري (تحاليل طبية)",
+        "duree": "3 سنوات",
+        "type_recrutement": "محلي صارم (نفس الولاية)",
+        "restriction_genre": "بدون تمييز",
+        "mode_calcul": {
+          "type": "معدل عام",
+          "seuil_depot_minimum": 11.0
+        },
+        "streams_acceptes": {
+          "علوم تجريبية": {"priorite": "P1", "min_moyenne_ponderee_2025": 13.5},
+          "رياضيات": {"priorite": "P2", "min_moyenne_ponderee_2025": 14.0}
+        },
+        "debouches": ["تقني مخبري للصحة العمومية (توظيف مباشر)"]
+      },
+      {
+        "id": "NUTRITIONNISTE",
+        "nom": "أخصائي تغذية للصحة العمومية",
+        "duree": "3 سنوات",
+        "type_recrutement": "محلي صارم (نفس الولاية)",
+        "restriction_genre": "بدون تمييز",
+        "mode_calcul": {
+          "type": "معدل عام",
+          "seuil_depot_minimum": 11.0
+        },
+        "streams_acceptes": {
+          "علوم تجريبية": {"priorite": "P1", "min_moyenne_ponderee_2025": 13.5},
+          "رياضيات": {"priorite": "P2", "min_moyenne_ponderee_2025": 14.0}
+        },
+        "debouches": ["أخصائي تغذية (توظيف مباشر)"]
+      }
+    ]
+  }
+}
+
+,
+{
+  "domaine": "العلوم الاقتصادية، علوم التسيير والعلوم التجارية (SEGC)",
+  "description": "تكوين في المالية، المحاسبة، التسيير، التجارة الدولية، التسويق والاقتصاد الكمي.",
+  "filiere_bac_accessibles": ["تسيير واقتصاد", "رياضيات", "علوم تجريبية"],
+  
+  "formations": {
+    "ens": [
+      {
+        "id": "ENS_PES_GESTION",
+        "nom": "أستاذ التعليم الثانوي - علوم التسيير",
+        "acronyme": "PES تسيير",
+        "duree": "5 سنوات",
+        "type_recrutement": "وطني (حسب المنطقة)",
+        "entretien_requis": true,
+        "mode_calcul": {
+          "type": "معدل عام",
+          "formule": "moyenne_generale",
+          "seuil_depot_minimum": 13.0
+        },
+        "streams_acceptes": {
+          "تسيير واقتصاد": {"priorite": "P1", "min_moyenne_ponderee_2025": 13.0},
+          "رياضيات": {"priorite": "P2", "min_moyenne_ponderee_2025": 14.0}
+        },
+        "debouches": ["أستاذ علوم التسيير في الثانوي (فروع تسيير واقتصاد)"]
+      },
+      {
+        "id": "ENS_PES_ECONOMIE",
+        "nom": "أستاذ التعليم الثانوي - اقتصاد",
+        "acronyme": "PES اقتصاد",
+        "duree": "5 سنوات",
+        "type_recrutement": "وطني (حسب المنطقة)",
+        "entretien_requis": true,
+        "mode_calcul": {
+          "type": "معدل عام",
+          "formule": "moyenne_generale",
+          "seuil_depot_minimum": 13.0
+        },
+        "streams_acceptes": {
+          "تسيير واقتصاد": {"priorite": "P1", "min_moyenne_ponderee_2025": 13.0},
+          "رياضيات": {"priorite": "P2", "min_moyenne_ponderee_2025": 14.0}
+        },
+        "debouches": ["أستاذ اقتصاد في الثانوي (فروع تسيير واقتصاد)"]
+      },
+      {
+        "id": "ENS_PES_COMPTABILITE",
+        "nom": "أستاذ التعليم الثانوي - محاسبة",
+        "acronyme": "PES محاسبة",
+        "duree": "5 سنوات",
+        "type_recrutement": "وطني (حسب المنطقة)",
+        "entretien_requis": true,
+        "mode_calcul": {
+          "type": "معدل عام",
+          "formule": "moyenne_generale",
+          "seuil_depot_minimum": 13.0
+        },
+        "streams_acceptes": {
+          "تسيير واقتصاد": {"priorite": "P1", "min_moyenne_ponderee_2025": 13.0},
+          "رياضيات": {"priorite": "P2", "min_moyenne_ponderee_2025": 14.0}
+        },
+        "debouches": ["أستاذ محاسبة في الثانوي (فروع تسيير واقتصاد)"]
+      }
+    ],
+    "ecoles_superieures": [
+      {
+        "id": "ESC_KOLEA",
+        "nom": "المدرسة العليا للتجارة",
+        "acronyme": "ESC القليعة",
+        "localisation": {"wilayas": ["تيبازة"]},
+        "duree": "5 سنوات",
+        "type_recrutement": "وطني",
+        "mode_calcul": {
+          "type": "معدل موزون",
+          "seuil_depot_fiche_voeux": 13.5
+        },
+        "streams_acceptes": {
+          "تسيير واقتصاد": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.0},
+          "رياضيات": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.0},
+          "علوم تجريبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 15.0}
+        },
+        "specialites": ["محاسبة", "تدقيق", "مالية", "تسويق"],
+        "debouches": ["إطار مالي", "مدقق حسابات", "مدير منتوج"]
+      },
+      {
+        "id": "EHEC_KOLEA",
+        "nom": "المدرسة العليا للدراسات التجارية",
+        "acronyme": "EHEC القليعة",
+        "localisation": {"wilayas": ["تيبازة"]},
+        "duree": "5 سنوات",
+        "type_recrutement": "وطني",
+        "mode_calcul": {
+          "type": "معدل موزون",
+          "seuil_depot_fiche_voeux": 13.5
+        },
+        "streams_acceptes": {
+          "تسيير واقتصاد": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.0},
+          "رياضيات": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.0},
+          "علوم تجريبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 15.0}
+        },
+        "specialites": ["تسيير", "سلسلة التوريد", "تجارة دولية"],
+        "debouches": ["مدير", "مسؤول لوجستيك", "استشاري"]
+      },
+      {
+        "id": "ENSSEA_KOLEA",
+        "nom": "المدرسة الوطنية العليا للإحصاء والاقتصاد التطبيقي",
+        "acronyme": "ENSSEA القليعة",
+        "localisation": {"wilayas": ["تيبازة"]},
+        "duree": "5 سنوات",
+        "type_recrutement": "وطني",
+        "mode_calcul": {
+          "type": "معدل موزون",
+          "seuil_depot_fiche_voeux": 14.0
+        },
+        "streams_acceptes": {
+          "رياضيات": {"priorite": "P1", "min_moyenne_ponderee_2025": 15.0},
+          "تسيير واقتصاد": {"priorite": "P1", "min_moyenne_ponderee_2025": 15.5},
+          "علوم تجريبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 16.0}
+        },
+        "specialites": ["اقتصاد قياسي", "علوم البيانات", "خبير اكتواري", "إحصاء"],
+        "debouches": ["عالم بيانات", "خبير اكتواري", "محلل مالي"]
+      },
+      {
+        "id": "ESEO_ORAN",
+        "nom": "المدرسة العليا للاقتصاد بوهران",
+        "acronyme": "ESEO وهران",
+        "localisation": {"wilayas": ["وهران"]},
+        "duree": "5 سنوات",
+        "type_recrutement": "وطني",
+        "mode_calcul": {
+          "type": "معدل موزون",
+          "seuil_depot_fiche_voeux": 13.5
+        },
+        "streams_acceptes": {
+          "تسيير واقتصاد": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.0},
+          "رياضيات": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.0},
+          "علوم تجريبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 15.0}
+        },
+        "specialites": ["اقتصاد", "مالية", "تسيير"],
+        "debouches": ["إطار اقتصادي", "محلل", "استشاري"]
+      }
+    ],
+    "lmd": [
+      {
+        "id": "LICENCE_SEGC",
+        "nom": "ليسانس العلوم الاقتصادية، علوم التسيير والعلوم التجارية",
+        "acronyme": "LMD SEGC",
+        "localisation": {"wilayas": "جميع الولايات"},
+        "duree": "3 سنوات",
+        "type_recrutement": "محلي",
+        "mode_calcul": {
+          "type": "معدل عام",
+          "seuil_depot_minimum": 10.0
+        },
+        "streams_acceptes": {
+          "تسيير واقتصاد": {"priorite": "P1", "min_moyenne_ponderee_2025": 10.0},
+          "رياضيات": {"priorite": "P1", "min_moyenne_ponderee_2025": 10.5},
+          "علوم تجريبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 11.0}
+        },
+        "specialites": [
+          "العلوم الاقتصادية",
+          "علوم التسيير",
+          "العلوم التجارية",
+          "العلوم المالية والمحاسبة"
+        ],
+        "debouches": ["إطار إداري", "مساعد تسيير", "مكلف بالزبائن"]
+      }
+    ]
+  }
+}
+
+,{
+  "domaine": "الآداب واللغات",
+  "description": "تكوين في اللغات الأجنبية، الترجمة، التفسير والآداب العربية. يشمل المدارس العليا للأساتذة (ENS) للتكوين في التعليم.",
+  "filiere_bac_accessibles": ["لغات أجنبية", "آداب وفلسفة", "علوم تجريبية", "رياضيات", "تسيير واقتصاد"],
+  
+  "formations": {
+    "ens": [
+      {
+        "id": "ENS_PEP_ARABE",
+        "nom": "أستاذ التعليم الابتدائي - لغة عربية",
+        "acronyme": "PEP عربية",
+        "duree": "3 سنوات",
+        "type_recrutement": "وطني (حسب المنطقة)",
+        "entretien_requis": true,
+        "mode_calcul": {
+          "type": "معدل عام",
+          "seuil_depot_minimum": 14.0
+        },
+        "streams_acceptes": {
+          "آداب وفلسفة": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.0},
+          "لغات أجنبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 14.5}
+        },
+        "debouches": ["أستاذ في المدرسة الابتدائية"]
+      },
+      {
+        "id": "ENS_PEP_FRANCAIS",
+        "nom": "أستاذ التعليم الابتدائي - لغة فرنسية",
+        "acronyme": "PEP فرنسية",
+        "duree": "3 سنوات",
+        "type_recrutement": "وطني (حسب المنطقة)",
+        "entretien_requis": true,
+        "mode_calcul": {
+          "type": "معدل عام",
+          "seuil_depot_minimum": 14.0
+        },
+        "streams_acceptes": {
+          "لغات أجنبية": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.0},
+          "آداب وفلسفة": {"priorite": "P2", "min_moyenne_ponderee_2025": 14.5}
+        },
+        "debouches": ["أستاذ في المدرسة الابتدائية"]
+      },
+      {
+        "id": "ENS_PEM_ARABE",
+        "nom": "أستاذ التعليم المتوسط - لغة عربية",
+        "acronyme": "PEM عربية",
+        "duree": "4 سنوات",
+        "type_recrutement": "وطني (حسب المنطقة)",
+        "entretien_requis": true,
+        "mode_calcul": {
+          "type": "معدل عام",
+          "seuil_depot_minimum": 14.0
+        },
+        "streams_acceptes": {
+          "آداب وفلسفة": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.0},
+          "لغات أجنبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 14.5}
+        },
+        "debouches": ["أستاذ في المتوسط (CEM)"]
+      },
+      {
+        "id": "ENS_PEM_FRANCAIS",
+        "nom": "أستاذ التعليم المتوسط - لغة فرنسية",
+        "acronyme": "PEM فرنسية",
+        "duree": "4 سنوات",
+        "type_recrutement": "وطني (حسب المنطقة)",
+        "entretien_requis": true,
+        "mode_calcul": {
+          "type": "معدل عام",
+          "seuil_depot_minimum": 14.0
+        },
+        "streams_acceptes": {
+          "لغات أجنبية": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.0},
+          "آداب وفلسفة": {"priorite": "P2", "min_moyenne_ponderee_2025": 14.5}
+        },
+        "debouches": ["أستاذ في المتوسط (CEM)"]
+      },
+      {
+        "id": "ENS_PEM_ANGLAIS",
+        "nom": "أستاذ التعليم المتوسط - لغة إنجليزية",
+        "acronyme": "PEM إنجليزية",
+        "duree": "4 سنوات",
+        "type_recrutement": "وطني (حسب المنطقة)",
+        "entretien_requis": true,
+        "mode_calcul": {
+          "type": "معدل عام",
+          "seuil_depot_minimum": 14.0
+        },
+        "streams_acceptes": {
+          "لغات أجنبية": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.0},
+          "آداب وفلسفة": {"priorite": "P2", "min_moyenne_ponderee_2025": 14.5}
+        },
+        "debouches": ["أستاذ في المتوسط (CEM)"]
+      },
+      {
+        "id": "ENS_PES_ARABE",
+        "nom": "أستاذ التعليم الثانوي - لغة عربية",
+        "acronyme": "PES عربية",
+        "duree": "5 سنوات",
+        "type_recrutement": "وطني (حسب المنطقة)",
+        "entretien_requis": true,
+        "mode_calcul": {
+          "type": "معدل عام",
+          "seuil_depot_minimum": 14.0
+        },
+        "streams_acceptes": {
+          "آداب وفلسفة": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.0},
+          "لغات أجنبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 14.5}
+        },
+        "debouches": ["أستاذ في الثانوي"]
+      },
+      {
+        "id": "ENS_PES_FRANCAIS",
+        "nom": "أستاذ التعليم الثانوي - لغة فرنسية",
+        "acronyme": "PES فرنسية",
+        "duree": "5 سنوات",
+        "type_recrutement": "وطني (حسب المنطقة)",
+        "entretien_requis": true,
+        "mode_calcul": {
+          "type": "معدل عام",
+          "seuil_depot_minimum": 14.0
+        },
+        "streams_acceptes": {
+          "لغات أجنبية": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.0},
+          "آداب وفلسفة": {"priorite": "P2", "min_moyenne_ponderee_2025": 14.5}
+        },
+        "debouches": ["أستاذ في الثانوي"]
+      },
+      {
+        "id": "ENS_PES_ANGLAIS",
+        "nom": "أستاذ التعليم الثانوي - لغة إنجليزية",
+        "acronyme": "PES إنجليزية",
+        "duree": "5 سنوات",
+        "type_recrutement": "وطني (حسب المنطقة)",
+        "entretien_requis": true,
+        "mode_calcul": {
+          "type": "معدل عام",
+          "seuil_depot_minimum": 14.0
+        },
+        "streams_acceptes": {
+          "لغات أجنبية": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.0},
+          "آداب وفلسفة": {"priorite": "P2", "min_moyenne_ponderee_2025": 14.5}
+        },
+        "debouches": ["أستاذ في الثانوي"]
+      }
+    ],
+    "ecoles_superieures": [
+      {
+        "id": "ESTI_ALGER",
+        "nom": "المدرسة العليا للترجمة والتأويل",
+        "acronyme": "ESTI الجزائر",
+        "localisation": {"wilayas": ["الجزائر"]},
+        "duree": "5 سنوات (شهادة ماستر)",
+        "type_recrutement": "وطني",
+        "entretien_requis": true,
+        "mode_calcul": {
+          "type": "معدل موزون",
+          "formule": "moyenne_generale",
+          "seuil_depot_fiche_voeux": 14.0
+        },
+        "streams_acceptes": {
+          "لغات أجنبية": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.0},
+          "آداب وفلسفة": {"priorite": "P2", "min_moyenne_ponderee_2025": 15.0}
+        },
+        "specialites": ["ترجمة فورية", "ترجمة تتبعية", "تأويل"],
+        "langues_combinaison": ["عربية + فرنسية + إنجليزية", "عربية + فرنسية + إسبانية", "عربية + فرنسية + ألمانية"],
+        "debouches": ["مترجم-مؤول رسمي", "مترجم في المنظمات الدولية", "مترجم في الوزارات أو المؤسسات الكبرى"]
+      }
+    ],
+    "lmd": [
+      {
+        "id": "LICENCE_ANGLAIS",
+        "nom": "ليسانس لغة إنجليزية",
+        "acronyme": "LMD إنجليزية",
+        "localisation": {"wilayas": "جميع الولايات"},
+        "duree": "3 سنوات",
+        "type_recrutement": "محلي",
+        "mode_calcul": {
+          "type": "معدل عام",
+          "seuil_depot_minimum": 10.0
+        },
+        "streams_acceptes": {
+          "لغات أجنبية": {"priorite": "P1", "min_moyenne_ponderee_2025": 10.0},
+          "آداب وفلسفة": {"priorite": "P2", "min_moyenne_ponderee_2025": 11.0},
+          "علوم تجريبية": {"priorite": "P3", "min_moyenne_ponderee_2025": 12.0},
+          "رياضيات": {"priorite": "P3", "min_moyenne_ponderee_2025": 12.0},
+          "تسيير واقتصاد": {"priorite": "P3", "min_moyenne_ponderee_2025": 12.0}
+        },
+        "specialites": ["الديداكتيك", "الأدب والحضارة", "إنجليزية الأعمال", "إنجليزية تقنية"],
+        "debouches": ["أستاذ في التعليم الخاص", "مترجم تجاري", "كاتب", "مساعد مدير"]
+      },
+      {
+        "id": "LICENCE_ARABE",
+        "nom": "ليسانس لغة وآداب عربية",
+        "acronyme": "LMD عربية",
+        "localisation": {"wilayas": "جميع الولايات"},
+        "duree": "3 سنوات",
+        "type_recrutement": "محلي",
+        "mode_calcul": {
+          "type": "معدل عام",
+          "seuil_depot_minimum": 10.0
+        },
+        "streams_acceptes": {
+          "آداب وفلسفة": {"priorite": "P1", "min_moyenne_ponderee_2025": 10.0},
+          "لغات أجنبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 11.0}
+        },
+        "specialites": ["لسانيات عربية", "أدب عربي قديم", "أدب عربي حديث", "نقد أدبي"],
+        "debouches": ["صحافة", "تدقيق لغوي", "مهن الثقافة", "تعليم"]
+      },
+      {
+        "id": "LICENCE_FRANCAIS",
+        "nom": "ليسانس لغة فرنسية",
+        "acronyme": "LMD فرنسية",
+        "localisation": {"wilayas": "جميع الولايات"},
+        "duree": "3 سنوات",
+        "type_recrutement": "محلي",
+        "mode_calcul": {
+          "type": "معدل عام",
+          "seuil_depot_minimum": 10.0
+        },
+        "streams_acceptes": {
+          "لغات أجنبية": {"priorite": "P1", "min_moyenne_ponderee_2025": 10.0},
+          "آداب وفلسفة": {"priorite": "P2", "min_moyenne_ponderee_2025": 11.0}
+        },
+        "specialites": ["علوم اللغة", "ديداكتيك الفرنسية كلغة أجنبية", "أدب فرنكوفوني"],
+        "debouches": ["تعليم", "اتصال", "إعلام", "علاقات عامة"]
+      },
+      {
+        "id": "LICENCE_ESPAGNOL",
+        "nom": "ليسانس لغة إسبانية",
+        "acronyme": "LMD إسبانية",
+        "localisation": {"wilayas": ["الجزائر", "وهران", "قسنطينة", "عنابة", "تلمسان"]},
+        "duree": "3 سنوات",
+        "type_recrutement": "محلي",
+        "mode_calcul": {
+          "type": "معدل عام",
+          "seuil_depot_minimum": 11.0
+        },
+        "streams_acceptes": {
+          "لغات أجنبية": {"priorite": "P1", "min_moyenne_ponderee_2025": 11.0},
+          "آداب وفلسفة": {"priorite": "P2", "min_moyenne_ponderee_2025": 12.0}
+        },
+        "specialites": ["أدب إسباني", "ترجمة", "ديداكتيك"],
+        "debouches": ["مرشد سياحي", "تجارة دولية", "ترجمة"]
+      },
+      {
+        "id": "LICENCE_ALLEMAND",
+        "nom": "ليسانس لغة ألمانية",
+        "acronyme": "LMD ألمانية",
+        "localisation": {"wilayas": ["الجزائر", "وهران", "قسنطينة"]},
+        "duree": "3 سنوات",
+        "type_recrutement": "محلي",
+        "mode_calcul": {
+          "type": "معدل عام",
+          "seuil_depot_minimum": 11.0
+        },
+        "streams_acceptes": {
+          "لغات أجنبية": {"priorite": "P1", "min_moyenne_ponderee_2025": 11.0},
+          "آداب وفلسفة": {"priorite": "P2", "min_moyenne_ponderee_2025": 12.0}
+        },
+        "specialites": ["أدب ألماني", "ترجمة", "ديداكتيك"],
+        "debouches": ["مرشد سياحي", "تجارة دولية", "ترجمة"]
+      },
+      {
+        "id": "LICENCE_ITALIEN",
+        "nom": "ليسانس لغة إيطالية",
+        "acronyme": "LMD إيطالية",
+        "localisation": {"wilayas": ["الجزائر", "وهران"]},
+        "duree": "3 سنوات",
+        "type_recrutement": "محلي",
+        "mode_calcul": {
+          "type": "معدل عام",
+          "seuil_depot_minimum": 11.0
+        },
+        "streams_acceptes": {
+          "لغات أجنبية": {"priorite": "P1", "min_moyenne_ponderee_2025": 11.0},
+          "آداب وفلسفة": {"priorite": "P2", "min_moyenne_ponderee_2025": 12.0}
+        },
+        "specialites": ["أدب إيطالي", "ترجمة", "ديداكتيك"],
+        "debouches": ["مرشد سياحي", "تجارة دولية", "ترجمة"]
+      },
+      {
+        "id": "LICENCE_RUSSE",
+        "nom": "ليسانس لغة روسية",
+        "acronyme": "LMD روسية",
+        "localisation": {"wilayas": ["الجزائر"]},
+        "duree": "3 سنوات",
+        "type_recrutement": "محلي",
+        "mode_calcul": {
+          "type": "معدل عام",
+          "seuil_depot_minimum": 11.0
+        },
+        "streams_acceptes": {
+          "لغات أجنبية": {"priorite": "P1", "min_moyenne_ponderee_2025": 11.0},
+          "آداب وفلسفة": {"priorite": "P2", "min_moyenne_ponderee_2025": 12.0}
+        },
+        "specialites": ["أدب روسي", "ترجمة", "ديداكتيك"],
+        "debouches": ["مرشد سياحي", "تجارة دولية", "ترجمة"]
+      }
+    ]
+  }
+}
+,{
+  "domaine": "الحقوق والعلوم السياسية",
+  "description": "تكوين في العلوم القانونية، القانون العام، القانون الخاص، قانون الأعمال، العلاقات الدولية والعلوم السياسية.",
+  "filiere_bac_accessibles": ["آداب وفلسفة", "لغات أجنبية", "تسيير واقتصاد", "علوم تجريبية", "رياضيات"],
+  
+  "formations": {
+    "ecoles_superieures": [
+      {
+        "id": "ENSSP_ALGER",
+        "nom": "المدرسة الوطنية العليا للعلوم السياسية",
+        "acronyme": "ENSSP",
+        "localisation": {"wilayas": ["الجزائر"]},
+        "duree": "5 سنوات (سنتان تحضيريتان + 3 سنوات تعليم عال)",
+        "type_recrutement": "وطني",
+        "entretien_requis": true,
+        "mode_calcul": {
+          "type": "معدل موزون",
+          "seuil_depot_fiche_voeux": 14.0
+        },
+        "streams_acceptes": {
+          "آداب وفلسفة": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.0},
+          "لغات أجنبية": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.0},
+          "تسيير واقتصاد": {"priorite": "P2", "min_moyenne_ponderee_2025": 14.5},
+          "علوم تجريبية": {"priorite": "P3", "min_moyenne_ponderee_2025": 15.0}
+        },
+        "specialites": ["العلاقات الدولية", "العلوم السياسية", "الاستراتيجية والدفاع", "السياسات العمومية"],
+        "debouches": ["دبلوماسي", "محلل سياسي", "إطار في الوزارات", "مستشار اتصال", "منظمات دولية (الأمم المتحدة، الجامعة العربية)"]
+      }
+    ],
+    "lmd": [
+      {
+        "id": "LICENCE_DROIT_PUBLIC",
+        "nom": "ليسانس القانون العام",
+        "acronyme": "LMD قانون عام",
+        "localisation": {"wilayas": "جميع الولايات"},
+        "duree": "3 سنوات",
+        "type_recrutement": "محلي",
+        "mode_calcul": {
+          "type": "معدل عام",
+          "seuil_depot_minimum": 10.0
+        },
+        "streams_acceptes": {
+          "آداب وفلسفة": {"priorite": "P1", "min_moyenne_ponderee_2025": 10.0},
+          "لغات أجنبية": {"priorite": "P1", "min_moyenne_ponderee_2025": 10.5},
+          "تسيير واقتصاد": {"priorite": "P2", "min_moyenne_ponderee_2025": 11.0},
+          "علوم تجريبية": {"priorite": "P3", "min_moyenne_ponderee_2025": 12.0},
+          "رياضيات": {"priorite": "P3", "min_moyenne_ponderee_2025": 12.0}
+        },
+        "specialites": ["القانون الدولي العام", "القانون الدستوري", "القانون الإداري"],
+        "debouches": ["موظف إداري عمومي", "قانوني في الجماعات المحلية", "مسابقة القضاء"]
+      },
+      {
+        "id": "LICENCE_DROIT_PRIVE",
+        "nom": "ليسانس القانون الخاص",
+        "acronyme": "LMD قانون خاص",
+        "localisation": {"wilayas": "جميع الولايات"},
+        "duree": "3 سنوات",
+        "type_recrutement": "محلي",
+        "mode_calcul": {
+          "type": "معدل عام",
+          "seuil_depot_minimum": 10.0
+        },
+        "streams_acceptes": {
+          "آداب وفلسفة": {"priorite": "P1", "min_moyenne_ponderee_2025": 10.0},
+          "لغات أجنبية": {"priorite": "P1", "min_moyenne_ponderee_2025": 10.5},
+          "تسيير واقتصاد": {"priorite": "P2", "min_moyenne_ponderee_2025": 11.0}
+        },
+        "specialites": ["القانون المدني", "القانون الجنائي", "القانون العقاري"],
+        "debouches": ["محام (بعد CAPA)", "موثق", "مفوض قضائي", "قانوني في المؤسسة"]
+      },
+      {
+        "id": "LICENCE_DROIT_AFFAIRES",
+        "nom": "ليسانس قانون الأعمال",
+        "acronyme": "LMD قانون الأعمال",
+        "localisation": {"wilayas": "جميع الولايات"},
+        "duree": "3 سنوات",
+        "type_recrutement": "محلي",
+        "mode_calcul": {
+          "type": "معدل عام",
+          "seuil_depot_minimum": 11.0
+        },
+        "streams_acceptes": {
+          "تسيير واقتصاد": {"priorite": "P1", "min_moyenne_ponderee_2025": 11.0},
+          "آداب وفلسفة": {"priorite": "P1", "min_moyenne_ponderee_2025": 11.5},
+          "لغات أجنبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 12.0}
+        },
+        "specialites": ["القانون التجاري", "قانون التأمينات", "قانون البنوك", "الملكية الفكرية"],
+        "debouches": ["قانوني أعمال", "مستشار قانوني للبنوك", "خبير في العقود الدولية", "مسؤول الامتثال"]
+      },
+      {
+        "id": "LICENCE_RELATIONS_INTERNATIONALES",
+        "nom": "ليسانس العلاقات الدولية",
+        "acronyme": "LMD علاقات دولية",
+        "localisation": {"wilayas": ["الجزائر", "وهران", "قسنطينة", "عنابة"]},
+        "duree": "3 سنوات",
+        "type_recrutement": "محلي",
+        "mode_calcul": {
+          "type": "معدل عام",
+          "seuil_depot_minimum": 11.0
+        },
+        "streams_acceptes": {
+          "لغات أجنبية": {"priorite": "P1", "min_moyenne_ponderee_2025": 11.0},
+          "آداب وفلسفة": {"priorite": "P1", "min_moyenne_ponderee_2025": 11.5},
+          "تسيير واقتصاد": {"priorite": "P2", "min_moyenne_ponderee_2025": 12.0}
+        },
+        "specialites": ["الجيوسياسية", "الدبلوماسية", "التعاون الدولي"],
+        "debouches": ["مهن الجيوسياسية", "صحافة دولية", "خبير في التعاون الدولي"]
+      },
+      {
+        "id": "LICENCE_ADMINISTRATION_PUBLIQUE",
+        "nom": "ليسانس تنظيم وإدارة عمومية",
+        "acronyme": "LMD إدارة عمومية",
+        "localisation": {"wilayas": ["الجزائر", "وهران", "قسنطينة", "البليدة"]},
+        "duree": "3 سنوات",
+        "type_recrutement": "محلي",
+        "mode_calcul": {
+          "type": "معدل عام",
+          "seuil_depot_minimum": 10.0
+        },
+        "streams_acceptes": {
+          "آداب وفلسفة": {"priorite": "P1", "min_moyenne_ponderee_2025": 10.0},
+          "تسيير واقتصاد": {"priorite": "P1", "min_moyenne_ponderee_2025": 10.5},
+          "لغات أجنبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 11.0}
+        },
+        "specialites": ["التسيير العمومي", "تسيير المؤسسات", "الإدارة الترابية"],
+        "debouches": ["إطار في الوظيف العمومي", "مدير مؤسسات عمومية", "مسؤول إداري"]
+      }
+    ]
+  }
+}
+
+,{
+  "domaine": "العلوم الإنسانية والاجتماعية",
+  "description": "تكوين في علم النفس، علم الاجتماع، الفلسفة، علوم الإعلام والاتصال، التاريخ، علم الآثار، الجغرافيا وتهيئة الإقليم.",
+  "filiere_bac_accessibles": ["آداب وفلسفة", "لغات أجنبية", "علوم تجريبية", "رياضيات", "تسيير واقتصاد"],
+  
+  "formations": {
+    "ens": [
+      {
+        "id": "ENS_PEM_HISTOIRE_GEO",
+        "nom": "أستاذ التعليم المتوسط - تاريخ وجغرافيا",
+        "acronyme": "PEM تاريخ-جغرافيا",
+        "duree": "4 سنوات",
+        "type_recrutement": "وطني (حسب المنطقة)",
+        "entretien_requis": true,
+        "mode_calcul": {
+          "type": "معدل عام",
+          "seuil_depot_minimum": 14.0
+        },
+        "streams_acceptes": {
+          "آداب وفلسفة": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.0},
+          "لغات أجنبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 14.5}
+        },
+        "debouches": ["أستاذ تاريخ وجغرافيا في المتوسط (CEM)"]
+      },
+      {
+        "id": "ENS_PES_HISTOIRE_GEO",
+        "nom": "أستاذ التعليم الثانوي - تاريخ وجغرافيا",
+        "acronyme": "PES تاريخ-جغرافيا",
+        "duree": "5 سنوات",
+        "type_recrutement": "وطني (حسب المنطقة)",
+        "entretien_requis": true,
+        "mode_calcul": {
+          "type": "معدل عام",
+          "seuil_depot_minimum": 14.0
+        },
+        "streams_acceptes": {
+          "آداب وفلسفة": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.0},
+          "لغات أجنبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 14.5}
+        },
+        "debouches": ["أستاذ تاريخ وجغرافيا في الثانوي"]
+      },
+      {
+        "id": "ENS_PES_PHILOSOPHIE",
+        "nom": "أستاذ التعليم الثانوي - فلسفة",
+        "acronyme": "PES فلسفة",
+        "duree": "5 سنوات",
+        "type_recrutement": "وطني (حسب المنطقة)",
+        "entretien_requis": true,
+        "mode_calcul": {
+          "type": "معدل عام",
+          "seuil_depot_minimum": 14.0
+        },
+        "streams_acceptes": {
+          "آداب وفلسفة": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.0},
+          "لغات أجنبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 14.5}
+        },
+        "debouches": ["أستاذ فلسفة في الثانوي"]
+      }
+    ],
+    "ecoles_superieures": [
+      {
+        "id": "ENSJSI_ALGER",
+        "nom": "المدرسة الوطنية العليا للصحافة وعلوم الإعلام",
+        "acronyme": "ENSJSI",
+        "localisation": {"wilayas": ["الجزائر"]},
+        "duree": "5 سنوات (شهادة ماستر)",
+        "type_recrutement": "وطني",
+        "entretien_requis": true,
+        "mode_calcul": {
+          "type": "معدل موزون",
+          "seuil_depot_fiche_voeux": 14.0
+        },
+        "streams_acceptes": {
+          "لغات أجنبية": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.0},
+          "آداب وفلسفة": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.5},
+          "تسيير واقتصاد": {"priorite": "P2", "min_moyenne_ponderee_2025": 15.0}
+        },
+        "specialites": ["صحافة سياسية", "صحافة اقتصادية", "إعلام رقمي", "اتصال مؤسساتي"],
+        "debouches": ["صحفي (صحافة، تلفزيون، راديو، ويب)", "مسؤول اتصال", "محلل إعلامي"]
+      }
+    ],
+    "lmd": [
+      {
+        "id": "LICENCE_PSYCHOLOGIE",
+        "nom": "ليسانس علم النفس",
+        "acronyme": "LMD علم النفس",
+        "localisation": {"wilayas": "جميع الولايات"},
+        "duree": "3 سنوات",
+        "type_recrutement": "محلي",
+        "mode_calcul": {
+          "type": "معدل عام",
+          "seuil_depot_minimum": 10.0
+        },
+        "streams_acceptes": {
+          "آداب وفلسفة": {"priorite": "P1", "min_moyenne_ponderee_2025": 10.0},
+          "لغات أجنبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 10.5},
+          "علوم تجريبية": {"priorite": "P3", "min_moyenne_ponderee_2025": 11.5}
+        },
+        "specialites": ["علم النفس العيادي", "علم النفس المدرسي", "علم النفس العمل والمنظمات"],
+        "debouches": ["أخصائي نفسي في الوسط الاستشفائي", "مستشار توجيه مدرسي", "مسؤول موارد بشرية"]
+      },
+      {
+        "id": "LICENCE_SOCIOLOGIE",
+        "nom": "ليسانس علم الاجتماع",
+        "acronyme": "LMD علم الاجتماع",
+        "localisation": {"wilayas": "جميع الولايات"},
+        "duree": "3 سنوات",
+        "type_recrutement": "محلي",
+        "mode_calcul": {
+          "type": "معدل عام",
+          "seuil_depot_minimum": 10.0
+        },
+        "streams_acceptes": {
+          "آداب وفلسفة": {"priorite": "P1", "min_moyenne_ponderee_2025": 10.0},
+          "لغات أجنبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 10.5}
+        },
+        "specialites": ["علم اجتماع التربية", "علم الاجتماع الإجرامي", "علم اجتماع المنظمات"],
+        "debouches": ["مستشار اجتماعي", "مكلف بدراسات ديموغرافية", "وسيط"]
+      },
+      {
+        "id": "LICENCE_PHILOSOPHIE",
+        "nom": "ليسانس فلسفة",
+        "acronyme": "LMD فلسفة",
+        "localisation": {"wilayas": "جميع الولايات"},
+        "duree": "3 سنوات",
+        "type_recrutement": "محلي",
+        "mode_calcul": {
+          "type": "معدل عام",
+          "seuil_depot_minimum": 10.0
+        },
+        "streams_acceptes": {
+          "آداب وفلسفة": {"priorite": "P1", "min_moyenne_ponderee_2025": 10.0},
+          "لغات أجنبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 11.0}
+        },
+        "specialites": ["فلسفة عامة", "أخلاق", "جماليات"],
+        "debouches": ["مهن الثقافة", "نشر", "بحث أكاديمي"]
+      },
+      {
+        "id": "LICENCE_INFO_COM",
+        "nom": "ليسانس علوم الإعلام والاتصال",
+        "acronyme": "LMD إعلام واتصال",
+        "localisation": {"wilayas": "جميع الولايات"},
+        "duree": "3 سنوات",
+        "type_recrutement": "محلي",
+        "mode_calcul": {
+          "type": "معدل عام",
+          "seuil_depot_minimum": 10.0
+        },
+        "streams_acceptes": {
+          "لغات أجنبية": {"priorite": "P1", "min_moyenne_ponderee_2025": 10.0},
+          "آداب وفلسفة": {"priorite": "P1", "min_moyenne_ponderee_2025": 10.5},
+          "تسيير واقتصاد": {"priorite": "P2", "min_moyenne_ponderee_2025": 11.0}
+        },
+        "specialites": ["علاقات عامة", "اتصال وتسويق", "صحافة سمعية بصرية"],
+        "debouches": ["ملحق صحفي", "مدير مجتمع", "صحفي محلي"]
+      },
+      {
+        "id": "LICENCE_HISTOIRE",
+        "nom": "ليسانس تاريخ",
+        "acronyme": "LMD تاريخ",
+        "localisation": {"wilayas": "جميع الولايات"},
+        "duree": "3 سنوات",
+        "type_recrutement": "محلي",
+        "mode_calcul": {
+          "type": "معدل عام",
+          "seuil_depot_minimum": 10.0
+        },
+        "streams_acceptes": {
+          "آداب وفلسفة": {"priorite": "P1", "min_moyenne_ponderee_2025": 10.0},
+          "لغات أجنبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 10.5}
+        },
+        "specialites": ["تاريخ قديم", "تاريخ حديث", "تاريخ الجزائر المعاصر"],
+        "debouches": ["أمين محفوظات", "باحث", "مرشد تراثي"]
+      },
+      {
+        "id": "LICENCE_ARCHEOLOGIE",
+        "nom": "ليسانس علم الآثار",
+        "acronyme": "LMD علم الآثار",
+        "localisation": {"wilayas": ["الجزائر", "قسنطينة", "قالمة", "عنابة", "تلمسان"]},
+        "duree": "3 سنوات",
+        "type_recrutement": "محلي / جهوي",
+        "mode_calcul": {
+          "type": "معدل عام",
+          "seuil_depot_minimum": 11.0
+        },
+        "streams_acceptes": {
+          "آداب وفلسفة": {"priorite": "P1", "min_moyenne_ponderee_2025": 11.0},
+          "لغات أجنبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 11.5},
+          "علوم تجريبية": {"priorite": "P3", "min_moyenne_ponderee_2025": 12.0}
+        },
+        "specialites": ["آثار ما قبل التاريخ", "آثار كلاسيكية", "آثار إسلامية"],
+        "debouches": ["تسيير التراث الوطني", "باحث في المواقع الأثرية", "أخصائي متاحف"]
+      },
+      {
+        "id": "LICENCE_GEOGRAPHIE",
+        "nom": "ليسانس جغرافيا وتهيئة الإقليم",
+        "acronyme": "LMD جغرافيا",
+        "localisation": {"wilayas": "جميع الولايات"},
+        "duree": "3 سنوات",
+        "type_recrutement": "محلي",
+        "mode_calcul": {
+          "type": "معدل عام",
+          "seuil_depot_minimum": 10.0
+        },
+        "streams_acceptes": {
+          "آداب وفلسفة": {"priorite": "P1", "min_moyenne_ponderee_2025": 10.0},
+          "علوم تجريبية": {"priorite": "P1", "min_moyenne_ponderee_2025": 10.5},
+          "رياضيات": {"priorite": "P1", "min_moyenne_ponderee_2025": 10.5},
+          "لغات أجنبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 11.0}
+        },
+        "specialites": ["تخطيط حضري", "خرائطية/نظم معلومات جغرافية", "بيئة"],
+        "debouches": ["رسام خرائط", "استشاري في التخطيط الحضري", "مدير مخاطر بيئية"]
+      }
+    ]
+  }
+}
+
+
+,{
+  "domaine": "العلوم الإسلامية",
+  "description": "تكوين في الفقه الإسلامي (الشريعة)، المالية والاقتصاد الإسلامي، أصول الدين، والحضارة الإسلامية.",
+  "filiere_bac_accessibles": ["آداب وفلسفة", "تسيير واقتصاد", "لغات أجنبية", "علوم تجريبية", "رياضيات"],
+  
+  "formations": {
+    "ens": [
+      {
+        "id": "ENS_PEM_SCIENCES_ISLAMIQUES",
+        "nom": "أستاذ التعليم المتوسط - علوم إسلامية",
+        "acronyme": "PEM علوم إسلامية",
+        "duree": "4 سنوات",
+        "type_recrutement": "وطني (حسب المنطقة)",
+        "entretien_requis": true,
+        "mode_calcul": {
+          "type": "معدل عام",
+          "seuil_depot_minimum": 14.0
+        },
+        "streams_acceptes": {
+          "آداب وفلسفة": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.0},
+          "تسيير واقتصاد": {"priorite": "P2", "min_moyenne_ponderee_2025": 14.5}
+        },
+        "debouches": ["أستاذ تربية إسلامية في المتوسط (CEM)"]
+      },
+      {
+        "id": "ENS_PES_SCIENCES_ISLAMIQUES",
+        "nom": "أستاذ التعليم الثانوي - علوم إسلامية",
+        "acronyme": "PES علوم إسلامية",
+        "duree": "5 سنوات",
+        "type_recrutement": "وطني (حسب المنطقة)",
+        "entretien_requis": true,
+        "mode_calcul": {
+          "type": "معدل عام",
+          "seuil_depot_minimum": 14.0
+        },
+        "streams_acceptes": {
+          "آداب وفلسفة": {"priorite": "P1", "min_moyenne_ponderee_2025": 14.0},
+          "تسيير واقتصاد": {"priorite": "P2", "min_moyenne_ponderee_2025": 14.5}
+        },
+        "debouches": ["أستاذ تربية إسلامية في الثانوي"]
+      }
+    ],
+    "universites_specialisees": [
+      {
+        "id": "UNIV_EMIR_ABDELKADER_CONSTANTINE",
+        "nom": "جامعة الأمير عبد القادر للعلوم الإسلامية",
+        "acronyme": "الجامعة الإسلامية قسنطينة",
+        "localisation": {"wilayas": ["قسنطينة"]},
+        "duree": "5 سنوات (3 سنوات ليسانس + 2 سنوات ماستر)",
+        "type_recrutement": "وطني",
+        "entretien_requis": false,
+        "mode_calcul": {
+          "type": "معدل موزون",
+          "seuil_depot_fiche_voeux": 13.0
+        },
+        "streams_acceptes": {
+          "آداب وفلسفة": {"priorite": "P1", "min_moyenne_ponderee_2025": 13.0},
+          "تسيير واقتصاد": {"priorite": "P2", "min_moyenne_ponderee_2025": 13.5}
+        },
+        "specialites": ["الشريعة والقانون", "التمويل الإسلامي", "أصول الدين", "الحضارة الإسلامية"],
+        "debouches": ["باحث أكاديمي", "مستشار قانوني في التمويل الإسلامي", "خبير في المخطوطات"]
+      },
+      {
+        "id": "FACULTE_SCIENCES_ISLAMIQUES_ALGER",
+        "nom": "كلية العلوم الإسلامية - الجزائر",
+        "acronyme": "كلية العلوم الإسلامية الجزائر",
+        "localisation": {"wilayas": ["الجزائر"]},
+        "duree": "5 سنوات (3 سنوات ليسانس + 2 سنوات ماستر)",
+        "type_recrutement": "وطني",
+        "entretien_requis": false,
+        "mode_calcul": {
+          "type": "معدل موزون",
+          "seuil_depot_fiche_voeux": 13.0
+        },
+        "streams_acceptes": {
+          "آداب وفلسفة": {"priorite": "P1", "min_moyenne_ponderee_2025": 13.0},
+          "تسيير واقتصاد": {"priorite": "P2", "min_moyenne_ponderee_2025": 13.5}
+        },
+        "specialites": ["الشريعة والقانون", "أصول الدين"],
+        "debouches": ["باحث", "مستشار قانوني"]
+      }
+    ],
+    "lmd": [
+      {
+        "id": "LICENCE_SHARIA_DROIT",
+        "nom": "ليسانس شريعة وقانون",
+        "acronyme": "LMD شريعة",
+        "localisation": {"wilayas": "جميع الولايات (أقطاب جهوية)"},
+        "duree": "3 سنوات",
+        "type_recrutement": "محلي / جهوي",
+        "mode_calcul": {
+          "type": "معدل عام",
+          "seuil_depot_minimum": 10.0
+        },
+        "streams_acceptes": {
+          "آداب وفلسفة": {"priorite": "P1", "min_moyenne_ponderee_2025": 10.0},
+          "تسيير واقتصاد": {"priorite": "P2", "min_moyenne_ponderee_2025": 10.5},
+          "لغات أجنبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 11.0}
+        },
+        "specialites": ["الفقه وأصوله", "القانون الإسلامي المقارن"],
+        "debouches": ["مستشار قانوني", "قضاء (مسابقة)", "تسيير الشؤون الدينية"]
+      },
+      {
+        "id": "LICENCE_FINANCE_ISLAMIQUE",
+        "nom": "ليسانس مالية واقتصاد إسلامي",
+        "acronyme": "LMD مالية إسلامية",
+        "localisation": {"wilayas": ["الجزائر", "قسنطينة", "وهران", "باتنة", "الوادي", "أدرار"]},
+        "duree": "3 سنوات",
+        "type_recrutement": "محلي / جهوي",
+        "mode_calcul": {
+          "type": "معدل عام",
+          "seuil_depot_minimum": 11.0
+        },
+        "streams_acceptes": {
+          "تسيير واقتصاد": {"priorite": "P1", "min_moyenne_ponderee_2025": 11.0},
+          "آداب وفلسفة": {"priorite": "P2", "min_moyenne_ponderee_2025": 11.5},
+          "رياضيات": {"priorite": "P2", "min_moyenne_ponderee_2025": 12.0}
+        },
+        "specialites": ["المعاملات المالية الإسلامية", "تسيير البنوك الإسلامية", "التكافل (التأمين الإسلامي)"],
+        "debouches": ["مستشار في التمويل الإسلامي", "مدقق شرعي في البنوك", "إطار بنكي"]
+      },
+      {
+        "id": "LICENCE_USUL_AL_DIN",
+        "nom": "ليسانس أصول الدين",
+        "acronyme": "LMD أصول الدين",
+        "localisation": {"wilayas": "جميع الولايات (أقطاب جهوية)"},
+        "duree": "3 سنوات",
+        "type_recrutement": "محلي / جهوي",
+        "mode_calcul": {
+          "type": "معدل عام",
+          "seuil_depot_minimum": 10.0
+        },
+        "streams_acceptes": {
+          "آداب وفلسفة": {"priorite": "P1", "min_moyenne_ponderee_2025": 10.0},
+          "تسيير واقتصاد": {"priorite": "P2", "min_moyenne_ponderee_2025": 10.5}
+        },
+        "specialites": ["العقيدة", "الحديث", "تفسير القرآن", "مقارنة الأديان"],
+        "debouches": ["تدريس", "بحث علمي", "إمام", "مرشدة (وزارة الشؤون الدينية)"]
+      },
+      {
+        "id": "LICENCE_CIVILISATION_ISLAMIQUE",
+        "nom": "ليسانس لغة وحضارة وثقافة إسلامية",
+        "acronyme": "LMD حضارة إسلامية",
+        "localisation": {"wilayas": ["الجزائر", "قسنطينة", "وهران", "تلمسان"]},
+        "duree": "3 سنوات",
+        "type_recrutement": "محلي / جهوي",
+        "mode_calcul": {
+          "type": "معدل عام",
+          "seuil_depot_minimum": 10.0
+        },
+        "streams_acceptes": {
+          "آداب وفلسفة": {"priorite": "P1", "min_moyenne_ponderee_2025": 10.0},
+          "لغات أجنبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 10.5}
+        },
+        "specialites": ["تاريخ الحضارة الإسلامية", "الفكر الإسلامي المعاصر"],
+        "debouches": ["تسيير التراث", "إعلام متخصص", "تنشيط ثقافي"]
+      }
+    ]
+  }
+}
+
+,{
+  "domaine": "الفنون والثقافة",
+  "description": "تكوين في الفنون التشكيلية، التصميم، السينما، السمعي البصري، الفنون الدرامية والموسيقى.",
+  "filiere_bac_accessibles": ["فنون", "آداب وفلسفة", "لغات أجنبية", "علوم تجريبية", "رياضيات", "تسيير واقتصاد"],
+  
+  "formations": {
+    "ens": [
+      {
+        "id": "ENS_PEM_ARTS",
+        "nom": "أستاذ التعليم المتوسط - تربية فنية",
+        "acronyme": "PEM تربية فنية",
+        "duree": "4 سنوات",
+        "type_recrutement": "وطني (حسب المنطقة)",
+        "entretien_requis": true,
+        "mode_calcul": {
+          "type": "معدل عام",
+          "formule": "moyenne_generale",
+          "seuil_depot_minimum": 13.0
+        },
+        "streams_acceptes": {
+          "فنون": {"priorite": "P1", "min_moyenne_ponderee_2025": 13.0},
+          "آداب وفلسفة": {"priorite": "P2", "min_moyenne_ponderee_2025": 13.5},
+          "لغات أجنبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 14.0}
+        },
+        "debouches": ["أستاذ تربية فنية في المتوسط (CEM)"]
+      },
+      {
+        "id": "ENS_PES_ARTS",
+        "nom": "أستاذ التعليم الثانوي - تربية فنية",
+        "acronyme": "PES تربية فنية",
+        "duree": "5 سنوات",
+        "type_recrutement": "وطني (حسب المنطقة)",
+        "entretien_requis": true,
+        "mode_calcul": {
+          "type": "معدل عام",
+          "formule": "moyenne_generale",
+          "seuil_depot_minimum": 13.0
+        },
+        "streams_acceptes": {
+          "فنون": {"priorite": "P1", "min_moyenne_ponderee_2025": 13.0},
+          "آداب وفلسفة": {"priorite": "P2", "min_moyenne_ponderee_2025": 13.5},
+          "لغات أجنبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 14.0}
+        },
+        "debouches": ["أستاذ تربية فنية في الثانوي"]
+      },
+      {
+        "id": "ENS_PEM_MUSIQUE",
+        "nom": "أستاذ التعليم المتوسط - تربية موسيقية",
+        "acronyme": "PEM تربية موسيقية",
+        "duree": "4 سنوات",
+        "type_recrutement": "وطني (حسب المنطقة)",
+        "entretien_requis": true,
+        "mode_calcul": {
+          "type": "معدل عام",
+          "formule": "moyenne_generale",
+          "seuil_depot_minimum": 13.0
+        },
+        "streams_acceptes": {
+          "فنون": {"priorite": "P1", "min_moyenne_ponderee_2025": 13.0},
+          "آداب وفلسفة": {"priorite": "P2", "min_moyenne_ponderee_2025": 13.5}
+        },
+        "debouches": ["أستاذ تربية موسيقية في المتوسط (CEM)"]
+      },
+      {
+        "id": "ENS_PES_MUSIQUE",
+        "nom": "أستاذ التعليم الثانوي - تربية موسيقية",
+        "acronyme": "PES تربية موسيقية",
+        "duree": "5 سنوات",
+        "type_recrutement": "وطني (حسب المنطقة)",
+        "entretien_requis": true,
+        "mode_calcul": {
+          "type": "معدل عام",
+          "formule": "moyenne_generale",
+          "seuil_depot_minimum": 13.0
+        },
+        "streams_acceptes": {
+          "فنون": {"priorite": "P1", "min_moyenne_ponderee_2025": 13.0},
+          "آداب وفلسفة": {"priorite": "P2", "min_moyenne_ponderee_2025": 13.5}
+        },
+        "debouches": ["أستاذ تربية موسيقية في الثانوي"]
+      }
+    ],
+    "ecoles_superieures": [
+      {
+        "id": "ESBA_ALGER",
+        "nom": "المدرسة العليا للفنون الجميلة",
+        "acronyme": "ESBA",
+        "localisation": {"wilayas": ["الجزائر"]},
+        "duree": "5 سنوات",
+        "type_recrutement": "وطني",
+        "concours_requis": true,
+        "entretien_requis": true,
+        "mode_calcul": {
+          "type": "مسابقة تطبيقية",
+          "seuil_depot_fiche_voeux": 12.0
+        },
+        "streams_acceptes": {
+          "فنون": {"priorite": "P1", "min_moyenne_ponderee_2025": 12.0},
+          "آداب وفلسفة": {"priorite": "P1", "min_moyenne_ponderee_2025": 12.5},
+          "لغات أجنبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 13.0},
+          "علوم تجريبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 13.5},
+          "رياضيات": {"priorite": "P2", "min_moyenne_ponderee_2025": 13.5},
+          "تسيير واقتصاد": {"priorite": "P3", "min_moyenne_ponderee_2025": 14.0}
+        },
+        "specialites": [
+          "فنون تشكيلية (رسم، نحت، حفر)",
+          "تصميم التهيئة (سينوغرافيا / هندسة داخلية)",
+          "تصميم بصري (جرافيك، إشهار)"
+        ],
+        "debouches": ["مهندس داخلي", "مصمم جرافيك", "سينوغراف مسرح/سينما", "فنان تشكيلي"]
+      },
+      {
+        "id": "ISMAS_ALGER",
+        "nom": "المعهد العالي لمهن الفنون المسرحية والسمعي البصري",
+        "acronyme": "ISMAS",
+        "localisation": {"wilayas": ["الجزائر"]},
+        "duree": "5 سنوات (شهادة ماستر)",
+        "type_recrutement": "وطني",
+        "concours_requis": true,
+        "entretien_requis": true,
+        "mode_calcul": {
+          "type": "مسابقة تطبيقية",
+          "seuil_depot_fiche_voeux": 12.0
+        },
+        "streams_acceptes": {
+          "فنون": {"priorite": "P1", "min_moyenne_ponderee_2025": 12.0},
+          "آداب وفلسفة": {"priorite": "P1", "min_moyenne_ponderee_2025": 12.5},
+          "لغات أجنبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 13.0}
+        },
+        "specialites": [
+          "سينما وسمعي بصري (إخراج، تصوير، مونتاج)",
+          "فنون درامية (تمثيل، إخراج مسرحي)"
+        ],
+        "debouches": ["مخرج", "مدير تصوير", "مونتير", "ممثل محترف", "ناقد سينمائي"]
+      },
+      {
+        "id": "INSM_ALGER",
+        "nom": "المعهد الوطني العالي للموسيقى",
+        "acronyme": "INSM",
+        "localisation": {"wilayas": ["الجزائر"]},
+        "duree": "5 سنوات",
+        "type_recrutement": "وطني",
+        "concours_requis": true,
+        "entretien_requis": true,
+        "mode_calcul": {
+          "type": "مسابقة تطبيقية",
+          "seuil_depot_fiche_voeux": 12.0
+        },
+        "streams_acceptes": {
+          "فنون": {"priorite": "P1", "min_moyenne_ponderee_2025": 12.0},
+          "آداب وفلسفة": {"priorite": "P1", "min_moyenne_ponderee_2025": 12.5},
+          "لغات أجنبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 13.0}
+        },
+        "specialites": ["علم الموسيقى", "قيادة الأوركسترا", "تأليف موسيقي", "آلة موسيقية"],
+        "debouches": ["عالم موسيقى", "قائد أوركسترا", "ملحن", "موزع موسيقي", "أستاذ متخصص"]
+      }
+    ],
+    "lmd": [
+      {
+        "id": "LICENCE_ARTS_VISUELS",
+        "nom": "ليسانس فنون بصرية",
+        "acronyme": "LMD فنون بصرية",
+        "localisation": {"wilayas": ["الجزائر", "وهران", "قسنطينة", "معسكر", "تلمسان"]},
+        "duree": "3 سنوات",
+        "type_recrutement": "محلي",
+        "mode_calcul": {
+          "type": "معدل عام",
+          "seuil_depot_minimum": 10.0
+        },
+        "streams_acceptes": {
+          "فنون": {"priorite": "P1", "min_moyenne_ponderee_2025": 10.0},
+          "آداب وفلسفة": {"priorite": "P1", "min_moyenne_ponderee_2025": 10.5},
+          "لغات أجنبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 11.0}
+        },
+        "specialites": ["رسم", "نحت", "حفر", "تصميم"],
+        "debouches": ["أستاذ تربية فنية", "منشط ثقافي", "مدير معارض أو متاحف"]
+      },
+      {
+        "id": "LICENCE_ARTS_SPECTACLE",
+        "nom": "ليسانس فنون المسرح",
+        "acronyme": "LMD فنون المسرح",
+        "localisation": {"wilayas": ["الجزائر", "وهران", "قسنطينة"]},
+        "duree": "3 سنوات",
+        "type_recrutement": "محلي",
+        "mode_calcul": {
+          "type": "معدل عام",
+          "seuil_depot_minimum": 10.0
+        },
+        "streams_acceptes": {
+          "فنون": {"priorite": "P1", "min_moyenne_ponderee_2025": 10.0},
+          "آداب وفلسفة": {"priorite": "P1", "min_moyenne_ponderee_2025": 10.5},
+          "لغات أجنبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 11.0}
+        },
+        "specialites": ["مسرح", "سينما", "أداء"],
+        "debouches": ["منشط ثقافي", "مساعد إنتاج", "وسيط ثقافي"]
+      }
+    ]
+  }
+}
+,{
+  "domaine": "STAPS (علوم وتقنيات النشاطات البدنية والرياضية)",
+  "description": "تكوين في التربية البدنية والرياضية، التدريب الرياضي وتسير الرياضة.",
+  "filiere_bac_accessibles": ["علوم تجريبية", "رياضيات", "تسيير واقتصاد", "آداب وفلسفة", "لغات أجنبية"],
+  
+  "formations": {
+    "ens": [
+      {
+        "id": "ENS_PEM_EPS",
+        "nom": "أستاذ التعليم المتوسط - تربية بدنية ورياضية",
+        "acronyme": "PEM تربية بدنية",
+        "duree": "4 سنوات",
+        "type_recrutement": "وطني (حسب المنطقة)",
+        "entretien_requis": true,
+        "test_physique_requis": true,
+        "visite_medicale_requise": true,
+        "mode_calcul": {
+          "type": "معدل عام",
+          "formule": "moyenne_generale",
+          "seuil_depot_minimum": 13.0
+        },
+        "streams_acceptes": {
+          "علوم تجريبية": {"priorite": "P1", "min_moyenne_ponderee_2025": 13.0},
+          "رياضيات": {"priorite": "P1", "min_moyenne_ponderee_2025": 13.5},
+          "تسيير واقتصاد": {"priorite": "P2", "min_moyenne_ponderee_2025": 14.0},
+          "آداب وفلسفة": {"priorite": "P3", "min_moyenne_ponderee_2025": 14.5},
+          "لغات أجنبية": {"priorite": "P3", "min_moyenne_ponderee_2025": 14.5}
+        },
+        "debouches": ["أستاذ تربية بدنية في المتوسط (CEM)"]
+      },
+      {
+        "id": "ENS_PES_EPS",
+        "nom": "أستاذ التعليم الثانوي - تربية بدنية ورياضية",
+        "acronyme": "PES تربية بدنية",
+        "duree": "5 سنوات",
+        "type_recrutement": "وطني (حسب المنطقة)",
+        "entretien_requis": true,
+        "test_physique_requis": true,
+        "visite_medicale_requise": true,
+        "mode_calcul": {
+          "type": "معدل عام",
+          "formule": "moyenne_generale",
+          "seuil_depot_minimum": 13.0
+        },
+        "streams_acceptes": {
+          "علوم تجريبية": {"priorite": "P1", "min_moyenne_ponderee_2025": 13.0},
+          "رياضيات": {"priorite": "P1", "min_moyenne_ponderee_2025": 13.5},
+          "تسيير واقتصاد": {"priorite": "P2", "min_moyenne_ponderee_2025": 14.0},
+          "آداب وفلسفة": {"priorite": "P3", "min_moyenne_ponderee_2025": 14.5},
+          "لغات أجنبية": {"priorite": "P3", "min_moyenne_ponderee_2025": 14.5}
+        },
+        "debouches": ["أستاذ تربية بدنية في الثانوي"]
+      }
+    ],
+    "instituts_elite": [
+      {
+        "id": "ISTS_ALGER",
+        "nom": "معهد علوم وتقنيات الرياضة",
+        "acronyme": "ISTS",
+        "localisation": {"wilayas": ["الجزائر"]},
+        "duree": "5 سنوات",
+        "type_recrutement": "وطني",
+        "test_physique_requis": true,
+        "visite_medicale_requise": true,
+        "mode_calcul": {
+          "type": "معدل موزون",
+          "seuil_depot_fiche_voeux": 13.0
+        },
+        "streams_acceptes": {
+          "علوم تجريبية": {"priorite": "P1", "min_moyenne_ponderee_2025": 13.0},
+          "رياضيات": {"priorite": "P1", "min_moyenne_ponderee_2025": 13.0},
+          "تسيير واقتصاد": {"priorite": "P2", "min_moyenne_ponderee_2025": 14.0},
+          "آداب وفلسفة": {"priorite": "P3", "min_moyenne_ponderee_2025": 14.5},
+          "لغات أجنبية": {"priorite": "P3", "min_moyenne_ponderee_2025": 14.5}
+        },
+        "specialites": ["تدريب عالي المستوى", "تحضير بدني", "تسيير الرياضة النخبوية"],
+        "debouches": ["مدرب المنتخبات الوطنية", "إطار سامي في وزارة الرياضة", "مدير تقني وطني"]
+      }
+    ],
+    "lmd": [
+      {
+        "id": "LICENCE_EPS",
+        "nom": "ليسانس تربية بدنية ورياضية",
+        "acronyme": "EPS",
+        "localisation": {"wilayas": ["الجزائر", "قسنطينة", "وهران", "سوق أهراس", "الشلف", "تيزي وزو", "عنابة", "سطيف"]},
+        "duree": "3 سنوات",
+        "type_recrutement": "محلي / جهوي",
+        "test_physique_requis": true,
+        "visite_medicale_requise": true,
+        "mode_calcul": {
+          "type": "معدل عام",
+          "seuil_depot_minimum": 10.0
+        },
+        "streams_acceptes": {
+          "علوم تجريبية": {"priorite": "P1", "min_moyenne_ponderee_2025": 10.0},
+          "رياضيات": {"priorite": "P1", "min_moyenne_ponderee_2025": 10.5},
+          "تسيير واقتصاد": {"priorite": "P2", "min_moyenne_ponderee_2025": 11.5},
+          "آداب وفلسفة": {"priorite": "P3", "min_moyenne_ponderee_2025": 12.0},
+          "لغات أجنبية": {"priorite": "P3", "min_moyenne_ponderee_2025": 12.0}
+        },
+        "specialites": ["تدريس التربية البدنية", "بيداغوجيا رياضية"],
+        "debouches": ["أستاذ تربية بدنية (مسابقة التربية الوطنية)", "منشط رياضي"]
+      },
+      {
+        "id": "LICENCE_ENTRAINEMENT_SPORTIF",
+        "nom": "ليسانس تدريب رياضي",
+        "acronyme": "تدريب رياضي",
+        "localisation": {"wilayas": ["الجزائر", "قسنطينة", "وهران", "تيزي وزو", "عنابة"]},
+        "duree": "3 سنوات",
+        "type_recrutement": "محلي / جهوي",
+        "test_physique_requis": true,
+        "visite_medicale_requise": true,
+        "mode_calcul": {
+          "type": "معدل عام",
+          "seuil_depot_minimum": 11.0
+        },
+        "streams_acceptes": {
+          "علوم تجريبية": {"priorite": "P1", "min_moyenne_ponderee_2025": 11.0},
+          "رياضيات": {"priorite": "P1", "min_moyenne_ponderee_2025": 11.5}
+        },
+        "specialites": ["تحضير بدني", "تدريب متخصص (كرة القدم، ألعاب القوى، كرة اليد، كرة الطائرة...)", "بيوميكانيك"],
+        "debouches": ["مدرب نادي", "محضر بدني عالي المستوى", "مدرب رياضي خاص"]
+      },
+      {
+        "id": "LICENCE_MANAGEMENT_SPORT",
+        "nom": "ليسانس تسيير رياضي",
+        "acronyme": "تسيير رياضي",
+        "localisation": {"wilayas": ["الجزائر", "قسنطينة", "وهران", "الشلف"]},
+        "duree": "3 سنوات",
+        "type_recrutement": "محلي / جهوي",
+        "test_physique_requis": true,
+        "visite_medicale_requise": true,
+        "mode_calcul": {
+          "type": "معدل عام",
+          "seuil_depot_minimum": 11.0
+        },
+        "streams_acceptes": {
+          "تسيير واقتصاد": {"priorite": "P1", "min_moyenne_ponderee_2025": 11.0},
+          "علوم تجريبية": {"priorite": "P2", "min_moyenne_ponderee_2025": 11.5},
+          "رياضيات": {"priorite": "P2", "min_moyenne_ponderee_2025": 11.5}
+        },
+        "specialites": ["تسيير الهياكل الرياضية", "تسويق رياضي", "تنظيم التظاهرات الرياضية"],
+        "debouches": ["مدير مجمع رياضي", "مدير نادي", "إطار في الرابطات", "إطار في مديرية الشباب والرياضة (DJS)"]
+      }
+    ]
+  }
+}
+
+]
