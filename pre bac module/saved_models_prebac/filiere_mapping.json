@@ -1,0 +1,32 @@
+{
+  "sciences_experimentales": {
+    "ar": "العلوم التجريبية",
+    "fr": "Sciences Expérimentales",
+    "en": "Experimental Sciences"
+  },
+  "maths": {
+    "ar": "الرياضيات",
+    "fr": "Mathématiques",
+    "en": "Mathematics"
+  },
+  "techniques_maths": {
+    "ar": "تقني رياضي",
+    "fr": "Technique Mathématique",
+    "en": "Technical Mathematics"
+  },
+  "gestion_economie": {
+    "ar": "تسيير واقتصاد",
+    "fr": "Gestion et Économie",
+    "en": "Management & Economics"
+  },
+  "langues_etrangeres": {
+    "ar": "لغات أجنبية",
+    "fr": "Langues Étrangères",
+    "en": "Foreign Languages"
+  },
+  "lettres_philosophie": {
+    "ar": "آداب وفلسفة",
+    "fr": "Lettres et Philosophie",
+    "en": "Literature & Philosophy"
+  }
+}

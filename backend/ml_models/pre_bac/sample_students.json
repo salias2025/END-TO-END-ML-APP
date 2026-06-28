@@ -1,0 +1,82 @@
+[
+  {
+    "student_id": 0,
+    "filiere": "sciences_experimentales",
+    "bac_avg": 14.44,
+    "bac_mention": "assez_bien",
+    "cluster_filiere": 1,
+    "archetype": "🔵 جيد جداً (المعدل: 15.2)"
+  },
+  {
+    "student_id": 1,
+    "filiere": "sciences_experimentales",
+    "bac_avg": 7.21,
+    "bac_mention": "echec",
+    "cluster_filiere": 5,
+    "archetype": "🔴 راسب (المعدل: 8.1)"
+  },
+  {
+    "student_id": 2,
+    "filiere": "sciences_experimentales",
+    "bac_avg": 11.85,
+    "bac_mention": "passable",
+    "cluster_filiere": 3,
+    "archetype": "🟠 مقبول (المعدل: 11.6)"
+  },
+  {
+    "student_id": 3,
+    "filiere": "sciences_experimentales",
+    "bac_avg": 11.19,
+    "bac_mention": "passable",
+    "cluster_filiere": 3,
+    "archetype": "🟠 مقبول (المعدل: 11.6)"
+  },
+  {
+    "student_id": 4,
+    "filiere": "sciences_experimentales",
+    "bac_avg": 13.01,
+    "bac_mention": "assez_bien",
+    "cluster_filiere": 2,
+    "archetype": "🟡 جيد (المعدل: 13.3)"
+  },
+  {
+    "student_id": 5,
+    "filiere": "sciences_experimentales",
+    "bac_avg": 7.67,
+    "bac_mention": "echec",
+    "cluster_filiere": 5,
+    "archetype": "🔴 راسب (المعدل: 8.1)"
+  },
+  {
+    "student_id": 6,
+    "filiere": "sciences_experimentales",
+    "bac_avg": 14.38,
+    "bac_mention": "bien",
+    "cluster_filiere": 1,
+    "archetype": "🔵 جيد جداً (المعدل: 15.2)"
+  },
+  {
+    "student_id": 7,
+    "filiere": "sciences_experimentales",
+    "bac_avg": 10.08,
+    "bac_mention": "echec",
+    "cluster_filiere": 4,
+    "archetype": "🔴 راسب (المعدل: 9.4)"
+  },
+  {
+    "student_id": 8,
+    "filiere": "sciences_experimentales",
+    "bac_avg": 7.92,
+    "bac_mention": "echec",
+    "cluster_filiere": 5,
+    "archetype": "🔴 راسب (المعدل: 8.1)"
+  },
+  {
+    "student_id": 9,
+    "filiere": "sciences_experimentales",
+    "bac_avg": 8.43,
+    "bac_mention": "echec",
+    "cluster_filiere": 5,
+    "archetype": "🔴 راسب (المعدل: 8.1)"
+  }
+]

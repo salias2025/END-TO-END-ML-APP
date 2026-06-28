@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BacAidz — Ton chemin vers le bac</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #080b14;
+    --bg2: #0d1224;
+    --bg3: #111827;
+    --surface: #141929;
+    --surface2: #1a2035;
+    --violet: #7c5cfc;
+    --violet-light: #a78bfa;
+    --violet-dim: #4c3899;
+    --violet-glow: rgba(124,92,252,0.18);
+    --indigo: #4f46e5;
+    --text: #f0edff;
+    --text-muted: #9490b5;
+    --text-dim: #5a5578;
+    --border: rgba(124,92,252,0.18);
+    --border2: rgba(124,92,252,0.08);
+    --accent: #c4b5fd;
+    --gold: #fbbf24;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+    line-height: 1.6;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.1rem 3rem;
+    background: rgba(8,11,20,0.82);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border2);
+  }
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.5rem;
+    letter-spacing: -0.03em;
+    background: linear-gradient(135deg, #c4b5fd 0%, #7c5cfc 60%, #4f46e5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .nav-links {
+    display: flex; gap: 2.2rem; list-style: none;
+  }
+  .nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--text); }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 7rem 3rem 4rem;
+    gap: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 20% 50%, rgba(79,70,229,0.13) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 80% 30%, rgba(124,92,252,0.1) 0%, transparent 60%);
+  }
+  .hero-grid-lines {
+    position: absolute; inset: 0; z-index: 0;
+    background-image:
+      linear-gradient(rgba(124,92,252,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(124,92,252,0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+  .hero-left { position: relative; z-index: 1; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    background: rgba(124,92,252,0.12);
+    border: 1px solid rgba(124,92,252,0.3);
+    border-radius: 100px;
+    padding: 0.3rem 0.9rem;
+    font-size: 0.78rem;
+    color: var(--violet-light);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 1.6rem;
+    font-weight: 500;
+  }
+  .hero-badge-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--violet);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.7); }
+  }
+  .hero-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.4rem;
+  }
+  .hero-title .accent {
+    background: linear-gradient(135deg, #c4b5fd, #7c5cfc, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .hero-subtitle {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    font-weight: 300;
+    max-width: 480px;
+    line-height: 1.75;
+    margin-bottom: 2.4rem;
+  }
+  .hero-cta {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    background: var(--violet);
+    color: #fff;
+    font-family: 'Syne', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.85rem 1.8rem;
+    border-radius: 8px;
+    text-decoration: none;
+    letter-spacing: 0.01em;
+    transition: background 0.2s, transform 0.15s;
+    box-shadow: 0 0 28px rgba(124,92,252,0.35);
+  }
+  .hero-cta:hover { background: #6748d6; transform: translateY(-2px); }
+  .hero-right {
+    position: relative; z-index: 1;
+    display: flex; justify-content: center; align-items: center;
+  }
+
+  /* ── ABOUT ── */
+  #about {
+    padding: 6rem 3rem;
+    background: var(--bg2);
+    border-top: 1px solid var(--border2);
+    border-bottom: 1px solid var(--border2);
+  }
+  .section-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--violet-light);
+    font-weight: 600;
+    margin-bottom: 0.7rem;
+    display: block;
+  }
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    margin-bottom: 1rem;
+  }
+  .section-desc {
+    color: var(--text-muted);
+    font-size: 1rem;
+    max-width: 560px;
+    line-height: 1.8;
+    margin-bottom: 3rem;
+  }
+  .about-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+    margin-top: 3rem;
+  }
+  .about-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.6rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .about-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, var(--violet), var(--indigo), transparent);
+  }
+  .about-card:hover { transform: translateY(-4px); border-color: rgba(124,92,252,0.4); }
+  .card-icon {
+    width: 44px; height: 44px;
+    border-radius: 10px;
+    background: rgba(124,92,252,0.12);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+  }
+  .card-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+  }
+  .card-body {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+  }
+
+  /* ── ROADMAP ── */
+  #roadmap {
+    padding: 6rem 3rem;
+    background: var(--bg);
+    position: relative;
+    overflow: hidden;
+  }
+  #roadmap::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 50% 60% at 50% 40%, rgba(79,70,229,0.06) 0%, transparent 70%);
+  }
+  .roadmap-container {
+    position: relative; margin-top: 4rem;
+    padding-bottom: 2rem;
+  }
+  /* THE ROAD SVG-LIKE STRIP */
+  .road-track {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .road-segment {
+    display: grid;
+    grid-template-columns: 1fr 80px 1fr;
+    width: 100%;
+    align-items: center;
+    position: relative;
+  }
+  .road-center {
+    display: flex; flex-direction: column; align-items: center;
+    position: relative; z-index: 2;
+  }
+  .road-line {
+    width: 4px;
+    flex: 1;
+    min-height: 48px;
+    background: linear-gradient(180deg, var(--violet) 0%, var(--indigo) 100%);
+    position: relative;
+    margin: 0 auto;
+  }
+  .road-line.dashed {
+    background: repeating-linear-gradient(
+      to bottom,
+      var(--violet-dim) 0px, var(--violet-dim) 12px,
+      transparent 12px, transparent 22px
+    );
+  }
+  .road-stop {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    background: var(--surface2);
+    border: 3px solid var(--violet);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: var(--violet-light);
+    box-shadow: 0 0 0 6px rgba(124,92,252,0.1), 0 0 20px rgba(124,92,252,0.2);
+    z-index: 3;
+    flex-shrink: 0;
+    position: relative;
+  }
+  .road-stop.start {
+    width: 60px; height: 60px;
+    font-size: 1.3rem;
+    background: var(--violet);
+    color: #fff;
+    box-shadow: 0 0 0 8px rgba(124,92,252,0.15), 0 0 32px rgba(124,92,252,0.4);
+  }
+  .road-stop.finish {
+    width: 60px; height: 60px;
+    background: linear-gradient(135deg, var(--gold), #f59e0b);
+    border-color: var(--gold);
+    color: #7c2d12;
+    box-shadow: 0 0 0 8px rgba(251,191,36,0.12), 0 0 32px rgba(251,191,36,0.3);
+  }
+  .road-card-left {
+    padding-right: 1.5rem;
+    text-align: right;
+  }
+  .road-card-right {
+    padding-left: 1.5rem;
+  }
+  .road-card-inner {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1rem 1.2rem;
+    display: inline-block;
+    max-width: 320px;
+    transition: border-color 0.2s;
+    position: relative;
+  }
+  .road-card-inner:hover { border-color: rgba(124,92,252,0.5); }
+  .road-card-inner::after {
+    content: '';
+    position: absolute; top: 50%; transform: translateY(-50%);
+    border: 6px solid transparent;
+  }
+  .road-card-left .road-card-inner::after {
+    right: -12px;
+    border-left-color: var(--border);
+  }
+  .road-card-right .road-card-inner::after {
+    left: -12px;
+    border-right-color: var(--border);
+  }
+  .road-card-tag {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--violet-light);
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    display: block;
+  }
+  .road-card-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.25rem;
+  }
+  .road-card-desc {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.55;
+  }
+  .road-spacer { height: 1px; width: 100%; }
+
+  /* ── TIMELINE ── */
+  #timeline {
+    padding: 6rem 3rem;
+    background: var(--bg2);
+    border-top: 1px solid var(--border2);
+  }
+  .timeline-phases {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3.5rem;
+    position: relative;
+  }
+  .timeline-phases::before {
+    content: '';
+    position: absolute;
+    top: 28px; left: calc(16.66% + 1.5rem); right: calc(16.66% + 1.5rem);
+    height: 2px;
+    background: linear-gradient(90deg, var(--violet-dim), var(--violet), var(--violet-dim));
+  }
+  .phase {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.2s;
+  }
+  .phase:hover { transform: translateY(-4px); }
+  .phase-header {
+    padding: 1.5rem 1.5rem 1rem;
+    display: flex; align-items: flex-start; gap: 0.75rem;
+    border-bottom: 1px solid var(--border2);
+  }
+  .phase-dot {
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    border: 2px solid var(--violet);
+    background: var(--bg);
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 0 10px rgba(124,92,252,0.4);
+  }
+  .phase-dot.active {
+    background: var(--violet);
+    box-shadow: 0 0 14px rgba(124,92,252,0.6);
+  }
+  .phase-dot.future {
+    border-color: var(--gold);
+    box-shadow: 0 0 10px rgba(251,191,36,0.3);
+  }
+  .phase-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.2rem;
+  }
+  .phase-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.2;
+  }
+  .phase-body { padding: 1.2rem 1.5rem 1.5rem; }
+  .phase-items { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+  .phase-items li {
+    display: flex; align-items: flex-start; gap: 0.5rem;
+    font-size: 0.85rem; color: var(--text-muted); line-height: 1.45;
+  }
+  .phase-items li::before {
+    content: '';
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--violet);
+    margin-top: 0.42rem;
+    flex-shrink: 0;
+  }
+  .phase-items li.gold::before { background: var(--gold); }
+  .phase-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 100px;
+    margin-top: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+  }
+  .phase-badge.pre {
+    background: rgba(124,92,252,0.12);
+    color: var(--violet-light);
+    border: 1px solid rgba(124,92,252,0.25);
+  }
+  .phase-badge.bac {
+    background: rgba(124,92,252,0.2);
+    color: var(--accent);
+    border: 1px solid rgba(124,92,252,0.4);
+  }
+  .phase-badge.post {
+    background: rgba(251,191,36,0.1);
+    color: #fbbf24;
+    border: 1px solid rgba(251,191,36,0.25);
+  }
+
+  /* ── COUNTDOWN ── */
+  #countdown {
+    padding: 5rem 3rem;
+    background: var(--bg);
+    border-top: 1px solid var(--border2);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  #countdown::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 50% 80% at 50% 100%, rgba(124,92,252,0.08) 0%, transparent 70%);
+  }
+  .countdown-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .countdown-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+    font-weight: 400;
+  }
+  .countdown-grid {
+    display: inline-flex;
+    gap: 0.8rem;
+    align-items: center;
+    position: relative; z-index: 1;
+  }
+  .countdown-unit {
+    text-align: center;
+    min-width: 90px;
+  }
+  .countdown-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 3.2rem;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    color: var(--text);
+    line-height: 1;
+    display: block;
+    font-variant-numeric: tabular-nums;
+  }
+  .countdown-unit-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-top: 0.4rem;
+    display: block;
+    font-weight: 500;
+  }
+  .countdown-sep {
+    font-family: 'Syne', sans-serif;
+    font-size: 2rem;
+    color: var(--text-dim);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1;
+  }
+  .countdown-note {
+    margin-top: 2rem;
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    position: relative; z-index: 1;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 2.5rem 3rem;
+    background: var(--bg2);
+    border-top: 1px solid var(--border2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .footer-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.1rem;
+    background: linear-gradient(135deg, #c4b5fd, #7c5cfc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .footer-note {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  }
+  .float { animation: float 5s ease-in-out infinite; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .fade-up {
+    opacity: 0;
+    animation: fadeUp 0.7s ease forwards;
+  }
+  .fade-up:nth-child(1) { animation-delay: 0.1s; }
+  .fade-up:nth-child(2) { animation-delay: 0.22s; }
+  .fade-up:nth-child(3) { animation-delay: 0.34s; }
+  .fade-up:nth-child(4) { animation-delay: 0.46s; }
+
+  @media (max-width: 900px) {
+    #hero { grid-template-columns: 1fr; padding-top: 6rem; }
+    .hero-right { display: none; }
+    .about-cards { grid-template-columns: 1fr; }
+    .timeline-phases { grid-template-columns: 1fr; }
+    .timeline-phases::before { display: none; }
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    #about, #roadmap, #timeline, #countdown { padding: 4rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-logo">bacaidz</span>
+  <ul class="nav-links">
+    <li><a href="#about">La plateforme</a></li>
+    <li><a href="#roadmap">Feuille de route</a></li>
+    <li><a href="#timeline">Phases</a></li>
+    <li><a href="#countdown">Compte à rebours</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="hero-left">
+    <div class="hero-badge fade-up">
+      <span class="hero-badge-dot"></span>
+      Ton avenir commence ici
+    </div>
+    <h1 class="hero-title fade-up">
+      Chaque grande<br>
+      réussite commence<br>
+      par <span class="accent">un seul pas.</span>
+    </h1>
+    <p class="hero-subtitle fade-up">
+      BacAidz t'accompagne de la préparation jusqu'à l'orientation — avec des ressources ciblées, une feuille de route claire, et une communauté qui te pousse vers le haut.
+    </p>
+    <a href="#roadmap" class="hero-cta fade-up">
+      Commencer maintenant
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+
+  <div class="hero-right">
+    <svg class="float" width="420" height="420" viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="glowGrad" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#7c5cfc" stop-opacity="0.25"/>
+          <stop offset="100%" stop-color="#7c5cfc" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="bookGrad" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#7c5cfc"/>
+          <stop offset="100%" stop-color="#4f46e5"/>
+        </linearGradient>
+        <linearGradient id="starGrad" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#fbbf24"/>
+          <stop offset="100%" stop-color="#f59e0b"/>
+        </linearGradient>
+        <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+          <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+          <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+
+      <!-- Glow bg -->
+      <ellipse cx="210" cy="210" rx="170" ry="170" fill="url(#glowGrad)"/>
+
+      <!-- Orbital ring -->
+      <circle cx="210" cy="210" r="150" stroke="rgba(124,92,252,0.12)" stroke-width="1" stroke-dasharray="6 8"/>
+      <circle cx="210" cy="210" r="115" stroke="rgba(124,92,252,0.08)" stroke-width="1" stroke-dasharray="3 10"/>
+
+      <!-- Central book -->
+      <g filter="url(#glow)">
+        <rect x="155" y="140" width="100" height="130" rx="8" fill="url(#bookGrad)"/>
+        <rect x="155" y="140" width="12" height="130" rx="4" fill="rgba(0,0,0,0.25)"/>
+        <!-- Pages -->
+        <line x1="178" y1="168" x2="238" y2="168" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="178" y1="182" x2="238" y2="182" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="178" y1="196" x2="218" y2="196" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="178" y1="210" x2="238" y2="210" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="178" y1="224" x2="228" y2="224" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" stroke-linecap="round"/>
+        <!-- BAC text -->
+        <text x="193" y="255" font-family="Syne, sans-serif" font-size="14" font-weight="800" fill="rgba(255,255,255,0.8)" letter-spacing="4">BAC</text>
+      </g>
+
+      <!-- Floating elements around -->
+      <!-- Star top-right -->
+      <g filter="url(#glow)" transform="translate(310, 120)">
+        <polygon points="20,0 24,14 38,14 27,22 31,36 20,28 9,36 13,22 2,14 16,14" fill="url(#starGrad)" opacity="0.9"/>
+      </g>
+
+      <!-- Check badge left -->
+      <g transform="translate(62, 185)">
+        <rect width="56" height="56" rx="16" fill="#1a2035" stroke="rgba(124,92,252,0.35)" stroke-width="1"/>
+        <circle cx="28" cy="28" r="16" fill="rgba(124,92,252,0.15)"/>
+        <path d="M20 28l6 6 12-12" stroke="#a78bfa" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </g>
+
+      <!-- Percentage badge right -->
+      <g transform="translate(302, 220)">
+        <rect width="66" height="56" rx="14" fill="#1a2035" stroke="rgba(251,191,36,0.25)" stroke-width="1"/>
+        <text x="10" y="24" font-family="Syne, sans-serif" font-size="11" font-weight="700" fill="#fbbf24">Score</text>
+        <text x="8" y="42" font-family="Syne, sans-serif" font-size="18" font-weight="800" fill="white">18/20</text>
+      </g>
+
+      <!-- Pencil top-left -->
+      <g transform="translate(88, 100) rotate(-30, 20, 60)">
+        <rect x="14" y="10" width="12" height="68" rx="3" fill="#7c5cfc"/>
+        <polygon points="14,78 20,96 26,78" fill="#c4b5fd"/>
+        <polygon points="14,78 20,88 26,78" fill="#f59e0b"/>
+        <rect x="14" y="10" width="12" height="10" rx="2" fill="#e0e0e0"/>
+      </g>
+
+      <!-- Atom / molecule bottom -->
+      <g transform="translate(155, 315)">
+        <circle cx="20" cy="20" r="7" fill="none" stroke="rgba(124,92,252,0.6)" stroke-width="1.5"/>
+        <ellipse cx="20" cy="20" rx="18" ry="7" fill="none" stroke="rgba(124,92,252,0.3)" stroke-width="1" transform="rotate(0,20,20)"/>
+        <ellipse cx="20" cy="20" rx="18" ry="7" fill="none" stroke="rgba(124,92,252,0.3)" stroke-width="1" transform="rotate(60,20,20)"/>
+        <ellipse cx="20" cy="20" rx="18" ry="7" fill="none" stroke="rgba(124,92,252,0.3)" stroke-width="1" transform="rotate(120,20,20)"/>
+        <circle cx="20" cy="20" r="4" fill="#7c5cfc"/>
+      </g>
+
+      <!-- Trophy bottom right -->
+      <g transform="translate(290, 310)">
+        <rect width="52" height="52" rx="14" fill="#1a2035" stroke="rgba(251,191,36,0.3)" stroke-width="1"/>
+        <path d="M16 12 h20 v16 a10 10 0 0 1-20 0 z" fill="none" stroke="#fbbf24" stroke-width="1.8"/>
+        <path d="M12 14 h4 M36 14 h4" stroke="#fbbf24" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="26" y1="38" x2="26" y2="44" stroke="#fbbf24" stroke-width="1.8"/>
+        <line x1="18" y1="44" x2="34" y2="44" stroke="#fbbf24" stroke-width="2" stroke-linecap="round"/>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div>
+    <span class="section-label">Comment ça marche</span>
+    <h2 class="section-title">Une plateforme pensée<br>pour les bacheliers</h2>
+    <p class="section-desc">BacAidz centralise tout ce dont tu as besoin — fiches de révision, exercices pratiques, planning personnalisé et orientation post-bac — dans un espace simple et efficace.</p>
+  </div>
+  <div class="about-cards">
+    <div class="about-card fade-up">
+      <div class="card-icon">📚</div>
+      <div class="card-title">Ressources ciblées</div>
+      <p class="card-body">Des fiches condensées et exercices par matière, alignés avec le programme officiel du baccalauréat algérien.</p>
+    </div>
+    <div class="about-card fade-up">
+      <div class="card-icon">🗓️</div>
+      <div class="card-title">Planning personnalisé</div>
+      <p class="card-body">Un calendrier de révision adapté à ton rythme et à tes points faibles, du début d'année jusqu'au jour J.</p>
+    </div>
+    <div class="about-card fade-up">
+      <div class="card-icon">🎯</div>
+      <div class="card-title">Suivi de progression</div>
+      <p class="card-body">Visualise tes progrès, identifie les lacunes et reçois des recommandations pour t'améliorer continuellement.</p>
+    </div>
+    <div class="about-card fade-up">
+      <div class="card-icon">🧭</div>
+      <div class="card-title">Orientation post-bac</div>
+      <p class="card-body">Explore les filières universitaires, les grandes écoles et les concours disponibles selon ta série et tes résultats.</p>
+    </div>
+    <div class="about-card fade-up">
+      <div class="card-icon">👥</div>
+      <div class="card-title">Communauté active</div>
+      <p class="card-body">Rejoins des milliers d'étudiants, partage des astuces, pose des questions et révise en groupe.</p>
+    </div>
+    <div class="about-card fade-up">
+      <div class="card-icon">🔔</div>
+      <div class="card-title">Alertes & rappels</div>
+      <p class="card-body">Ne rate plus aucune échéance importante : examens blancs, dates d'inscription, résultats — tout est notifié.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section id="roadmap">
+  <div style="position:relative;z-index:1;">
+    <span class="section-label">Feuille de route</span>
+    <h2 class="section-title">Le chemin vers ton bac</h2>
+    <p class="section-desc">De la rentrée jusqu'au résultat — chaque escale compte. Suis le tracé, reste sur la route.</p>
+  </div>
+
+  <div class="roadmap-container" style="position:relative;z-index:1;">
+    <div class="road-track">
+
+      <!-- STOP 0 – START -->
+      <div class="road-segment">
+        <div></div>
+        <div class="road-center">
+          <div class="road-stop start">🚀</div>
+          <div class="road-line" style="min-height:56px;"></div>
+        </div>
+        <div class="road-card-right">
+          <div class="road-card-inner">
+            <span class="road-card-tag">Escale 0 · Rentrée</span>
+            <div class="road-card-title">Début de l'aventure</div>
+            <p class="road-card-desc">Prise en main de la plateforme, bilan de niveau, et mise en place du planning de révision.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- STOP 1 -->
+      <div class="road-segment">
+        <div class="road-card-left">
+          <div class="road-card-inner">
+            <span class="road-card-tag">Escale 1 · Oct–Nov</span>
+            <div class="road-card-title">Fondamentaux</div>
+            <p class="road-card-desc">Révision des bases de chaque matière. Fiches synthétiques et exercices d'ancrage.</p>
+          </div>
+        </div>
+        <div class="road-center">
+          <div class="road-stop">1</div>
+          <div class="road-line" style="min-height:56px;"></div>
+        </div>
+        <div></div>
+      </div>
+
+      <!-- STOP 2 -->
+      <div class="road-segment">
+        <div></div>
+        <div class="road-center">
+          <div class="road-stop">2</div>
+          <div class="road-line" style="min-height:56px;"></div>
+        </div>
+        <div class="road-card-right">
+          <div class="road-card-inner">
+            <span class="road-card-tag">Escale 2 · Déc–Janv</span>
+            <div class="road-card-title">Examens blancs</div>
+            <p class="road-card-desc">Premiers examens blancs pour évaluer le niveau. Analyse des erreurs et correction ciblée.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- STOP 3 -->
+      <div class="road-segment">
+        <div class="road-card-left">
+          <div class="road-card-inner">
+            <span class="road-card-tag">Escale 3 · Fév–Mars</span>
+            <div class="road-card-title">Approfondissement</div>
+            <p class="road-card-desc">Chapitres complexes, sujets des années précédentes, exercices chronométrés et techniques de mémorisation.</p>
+          </div>
+        </div>
+        <div class="road-center">
+          <div class="road-stop">3</div>
+          <div class="road-line" style="min-height:56px;"></div>
+        </div>
+        <div></div>
+      </div>
+
+      <!-- STOP 4 -->
+      <div class="road-segment">
+        <div></div>
+        <div class="road-center">
+          <div class="road-stop">4</div>
+          <div class="road-line" style="min-height:56px;"></div>
+        </div>
+        <div class="road-card-right">
+          <div class="road-card-inner">
+            <span class="road-card-tag">Escale 4 · Avril–Mai</span>
+            <div class="road-card-title">Sprint final</div>
+            <p class="road-card-desc">Révisions intensives, simulations d'examen complètes dans les conditions réelles. Gestion du stress et du temps.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- STOP 5 -->
+      <div class="road-segment">
+        <div class="road-card-left">
+          <div class="road-card-inner">
+            <span class="road-card-tag">Escale 5 · J–2</span>
+            <div class="road-card-title">Dernière ligne droite</div>
+            <p class="road-card-desc">Check-list pré-examen, révision légère des points clés, préparation mentale et logistique du jour J.</p>
+          </div>
+        </div>
+        <div class="road-center">
+          <div class="road-stop">5</div>
+          <div class="road-line" style="min-height:56px;"></div>
+        </div>
+        <div></div>
+      </div>
+
+      <!-- FINISH -->
+      <div class="road-segment">
+        <div></div>
+        <div class="road-center">
+          <div class="road-stop finish">🏆</div>
+        </div>
+        <div class="road-card-right">
+          <div class="road-card-inner">
+            <span class="road-card-tag">Destination finale</span>
+            <div class="road-card-title">Le Baccalauréat !</div>
+            <p class="road-card-desc">Tu as fait le chemin. Place à l'orientation et à la suite de ton parcours universitaire.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="timeline">
+  <span class="section-label">Phases clés</span>
+  <h2 class="section-title">Ton parcours en 3 phases</h2>
+  <p class="section-desc">Chaque étape a ses enjeux, ses ressources et ses objectifs. BacAidz t'accompagne tout au long.</p>
+
+  <div class="timeline-phases">
+
+    <!-- PHASE 1 -->
+    <div class="phase">
+      <div class="phase-header">
+        <span class="phase-dot active"></span>
+        <div>
+          <span class="phase-label">Phase 1 · Sept → Mai</span>
+          <div class="phase-title">Pré-bac :<br>l'année de préparation</div>
+        </div>
+      </div>
+      <div class="phase-body">
+        <ul class="phase-items">
+          <li>Bilan de niveau et plan de révision personnalisé</li>
+          <li>Fiches et résumés de cours par chapitre</li>
+          <li>Exercices progressifs avec correction automatique</li>
+          <li>Examens blancs mensuels avec analyse</li>
+          <li>Suivi de progression hebdomadaire</li>
+          <li>Forums d'entraide par matière</li>
+        </ul>
+        <span class="phase-badge pre">En cours</span>
+      </div>
+    </div>
+
+    <!-- PHASE 2 -->
+    <div class="phase">
+      <div class="phase-header">
+        <span class="phase-dot active"></span>
+        <div>
+          <span class="phase-label">Phase 2 · Juin</span>
+          <div class="phase-title">Année du bac :<br>le grand jour</div>
+        </div>
+      </div>
+      <div class="phase-body">
+        <ul class="phase-items">
+          <li>Planning J-30 intensif et ciblé</li>
+          <li>Récapitulatifs express par matière</li>
+          <li>Sessions de révision en live stream</li>
+          <li>Notifications du calendrier officiel</li>
+          <li class="gold">Gestion du stress et techniques d'examen</li>
+          <li class="gold">Checklist du jour J</li>
+        </ul>
+        <span class="phase-badge bac">Phase décisive</span>
+      </div>
+    </div>
+
+    <!-- PHASE 3 -->
+    <div class="phase">
+      <div class="phase-header">
+        <span class="phase-dot future"></span>
+        <div>
+          <span class="phase-label">Phase 3 · Juillet+</span>
+          <div class="phase-title">Post-bac :<br>l'orientation</div>
+        </div>
+      </div>
+      <div class="phase-body">
+        <ul class="phase-items">
+          <li>Guide complet des filières universitaires</li>
+          <li>Présentation des grandes écoles et concours</li>
+          <li>Simulateur d'orientation selon ton score</li>
+          <li>Témoignages d'étudiants par filière</li>
+          <li class="gold">Préparation aux concours d'entrée</li>
+          <li class="gold">Ressources pour l'inscription universitaire</li>
+        </ul>
+        <span class="phase-badge post">À venir</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- COUNTDOWN -->
+<section id="countdown">
+  <span class="countdown-label">Compte à rebours</span>
+  <p class="countdown-title">Baccalauréat 2025 — Il te reste</p>
+  <div class="countdown-grid">
+    <div class="countdown-unit">
+      <span class="countdown-num" id="cd-days">--</span>
+      <span class="countdown-unit-label">jours</span>
+    </div>
+    <span class="countdown-sep">:</span>
+    <div class="countdown-unit">
+      <span class="countdown-num" id="cd-hours">--</span>
+      <span class="countdown-unit-label">heures</span>
+    </div>
+    <span class="countdown-sep">:</span>
+    <div class="countdown-unit">
+      <span class="countdown-num" id="cd-mins">--</span>
+      <span class="countdown-unit-label">minutes</span>
+    </div>
+    <span class="countdown-sep">:</span>
+    <div class="countdown-unit">
+      <span class="countdown-num" id="cd-secs">--</span>
+      <span class="countdown-unit-label">secondes</span>
+    </div>
+  </div>
+  <p class="countdown-note">📌 Date cible estimée : 8 juin 2025 · Mise à jour officielle à venir</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">bacaidz</span>
+  <span class="footer-note">© 2025 BacAidz · Fait pour les futurs bacheliers algériens 🇩🇿</span>
+</footer>
+
+<script>
+  // ── Countdown ──
+  const target = new Date('2025-06-08T08:00:00').getTime();
+  function tick() {
+    const now = Date.now();
+    const diff = target - now;
+    if (diff <= 0) {
+      document.getElementById('cd-days').textContent = '00';
+      document.getElementById('cd-hours').textContent = '00';
+      document.getElementById('cd-mins').textContent = '00';
+      document.getElementById('cd-secs').textContent = '00';
+      return;
+    }
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    document.getElementById('cd-days').textContent = String(d).padStart(2, '0');
+    document.getElementById('cd-hours').textContent = String(h).padStart(2, '0');
+    document.getElementById('cd-mins').textContent = String(m).padStart(2, '0');
+    document.getElementById('cd-secs').textContent = String(s).padStart(2, '0');
+  }
+  tick();
+  setInterval(tick, 1000);
+
+  // ── Scroll reveal ──
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.about-card, .phase').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(24px)';
+    el.style.transition = 'opacity 0.55s ease, transform 0.55s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>

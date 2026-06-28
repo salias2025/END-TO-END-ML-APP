@@ -1,0 +1,10 @@
+{
+  "model_type": null,
+  "r2_score": null,
+  "mae": null,
+  "rmse": null,
+  "training_date": "2026-06-22T14:03:19.787116",
+  "filiere_metrics": {},
+  "features_used": 70,
+  "total_students": 1500
+}

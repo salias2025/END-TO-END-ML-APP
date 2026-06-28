@@ -1,0 +1,216 @@
+{
+  "arabic": {
+    "name_ar": "📖 اللغة العربية",
+    "icon": "📖",
+    "youtube": [
+      { "name": "أبو بكر محمد", "channel": "Prof Abou Bakr Moubarek", "url": "https://youtube.com/@aboubakrmoubarek" },
+      { "name": "أسامة حيقون", "channel": "Higoun Oussama", "url": "https://youtube.com/@higounoussama" }
+    ],
+    "books": [
+      { "name": "كتاب الجوهرة", "author": "أبو بكر محمد", "url": "https://share.google/A8gzuqn57gPzuowLl" }
+    ],
+    "facebook": [
+      
+      { "name": "Prof okba ben nafi3", "url": "https://www.facebook.com/Nafi3.bac.dz/" }
+    ]
+  },
+  "mathematics": {
+    "name_ar": "🧮 الرياضيات",
+    "icon": "🧮",
+    "youtube": [
+      { "name": "نور الدين", "channel": "Prof Nourredine", "url": "youtube.com/channel/UCdG7cXx2fdJCduxfMOtF_AQ" },
+      { "name": "إنفينيتي", "channel": "Infinity Maths", "url": "https://www.youtube.com/@infinitymath20" },
+      { "name": "أمين بروف", "channel": "Amine Prof Maths", "url": "www.youtube.com/@amineprofmath" },
+      { "name": "ساتورن", "channel": "Saturn (احتمالات)", "url": "www.youtube.com/@Abdechafi.math.saturn" },
+      { "name": "ساتورن", "channel": "abd el bassit", "url": "www.youtube.com/@الأستاذعبدالباسط-س1و" }
+    ],
+    "books": [
+      { "name": "سلسلة الفضية", "author": "أستاذ نور الدين", "url": "https://share.google/NSWu6IcIAdtxtH8EH" }
+    ],
+    "facebook": [
+      { "name": "Top Maths", "url": "https://www.facebook.com/topmaths13" },
+      { "name": "Math For All", "url": "https://www.facebook.com/profile.php?id=61550813927654&sk=about" },
+      { "name": "Ard Maths", "url": "https://www.facebook.com/profile.php?id=100072462311846" },
+      { "name": "Prof Dramnia Fouad", "url": "https://www.facebook.com/share/18YR8CyVkq/" }
+    ],
+    "apps": [
+      { "name": "GeoGebra", "platform": "Android/iOS", "url": "https://www.geogebra.org/download" }
+    ]
+  },
+  "physics": {
+    "name_ar": "⚡ الفيزياء",
+    "icon": "⚡",
+    "youtube": [
+      { "name": "عبد اللطيف", "channel": "Prof Abdellatif", "url": "www.youtube.com/@abdelatif_phyDZ" },
+      { "name": "محمد الأمين زدون", "channel": "Zeddoune Mohamed El Amine", "url": "www.youtube.com/@aminezeddoun" },
+      { "name": "سيد أحمد شلال", "channel": "Prof Sid Ahmed Chalal", "url": "www.youtube.com/@sidahmedchaallel8246" }
+    ],
+    "books": [
+      { "name": "كتاب دولفين", "url": "https://share.google/HfakDhimQuoGgTff0" },
+      { "name": "Cours DZ Edition 2022", "url": "https://www.facebook.com/coursdz2023/photos/%D8%A7%D9%84%D8%A3%D8%B3%D8%AA%D8%A7%D8%B0-%D8%AC%D9%85%D8%A7%D9%84-%D8%A7%D9%84%D8%AF%D9%8A%D9%86-%D8%A5%D8%BA%D9%8A%D9%84-%D9%85%D9%86-%D8%A3%D8%AD%D8%B3%D9%86-%D8%A3%D8%B3%D8%A7%D8%AA%D8%B0%D8%A9-%D8%A7%D9%84%D9%81%D9%8A%D8%B2%D9%8A%D8%A7%D8%A1-%D8%AE%D8%B1%D9%8A%D8%AC-%D8%A7%D9%84%D9%85%D8%AF%D8%B1%D8%B3%D8%A9-%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A%D8%A9-%D8%A7%D9%84%D9%85%D8%AA%D8%B9%D8%AF%D8%AF%D8%A9-%D8%A7%D9%84/768355263893442/" },
+      { "name": "تأشيرات النجاح", "url": "https://share.google/oNFeOpraMPaMWH64H" }
+    ],
+    "facebook": [
+      { "name": "Fares Fergani Physics", "url": "https://www.facebook.com/faresfergani25" },
+      { "name": "Prof Chnayet", "url": "https://www.facebook.com/TaachiratNadjah" },
+      { "name": "Physics Stif 2024", "url": "https://www.facebook.com/groups/929244597147487/" },
+      { "name": "ملتقى أساتذة العلوم الفيزيائية", "url": "https://www.facebook.com/groups/164164357393455/" }
+    ]
+  },
+  "science": {
+    "name_ar": "🔬 العلوم الطبيعية",
+    "icon": "🔬",
+    "youtube": [
+      { "name": "زينة شريف كتفي", "channel": "Ketfi Zina Chrif", "url": "www.youtube.com/@prof-ketfi.cherif-zina" },
+      { "name": "بروف شاوش", "channel": "Prof Chaouche", "url": "www.youtube.com/@Profchaouch" },
+      { "name": "مصطفى بد", "channel": "Mustapaha Bdd", "url": "www.youtube.com/@MostafaBdd" }
+    ],
+    "books": [
+      { "name": "سلسلة الفضية", "author": "كتفي شريف", "url": "https://share.google/0OZuOR0pJjgVQbor2" }
+    ]
+  },
+  "his_geo": {
+    "name_ar": "📜 التاريخ والجغرافيا",
+    "icon": "📜",
+    "youtube": [
+      { "name": "أمين سكول", "channel": "Amine School", "url": "www.youtube.com/@amine_histoir_geo" },
+      { "name": "هند شواو", "channel": "Hind Chaouaou", "url": "www.youtube.com/@Hindchaouaou" }
+    ],
+    "books": [
+      { "name": "كتاب برنان", "author": "Prof Bourenane", "url": "https://share.google/RS1l6sWhzN2dUFJhh" },
+      { "name": "مطوية خرائط", "type": "خرائط تاريخ وجغرافيا", "url": "https://share.google/4ojg8h1mu0Yy7fGLb" }
+    ],
+    "facebook": [
+      { "name": "عقبة بن نافع", "page": "Okba Ben Nafe3", "url": "https://www.facebook.com/Nafi3.bac.dz/" }
+    ]
+  },
+  "islamia": {
+    "name_ar": "🕌 العلوم الإسلامية",
+    "icon": "🕌",
+    "youtube": [
+      { "name": "نوال بوسعدي", "channel": "Bous3adi Nawel", "url": "www.youtube.com/@BOUSSAADI" },
+      { "name": "بروف صالحي", "channel": "Prof Salhi", "url": "www.youtube.com/@oustada_Salhi" },
+      { "name": "بروف شمس الدين", "channel": "Prof Chams Ddine", "url": "www.youtube.com/@dr_chms2540" }
+    ],
+    "books": [
+      { "name": "سلسلة الخضراء", "url": "https://share.google/B3KJlKujPsK8Hn4M5" },
+      { "name": "سلسلة العرجوانية", "url": "https://share.google/fwKPSOMXTtsrNJCrJ" }
+    ],
+    "facebook": [
+      { "name": "tarbia.dz", "page": "Tarbia.dz online website", "url": "https://www.facebook.com/tarbiadz.online" }
+    ]
+  },
+  "philo": {
+    "name_ar": "💭 الفلسفة",
+    "icon": "💭",
+    "youtube": [
+      { "name": "بروف ضيف", "channel": "Prof Dhif", "url": "www.youtube.com/@الأستاذةضيف" }
+    ],
+    "books": [
+      { "name": "كتاب هبة جبابرية", "author": "Hiba Djebabria", "url": "https://share.google/DHot50OqWen9nLe62" }
+    ]
+  },
+  "droit": {
+    "name_ar": "⚖️ القانون",
+    "icon": "⚖️",
+    "youtube": [
+      { "name": "دروس القانون - الأستاذ بقباقي رابح", "channel": "الأستاذ بقباقي رابح", "url": "https://www.youtube.com/@prof_beghbaghi" },
+      { "name": "شرح ملخصات القانون", "channel": "الأستاذ ربيع ثامر", "url": "https://www.youtube.com/@prof_rabie_thamer" }
+    ],
+    "books": [
+      { "name": "المنير في القانون (ملخص شامل)", "author": "أ. بقباقي رابح", "url": "https://www.facebook.com/groups/bac.gestion.dz/permalink/1015923456" }
+    ],
+    "facebook": [
+      { "name": "صفحة الأستاذ بقباقي رابح للمحاسبة والقانون", "url": "https://www.facebook.com/prof.beghbaghi" },
+      { "name": "مجموعة بكالوريا تسيير واقتصاد DZ", "url": "https://www.facebook.com/groups/bac.gestion.dz" }
+    ]
+  },
+  "economie": {
+    "name_ar": "📈 الاقتصاد",
+    "icon": "📈",
+    "youtube": [
+      { "name": "الاقتصاد والمناجمنت - الأستاذ عبد الفتاح", "channel": "الأستاذ عبد الفتاح", "url": "https://www.youtube.com/@prof_compta007" },
+      { "name": "دروس الاقتصاد المبسطة", "channel": "الأستاذ ربيع ثامر محاسبة اقتصاد قانون", "url": "https://www.youtube.com/@prof_rabie_thamer" }
+    ],
+    "books": [
+      { "name": "الوافي في الاقتصاد والمناجمنت", "author": "أ. عبد الفتاح", "url": "https://www.facebook.com/groups/bac.gestion.dz/permalink/2026112233" }
+    ],
+    "facebook": [
+      { "name": "صفحة الأستاذ عبد الفتاح في مادة المحاسبة والإقتصاد", "url": "https://www.facebook.com/prof.compta007" },
+      { "name": "عالم شعبة تسيير واقتصاد - الجزائر", "url": "https://www.facebook.com/groups/gestion.economie.dz" }
+    ]
+  },
+  "gestion": {
+    "name_ar": "📊 التسيير المحاسبي والمالي",
+    "icon": "📊",
+    "youtube": [
+      { "name": "سلسلة دروس المحاسبة من الصفر", "channel": "الأستاذ عبد الفتاح في مادة المحاسبة والإقتصاد", "url": "https://www.youtube.com/@prof_compta007" },
+      { "name": "حلول بكالوريات التسيير المالي", "channel": "الأستاذ بقباقي رابح", "url": "https://www.youtube.com/@prof_beghbaghi" }
+    ],
+    "books": [
+      { "name": "المساعد في المحاسبة (أعمال نهاية السنة والتحليل المالي)", "author": "أ. عبد الفتاح", "url": "https://www.facebook.com/groups/gestion.economie.dz/permalink/303444555" }
+    ],
+    "facebook": [
+      { "name": "صفحة الأستاذ ربيع ثامر", "url": "https://www.facebook.com/prof.rabie.thamer" },
+      { "name": "مجتمع التسيير والمحاسبة DZ", "url": "https://www.facebook.com/groups/compta.dz.bac" }
+    ]
+  },
+  "english": {
+    "name_ar": "🇬🇧 اللغة الإنجليزية",
+    "icon": "🇬🇧",
+    "youtube": [
+      { "name": "دروس الإنجليزية من الصفر", "channel": "Prof Nasri English", "url": "https://www.youtube.com/@profnasrienglish" },
+      { "name": "مراجعة شاملة وقواعد الباك", "channel": "الاستاذة منصوري للغة الانجليزية", "url": "https://www.youtube.com/@prof_mansouri_english" }
+    ],
+    "books": [
+      { "name": "المغني في اللغة الإنجليزية", "author": "أ. ناصري رابح", "url": "https://www.facebook.com/groups/bac.dz.all/permalink/777888999" }
+    ],
+    "apps": [
+      { "name": "Duolingo", "url": "https://www.duolingo.com/" },
+      { "name": "Memrise", "url": "https://www.memrise.com/" }
+    ]
+  },
+  "french": {
+    "name_ar": "🇫🇷 اللغة الفرنسية",
+    "icon": "🇫🇷",
+    "youtube": [
+      { "name": "منهجية النص التاريخي والـ Compte rendu", "channel": "Prof Hachachra", "url": "https://www.youtube.com/@profhachachra" },
+      { "name": "دروس وقواعد الفرنسية للباك", "channel": "الاستاذة خيرة للغة الفرنسية", "url": "https://www.youtube.com/@profkhaira" }
+    ],
+    "books": [
+      { "name": "الكامل في اللغة الفرنسية", "author": "أ. حشاشرة", "url": "https://www.facebook.com/groups/bac.dz.all/permalink/123123123" }
+    ]
+  },
+  "tamazight": {
+    "name_ar": "ⵜⴰⵎⴰⵣⵉⵖⵜ الأمازيغية",
+    "icon": "ⵣ",
+    "youtube": [
+      { "name": "دروس الأمازيغية للطور الثانوي", "channel": "Tamazight Secondary", "url": "https://www.youtube.com/@tamazight_secondary" }
+    ],
+    "facebook": [
+      { "name": "أساتذة ومفتشي اللغة الأمازيغية للباكالوريا", "url": "https://www.facebook.com/groups/tamazight.bac.dz" }
+    ]
+  },
+  "techno": {
+    "name_ar": "💻 التكنولوجيا",
+    "icon": "💻",
+    "youtube": [
+      { "name": "هندسة الطرائق والمدنية والميكانيكية للباك", "channel": "أكاديمية الهندسة DZ", "url": "https://www.youtube.com/@genie_dz" },
+      { "name": "دروس الهندسة الكهربائية", "channel": "الأستاذ مراد للكهرباء", "url": "https://www.youtube.com/@prof_mourad_elec" }
+    ],
+    "facebook": [
+      { "name": "مجموعة الهندسة والتكنولوجيا لطلاب البكالوريا", "url": "https://www.facebook.com/groups/techno.bac.dz" }
+    ]
+  },
+  "foreign_languages": {
+    "name_ar": "🌍 اللغات الأجنبية (إسباني/ألماني/إيطالي)",
+    "icon": "🌍",
+    "youtube": [
+      { "name": "دروس اللغة الإسبانية للباك", "channel": "Prof الإسبانية DZ", "url": "https://www.youtube.com/@prof_spanish_bac" },
+      { "name": "دروس اللغة الألمانية للباك", "channel": "Deutsch mit Prof", "url": "https://www.youtube.com/@deutsch_bac_dz" }
+    ],
+    "books": [
+      { "name": "سلسلة التميز في اللغات الأجنبية", "author": "نخبة من الأساتذة", "url": "https://www.facebook.com/groups/bac.langues.dz/permalink/456456456" }
+    ]
+  }
+}
