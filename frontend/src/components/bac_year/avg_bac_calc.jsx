@@ -155,7 +155,8 @@ export default function AvgBacCalc() {
 
     currentSubjects.forEach((subject, index) => {
       const grade = grades[index];
-      if (grade !== undefined && grade !== '' && !isNaN(grade) && grade >= 0 && grade <= 20) {
+      // ✅ FIX: Check if grade is a valid number
+      if (grade !== undefined && grade !== '' && !isNaN(grade) && typeof grade === 'number' && grade >= 0 && grade <= 20) {
         totalPoints += grade * subject.coef;
         totalCoef += subject.coef;
         hasValidGrade = true;
@@ -194,15 +195,6 @@ export default function AvgBacCalc() {
   };
 
   const totalCoef = currentSubjects.reduce((sum, s) => sum + s.coef, 0);
-
-  // Helper to get color brightness for text
-  const isLightColor = (hex) => {
-    const r = parseInt(hex.slice(1, 3), 16);
-    const g = parseInt(hex.slice(3, 5), 16);
-    const b = parseInt(hex.slice(5, 7), 16);
-    const brightness = (r * 299 + g * 587 + b * 114) / 1000;
-    return brightness > 128;
-  };
 
   return (
     <div style={{
@@ -395,8 +387,8 @@ export default function AvgBacCalc() {
             <tbody>
               {currentSubjects.map((subject, index) => {
                 const gradeValue = grades[index] !== undefined ? grades[index] : '';
-                const isValid = gradeValue !== '' && !isNaN(gradeValue) && gradeValue >= 0 && gradeValue <= 20;
-                const isError = gradeValue !== '' && !isNaN(gradeValue) && (gradeValue < 0 || gradeValue > 20);
+                const isValid = gradeValue !== '' && !isNaN(gradeValue) && typeof gradeValue === 'number' && gradeValue >= 0 && gradeValue <= 20;
+                const isError = gradeValue !== '' && !isNaN(gradeValue) && typeof gradeValue === 'number' && (gradeValue < 0 || gradeValue > 20);
                 const isHovered = hoveredRow === index;
                 
                 return (
