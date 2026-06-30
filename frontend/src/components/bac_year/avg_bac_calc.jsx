@@ -86,7 +86,8 @@ export default function AvgBacCalc() {
         { subject: 'الأمازيغية', coef: 2, emoji: 'ⵣ' },
         { subject: 'التربية البدنية', coef: 1, emoji: '🏃' }
     ]
-};
+  };
+
   const streamOptions = Object.keys(streamsData);
   const currentSubjects = streamsData[selectedStream] || [];
 
@@ -128,9 +129,10 @@ export default function AvgBacCalc() {
     }
   }, [average]);
 
+  // ✅ FIXED: Allow typing decimal point
   const handleGradeChange = (subjectIndex, value) => {
-    // ✅ Allow empty, dot, and negative sign for typing
-    if (value === '' || value === '-' || value === '.') {
+    // Allow empty, dot, negative sign, and decimal for typing
+    if (value === '' || value === '-' || value === '.' || value === '0.') {
       setGrades(prev => ({
         ...prev,
         [subjectIndex]: value
@@ -139,7 +141,7 @@ export default function AvgBacCalc() {
       return;
     }
     
-    // ✅ Allow numbers with one decimal point
+    // Check if it's a valid number
     const numValue = parseFloat(value);
     if (!isNaN(numValue) && numValue >= 0 && numValue <= 20) {
       setGrades(prev => ({
@@ -157,7 +159,6 @@ export default function AvgBacCalc() {
 
     currentSubjects.forEach((subject, index) => {
       const grade = grades[index];
-      // ✅ FIX: Check if grade is a valid number
       if (grade !== undefined && grade !== '' && !isNaN(grade) && typeof grade === 'number' && grade >= 0 && grade <= 20) {
         totalPoints += grade * subject.coef;
         totalCoef += subject.coef;
