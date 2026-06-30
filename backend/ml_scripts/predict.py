@@ -484,94 +484,121 @@ def predict(model_path, input_data, subject):
                 input_data[key] = val
     
     elif subject == 'physics':
-        # ✅ Map frontend field names
-        # Frontend sends: exams_practiced → Backend expects: bac_exams_practiced
-        if 'bac_exams_practiced' not in input_data:
-            input_data['bac_exams_practiced'] = input_data.get('exams_practiced', 0)
-        if 'tp_practice' not in input_data:
-            input_data['tp_practice'] = input_data.get('tp_practice', 0)
-        if 'study_hours' not in input_data:
-            input_data['study_hours'] = input_data.get('study_hours', 5)
-        
-        feature_names = [
-            'phys_grade_t1', 'phys_grade_t2', 'phys_grade_t3', 'phys_avg_grade', 'phys_trend',
-            'mechanics', 'electricity', 'chemistry_general', 'chemistry_esterification',
-            'chemistry_acid_base', 'nuclear', 'waves_oscillations',
-            'problem_solving', 'graph_interpretation',
-            'bac_exams_practiced', 'tp_practice',
-            'physics_anxiety', 'formula_mastery',
-            'mechanics_block', 'electricity_block', 'chemistry_block',
-            'nuclear_block', 'waves_block',
-            'imbalance_score', 'practice_intensity', 'psychological_composite',
-            'problem_solving_composite', 'psychological_health',
-            'study_quality', 'stream_encoded'
+    # ============================================
+    # MAP FRONTEND FIELD NAMES
+    # ============================================
+    # Frontend sends "grade_t1" but model expects "phys_grade_t1"
+     if 'phys_grade_t1' not in input_data:
+        input_data['phys_grade_t1'] = input_data.get('grade_t1', 0)
+     if 'phys_grade_t2' not in input_data:
+        input_data['phys_grade_t2'] = input_data.get('grade_t2', 0)
+     if 'phys_grade_t3' not in input_data:
+        input_data['phys_grade_t3'] = input_data.get('grade_t3', 0)
+    
+     if 'bac_exams_practiced' not in input_data:
+        input_data['bac_exams_practiced'] = input_data.get('exams_pracited', 0)
+     if 'tp_practice' not in input_data:
+        input_data['tp_practice'] = input_data.get('tp_practice', 0)
+     if 'study_hours' not in input_data:
+        input_data['study_hours'] = input_data.get('study_hours', 5)
+    
+    # ============================================
+    # CALCULATE BASE FEATURES
+    # ============================================
+     if 'phys_avg_grade' not in input_data or input_data['phys_avg_grade'] == 0:
+        input_data['phys_avg_grade'] = (input_data.get('phys_grade_t1', 0) + 
+                                         input_data.get('phys_grade_t2', 0) + 
+                                         input_data.get('phys_grade_t3', 0)) / 3
+    
+     if 'phys_trend' not in input_data:
+        input_data['phys_trend'] = input_data.get('phys_grade_t3', 0) - input_data.get('phys_grade_t1', 0)
+    
+    # ============================================
+    # BLOCK FEATURES
+    # ============================================
+     if 'mechanics_block' not in input_data:
+        input_data['mechanics_block'] = input_data.get('mechanics', 0)
+    
+     if 'electricity_block' not in input_data:
+        input_data['electricity_block'] = input_data.get('electricity', 0)
+    
+     if 'chemistry_block' not in input_data:
+        chem_skills = ['chemistry_general', 'chemistry_esterification', 'chemistry_acid_base']
+        input_data['chemistry_block'] = sum(input_data.get(s, 0) for s in chem_skills) / len(chem_skills)
+    
+     if 'nuclear_block' not in input_data:
+        input_data['nuclear_block'] = input_data.get('nuclear', 0)
+    
+     if 'waves_block' not in input_data:
+        input_data['waves_block'] = input_data.get('waves_oscillations', 0)
+    
+    # ============================================
+    # COMPOSITE FEATURES
+    # ============================================
+     if 'problem_solving_composite' not in input_data:
+        input_data['problem_solving_composite'] = (input_data.get('problem_solving', 0) + 
+                                                    input_data.get('graph_interpretation', 0)) / 2
+    
+     if 'practice_intensity' not in input_data:
+        exams = input_data.get('bac_exams_practiced', 0)
+        tp = input_data.get('tp_practice', 0)
+        input_data['practice_intensity'] = (exams / 30 * 10 * 0.8 + tp / 5 * 10 * 0.2)
+    
+     if 'psychological_health' not in input_data:
+        anxiety = input_data.get('physics_anxiety', 5)
+        formula = input_data.get('formula_mastery', 5)
+        input_data['psychological_health'] = ((10 - anxiety) + formula) / 2
+    
+     if 'study_quality' not in input_data:
+        exams = input_data.get('bac_exams_practiced', 0)
+        input_data['study_quality'] = (exams / 30 * 10)
+    
+     if 'imbalance_score' not in input_data:
+        blocks = [
+            input_data.get('mechanics', 0),
+            input_data.get('electricity', 0),
+            input_data.get('chemistry_general', 0),
+            input_data.get('nuclear', 0),
+            input_data.get('waves_oscillations', 0)
         ]
-        
-        # Calculate Physics-derived features
-        if 'phys_avg_grade' not in input_data or input_data['phys_avg_grade'] == 0:
-            input_data['phys_avg_grade'] = (input_data.get('phys_grade_t1', 0) + input_data.get('phys_grade_t2', 0) + input_data.get('phys_grade_t3', 0)) / 3
-        
-        if 'phys_trend' not in input_data:
-            input_data['phys_trend'] = input_data.get('phys_grade_t3', 0) - input_data.get('phys_grade_t1', 0)
-        
-        # Mechanics Block
-        if 'mechanics_block' not in input_data:
-            input_data['mechanics_block'] = input_data.get('mechanics', 0)
-        
-        # Electricity Block
-        if 'electricity_block' not in input_data:
-            input_data['electricity_block'] = input_data.get('electricity', 0)
-        
-        # Chemistry Block
-        if 'chemistry_block' not in input_data:
-            chem_skills = ['chemistry_general', 'chemistry_esterification', 'chemistry_acid_base']
-            input_data['chemistry_block'] = sum(input_data.get(s, 0) for s in chem_skills) / len(chem_skills)
-        
-        # Nuclear Block
-        if 'nuclear_block' not in input_data:
-            input_data['nuclear_block'] = input_data.get('nuclear', 0)
-        
-        # Waves Block
-        if 'waves_block' not in input_data:
-            input_data['waves_block'] = input_data.get('waves_oscillations', 0)
-        
-        # Practice Intensity
-        if 'practice_intensity' not in input_data:
-            exams = input_data.get('bac_exams_practiced', 0)
-            tp = input_data.get('tp_practice', 0)
-            input_data['practice_intensity'] = (exams / 30 * 10 * 0.8 + tp / 5 * 10 * 0.2)
-        
-        # Problem Solving Composite
-        if 'problem_solving_composite' not in input_data:
-            input_data['problem_solving_composite'] = (input_data.get('problem_solving', 0) + input_data.get('graph_interpretation', 0)) / 2
-        
-        # Psychological Health
-        if 'psychological_health' not in input_data:
-            no_anxiety = 10 - input_data.get('physics_anxiety', 5)
-            formula = input_data.get('formula_mastery', 5)
-            input_data['psychological_health'] = (no_anxiety * 0.6 + formula * 0.4)
-        
-        # Imbalance Score
-        if 'imbalance_score' not in input_data:
-            skills = [
-                input_data.get('mechanics', 0),
-                input_data.get('electricity', 0),
-                input_data.get('chemistry_general', 0),
-                input_data.get('nuclear', 0),
-                input_data.get('waves_oscillations', 0)
-            ]
-            avg = sum(skills) / len(skills)
-            input_data['imbalance_score'] = sum((s - avg) ** 2 for s in skills) / len(skills)
-        
-        # Default values
-        defaults = {
-            'psychological_composite': 5,
-            'study_quality': 5,
-            'stream_encoded': 0
+        avg = sum(blocks) / len(blocks)
+        input_data['imbalance_score'] = sum((s - avg) ** 2 for s in blocks) / len(blocks)
+    
+    # ============================================
+    # STREAM ENCODING
+    # ============================================
+     if 'stream_encoded' not in input_data:
+        stream_mapping = {
+            'Sciences': 0,
+            'Maths': 1,
+            'Technique': 2,
+            'Gestion': 3,
+            'Lettres': 4
         }
-        for key, val in defaults.items():
-            if key not in input_data:
-                input_data[key] = val
+        input_data['stream_encoded'] = stream_mapping.get(input_data.get('stream', 'Sciences'), 0)
+    
+    # ============================================
+    # PSYCHOLOGICAL COMPOSITE (DEFAULT)
+    # ============================================
+     if 'psychological_composite' not in input_data:
+        input_data['psychological_composite'] = 5
+    
+    # ============================================
+    # EXACT 30 FEATURES (MATCHING NOTEBOOK)
+    # ============================================
+     feature_names = [
+        'phys_grade_t1', 'phys_grade_t2', 'phys_grade_t3', 'phys_avg_grade', 'phys_trend',
+        'mechanics', 'electricity', 'chemistry_general', 'chemistry_esterification',
+        'chemistry_acid_base', 'nuclear', 'waves_oscillations',
+        'problem_solving', 'graph_interpretation',
+        'bac_exams_practiced', 'tp_practice',
+        'physics_anxiety', 'formula_mastery',
+        'mechanics_block', 'electricity_block', 'chemistry_block',
+        'nuclear_block', 'waves_block',
+        'imbalance_score', 'practice_intensity', 'psychological_composite',
+        'problem_solving_composite', 'psychological_health',
+        'study_quality', 'stream_encoded'
+    ]
      
     elif subject == 'science':
         # Map frontend field names
@@ -662,84 +689,185 @@ def predict(model_path, input_data, subject):
                 input_data[key] = val
 
     elif subject == 'techno':
-        # Map frontend field names
-        if 'bac_exams_practiced' not in input_data:
-            input_data['bac_exams_practiced'] = input_data.get('exams_practiced', 0)
-        if 'specialty_exercises_week' not in input_data:
-            input_data['specialty_exercises_week'] = input_data.get('specialty_exercises_week', 0)
-        if 'full_simulations' not in input_data:
-            input_data['full_simulations'] = input_data.get('full_simulations', 0)
-        
-        feature_names = [
-            'tech_grade_t1', 'tech_grade_t2', 'tech_grade_t3', 'tech_avg_grade', 'tech_trend',
-            'mechanics_rdm', 'material_resistance', 'gear_transmission',
-            'automation_grafcet', 'logic_circuits', 'electrical_systems',
-            'structural_analysis', 'reinforced_concrete', 'road_construction',
-            'organic_chemistry', 'polymer_chemistry', 'thermodynamics',
-            'problem_solving', 'diagram_interpretation', 'calculation_accuracy', 'technical_drawing',
-            'bac_exams_practiced', 'specialty_exercises_week', 'full_simulations', 'correction_quality',
-            'tech_anxiety', 'confidence', 'exam_stress', 'focus_concentration',
-            'study_hours', 'consistency', 'teacher_quality', 'lab_access', 'tutoring',
-            'mechanics_block', 'automation_block', 'chemistry_block', 'civil_block',
-            'imbalance_score', 'practice_intensity', 'psychological_composite',
-            'problem_solving_composite', 'psychological_health',
-            'study_quality', 'exam_prep_score', 'overall_skill_score', 'specialty_encoded'
+    # ============================================
+    # MAP FRONTEND FIELD NAMES - TECHNICAL STREAM
+    # ============================================
+    
+    # Map grade fields (frontend already sends tech_grade_t1, but handle generic just in case)
+     if 'tech_grade_t1' not in input_data:
+        input_data['tech_grade_t1'] = input_data.get('grade_t1', 0)
+     if 'tech_grade_t2' not in input_data:
+        input_data['tech_grade_t2'] = input_data.get('grade_t2', 0)
+     if 'tech_grade_t3' not in input_data:
+        input_data['tech_grade_t3'] = input_data.get('grade_t3', 0)
+    
+    # Map habit fields
+     if 'bac_exams_practiced' not in input_data:
+        input_data['bac_exams_practiced'] = input_data.get('exams_practiced', 0)
+     if 'specialty_exercises_week' not in input_data:
+        input_data['specialty_exercises_week'] = input_data.get('essays_per_week', 0)
+     if 'full_simulations' not in input_data:
+        input_data['full_simulations'] = input_data.get('full_simulations', 0)
+     if 'correction_quality' not in input_data:
+        input_data['correction_quality'] = input_data.get('correction_quality', 5)
+     if 'study_hours' not in input_data:
+        input_data['study_hours'] = input_data.get('study_hours', 5)
+     if 'consistency' not in input_data:
+        input_data['consistency'] = input_data.get('consistency', 5)
+    
+    # Map psychological fields
+     if 'tech_anxiety' not in input_data:
+        input_data['tech_anxiety'] = input_data.get('tech_anxiety', 5)
+     if 'confidence' not in input_data:
+        input_data['confidence'] = input_data.get('confidence', 5)
+     if 'exam_stress' not in input_data:
+        input_data['exam_stress'] = input_data.get('exam_stress', 5)
+     if 'focus_concentration' not in input_data:
+        input_data['focus_concentration'] = input_data.get('focus_concentration', 5)
+     if 'teacher_quality' not in input_data:
+        input_data['teacher_quality'] = input_data.get('teacher_quality', 5)
+     if 'lab_access' not in input_data:
+        input_data['lab_access'] = input_data.get('lab_access', 5)
+     if 'tutoring' not in input_data:
+        input_data['tutoring'] = input_data.get('tutoring', 0)
+    
+    # Specialty fields are already sent correctly from frontend:
+    # GM: mechanics_rdm, material_resistance, gear_transmission
+    # GE: automation_grafcet, logic_circuits, electrical_systems
+    # GC: structural_analysis, reinforced_concrete, road_construction
+    # GP: organic_chemistry, polymer_chemistry, thermodynamics
+    
+    # Cross-specialty fields are already sent correctly:
+    # problem_solving, diagram_interpretation, calculation_accuracy, technical_drawing
+    
+     feature_names = [
+        # Grade features (5)
+        'tech_grade_t1', 'tech_grade_t2', 'tech_grade_t3', 'tech_avg_grade', 'tech_trend',
+        # Specialty GM (3)
+        'mechanics_rdm', 'material_resistance', 'gear_transmission',
+        # Specialty GE (3)
+        'automation_grafcet', 'logic_circuits', 'electrical_systems',
+        # Specialty GC (3)
+        'structural_analysis', 'reinforced_concrete', 'road_construction',
+        # Specialty GP (3)
+        'organic_chemistry', 'polymer_chemistry', 'thermodynamics',
+        # Cross-specialty (4)
+        'problem_solving', 'diagram_interpretation', 'calculation_accuracy', 'technical_drawing',
+        # Habits (4)
+        'bac_exams_practiced', 'specialty_exercises_week', 'full_simulations', 'correction_quality',
+        # Psychological (5)
+        'tech_anxiety', 'confidence', 'exam_stress', 'focus_concentration',
+        # Study (2)
+        'study_hours', 'consistency',
+        # External (3)
+        'teacher_quality', 'lab_access', 'tutoring',
+        # Derived features (13)
+        'mechanics_block', 'automation_block', 'chemistry_block', 'civil_block',
+        'imbalance_score', 'practice_intensity', 'psychological_composite',
+        'problem_solving_composite', 'psychological_health',
+        'study_quality', 'exam_prep_score', 'overall_skill_score', 'specialty_encoded'
+     ]
+    
+    # ============================================
+    # CALCULATE DERIVED FEATURES
+    # ============================================
+    
+    # Average grade
+     if 'tech_avg_grade' not in input_data or input_data['tech_avg_grade'] == 0:
+        input_data['tech_avg_grade'] = (input_data.get('tech_grade_t1', 0) + input_data.get('tech_grade_t2', 0) + input_data.get('tech_grade_t3', 0)) / 3
+    
+    # Grade trend
+     if 'tech_trend' not in input_data:
+        input_data['tech_trend'] = input_data.get('tech_grade_t3', 0) - input_data.get('tech_grade_t1', 0)
+    
+    # Calculate specialty blocks
+     if 'mechanics_block' not in input_data:
+        input_data['mechanics_block'] = (input_data.get('mechanics_rdm', 0) + input_data.get('material_resistance', 0) + input_data.get('gear_transmission', 0)) / 3
+    
+     if 'automation_block' not in input_data:
+        input_data['automation_block'] = (input_data.get('automation_grafcet', 0) + input_data.get('logic_circuits', 0) + input_data.get('electrical_systems', 0)) / 3
+    
+     if 'chemistry_block' not in input_data:
+        input_data['chemistry_block'] = (input_data.get('organic_chemistry', 0) + input_data.get('polymer_chemistry', 0) + input_data.get('thermodynamics', 0)) / 3
+    
+     if 'civil_block' not in input_data:
+        input_data['civil_block'] = (input_data.get('structural_analysis', 0) + input_data.get('reinforced_concrete', 0) + input_data.get('road_construction', 0)) / 3
+    
+    # Practice Intensity
+     if 'practice_intensity' not in input_data:
+        exams = input_data.get('bac_exams_practiced', 0)
+        exercises = input_data.get('specialty_exercises_week', 0)
+        simulations = input_data.get('full_simulations', 0)
+        input_data['practice_intensity'] = (exams / 30 * 10 * 0.4 + exercises / 15 * 10 * 0.3 + simulations / 5 * 10 * 0.3)
+    
+    # Problem Solving Composite
+     if 'problem_solving_composite' not in input_data:
+        input_data['problem_solving_composite'] = (input_data.get('problem_solving', 0) + input_data.get('diagram_interpretation', 0)) / 2
+    
+    # Psychological Health
+     if 'psychological_health' not in input_data:
+        confidence = input_data.get('confidence', 5)
+        focus = input_data.get('focus_concentration', 5)
+        no_anxiety = 10 - input_data.get('tech_anxiety', 5)
+        no_stress = 10 - input_data.get('exam_stress', 5)
+        input_data['psychological_health'] = (confidence + focus + no_anxiety + no_stress) / 4
+    
+    # Study Quality
+     if 'study_quality' not in input_data:
+        consistency = input_data.get('consistency', 5)
+        study_hours = input_data.get('study_hours', 5) / 12 * 10
+        correction = input_data.get('correction_quality', 5)
+        input_data['study_quality'] = consistency * 0.5 + study_hours * 0.3 + correction * 0.2
+    
+    # Exam Prep Score
+     if 'exam_prep_score' not in input_data:
+        input_data['exam_prep_score'] = input_data.get('bac_exams_practiced', 0) / 30 * 10
+    
+    # Overall Skill Score (based on specialty)
+     if 'overall_skill_score' not in input_data:
+        specialty = input_data.get('specialty', 'GM')
+        if specialty == 'GM':
+            input_data['overall_skill_score'] = (input_data.get('mechanics_rdm', 0) + input_data.get('material_resistance', 0) + input_data.get('gear_transmission', 0)) / 3
+        elif specialty == 'GE':
+            input_data['overall_skill_score'] = (input_data.get('automation_grafcet', 0) + input_data.get('logic_circuits', 0) + input_data.get('electrical_systems', 0)) / 3
+        elif specialty == 'GC':
+            input_data['overall_skill_score'] = (input_data.get('structural_analysis', 0) + input_data.get('reinforced_concrete', 0) + input_data.get('road_construction', 0)) / 3
+        else:  # GP
+            input_data['overall_skill_score'] = (input_data.get('organic_chemistry', 0) + input_data.get('polymer_chemistry', 0) + input_data.get('thermodynamics', 0)) / 3
+    
+    # Encode specialty
+     if 'specialty_encoded' not in input_data:
+        specialty_mapping = {'GM': 0, 'GE': 1, 'GC': 2, 'GP': 3}
+        input_data['specialty_encoded'] = specialty_mapping.get(input_data.get('specialty', 'GM'), 0)
+    
+    # Imbalance Score (variance of non-zero specialty blocks)
+     if 'imbalance_score' not in input_data:
+        blocks = [
+            input_data.get('mechanics_block', 0),
+            input_data.get('automation_block', 0),
+            input_data.get('chemistry_block', 0),
+            input_data.get('civil_block', 0)
         ]
-        
-        # Calculate Techno-derived features
-        if 'tech_avg_grade' not in input_data or input_data['tech_avg_grade'] == 0:
-            input_data['tech_avg_grade'] = (input_data.get('tech_grade_t1', 0) + input_data.get('tech_grade_t2', 0) + input_data.get('tech_grade_t3', 0)) / 3
-        
-        if 'tech_trend' not in input_data:
-            input_data['tech_trend'] = input_data.get('tech_grade_t3', 0) - input_data.get('tech_grade_t1', 0)
-        
-        # Practice Intensity
-        if 'practice_intensity' not in input_data:
-            exams = input_data.get('bac_exams_practiced', 0)
-            exercises = input_data.get('specialty_exercises_week', 0)
-            simulations = input_data.get('full_simulations', 0)
-            input_data['practice_intensity'] = (exams / 30 * 10 * 0.4 + exercises / 15 * 10 * 0.3 + simulations / 5 * 10 * 0.3)
-        
-        # Problem Solving Composite
-        if 'problem_solving_composite' not in input_data:
-            input_data['problem_solving_composite'] = (input_data.get('problem_solving', 0) + input_data.get('diagram_interpretation', 0)) / 2
-        
-        # Psychological Health
-        if 'psychological_health' not in input_data:
-            confidence = input_data.get('confidence', 5)
-            focus = input_data.get('focus_concentration', 5)
-            no_anxiety = 10 - input_data.get('tech_anxiety', 5)
-            no_stress = 10 - input_data.get('exam_stress', 5)
-            input_data['psychological_health'] = (confidence + focus + no_anxiety + no_stress) / 4
-        
-        # Study Quality
-        if 'study_quality' not in input_data:
-            consistency = input_data.get('consistency', 5)
-            study_hours = input_data.get('study_hours', 5) / 12 * 10
-            correction = input_data.get('correction_quality', 5)
-            input_data['study_quality'] = consistency * 0.5 + study_hours * 0.3 + correction * 0.2
-        
-        # Exam Prep Score
-        if 'exam_prep_score' not in input_data:
-            input_data['exam_prep_score'] = input_data.get('bac_exams_practiced', 0) / 30 * 10
-        
-        # Default values
-        defaults = {
-            'mechanics_block': 5,
-            'automation_block': 5,
-            'chemistry_block': 5,
-            'civil_block': 5,
-            'imbalance_score': 0,
-            'psychological_composite': 5,
-            'overall_skill_score': 5,
-            'specialty_encoded': 0,
-            'teacher_quality': 5,
-            'lab_access': 5,
-            'tutoring': 0
-        }
-        for key, val in defaults.items():
-            if key not in input_data:
-                input_data[key] = val
+        non_zero = [b for b in blocks if b > 0]
+        if len(non_zero) > 1:
+            avg = sum(non_zero) / len(non_zero)
+            input_data['imbalance_score'] = sum((b - avg) ** 2 for b in non_zero) / len(non_zero)
+        else:
+            input_data['imbalance_score'] = 0
+    
+    # Psychological Composite (default)
+     if 'psychological_composite' not in input_data:
+        input_data['psychological_composite'] = input_data.get('psychological_health', 5)
+    
+    # Default values for any missing features
+     defaults = {
+        'teacher_quality': 5,
+        'lab_access': 5,
+        'tutoring': 0
+    }
+     for key, val in defaults.items():
+        if key not in input_data:
+            input_data[key] = val
 
     elif subject == 'gestion':
         # ============================================
@@ -1195,7 +1323,76 @@ def predict(model_path, input_data, subject):
             input_data[key] = val
     
     elif subject == 'philo':
-    # Map frontend field names
+    # ============================================
+    # MAP FRONTEND FIELD NAMES TO MODEL EXPECTATIONS
+    # ============================================
+    
+    # Frontend sends "text_analysis" → Model expects "text_analysis_method"
+     if 'text_analysis_method' not in input_data:
+        input_data['text_analysis_method'] = input_data.get('text_analysis', 0)
+    
+    # Frontend sends "argument_identification" → Model expects "argumentative_method"
+     if 'argumentative_method' not in input_data:
+        input_data['argumentative_method'] = input_data.get('argument_identification', 0)
+    
+    # Frontend sends "concept_comprehension" → Model expects "conceptual_understanding"
+     if 'conceptual_understanding' not in input_data:
+        input_data['conceptual_understanding'] = input_data.get('concept_comprehension', 0)
+    
+    # Frontend sends "comparison_skill" → Model expects "comparative_method"
+     if 'comparative_method' not in input_data:
+        input_data['comparative_method'] = input_data.get('comparison_skill', 0)
+    
+    # Frontend sends "synthesis_skill" → Model expects "argument_strength" or use as is
+     if 'synthesis_skill' not in input_data:
+        # Synthesis is part of argumentation
+        pass
+    
+    # Frontend sends "critical_thinking" → Model expects "critical_thinking" (same)
+     if 'critical_thinking' not in input_data:
+        input_data['critical_thinking'] = input_data.get('critical_thinking', 0)
+    
+    # Frontend sends "philosophical_reasoning" → Model expects "logical_reasoning"
+     if 'logical_reasoning' not in input_data:
+        input_data['logical_reasoning'] = input_data.get('philosophical_reasoning', 0)
+    
+    # Frontend sends "essay_structure" → Model expects "essay_structure" (same)
+     if 'essay_structure' not in input_data:
+        input_data['essay_structure'] = input_data.get('essay_structure', 0)
+    
+    # Frontend sends "clarity_expression" → Model expects "clarity_expression" (same)
+     if 'clarity_expression' not in input_data:
+        input_data['clarity_expression'] = input_data.get('clarity_expression', 0)
+    
+    # Frontend sends "conclusion_skill" → Model expects "argument_strength"
+     if 'argument_strength' not in input_data:
+        input_data['argument_strength'] = input_data.get('conclusion_skill', 0)
+    
+    # Frontend sends "problematization" → Model expects "problem_chapter"
+     if 'problem_chapter' not in input_data:
+        input_data['problem_chapter'] = input_data.get('problematization', 0)
+    
+    # Frontend sends "thesis_defense" → Model expects "doctrines_chapter"
+     if 'doctrines_chapter' not in input_data:
+        input_data['doctrines_chapter'] = input_data.get('thesis_defense', 0)
+    
+    # Frontend sends "conceptual_analysis" → Model expects "science_philosophy_chapter"
+     if 'science_philosophy_chapter' not in input_data:
+        input_data['science_philosophy_chapter'] = input_data.get('conceptual_analysis', 0)
+    
+    # Frontend sends "logic_consistency" → Model expects "logic_chapter"
+     if 'logic_chapter' not in input_data:
+        input_data['logic_chapter'] = input_data.get('logic_consistency', 0)
+    
+    # Frontend sends "nuance_handling" → Model expects "ethics_chapter"
+     if 'ethics_chapter' not in input_data:
+        input_data['ethics_chapter'] = input_data.get('nuance_handling', 0)
+    
+    # Frontend sends "example_usage" → Model expects "use_of_examples"
+     if 'use_of_examples' not in input_data:
+        input_data['use_of_examples'] = input_data.get('example_usage', 0)
+    
+    # Map habits
      if 'past_exams' not in input_data:
         input_data['past_exams'] = input_data.get('exams_practiced', 0)
      if 'essays_written_week' not in input_data:
@@ -1208,9 +1405,15 @@ def predict(model_path, input_data, subject):
         input_data['consistency'] = input_data.get('consistency', 5)
      if 'study_method' not in input_data:
         input_data['study_method'] = input_data.get('study_method', 3)
+     if 'stress_level' not in input_data:
+        input_data['stress_level'] = input_data.get('stress', 5)
+     if 'confidence' not in input_data:
+        input_data['confidence'] = input_data.get('confidence', 5)
+     if 'interest' not in input_data:
+        input_data['interest'] = input_data.get('interest', 5)
     
     # ============================================
-    # EXACT 38 FEATURES from the model
+    # EXACT 38 FEATURES - WITHOUT overall_philo
     # ============================================
      feature_names = [
         # Grade features (5)
@@ -1230,8 +1433,8 @@ def predict(model_path, input_data, subject):
         'stress_level', 'confidence', 'interest',
         # Derived features (7)
         'methodology_composite', 'thinking_composite', 'writing_composite',
-        'practice_intensity', 'study_quality', 'philo_imbalance', 'overall_philo'
-     ]
+        'practice_intensity', 'study_quality', 'philo_imbalance'
+    ]
     
     # ============================================
     # CALCULATE DERIVED FEATURES
@@ -1283,14 +1486,6 @@ def predict(model_path, input_data, subject):
         ]
         avg = sum(skills) / len(skills)
         input_data['philo_imbalance'] = sum((s - avg) ** 2 for s in skills) / len(skills)
-    
-    # Overall Philo Score
-     if 'overall_philo' not in input_data:
-        input_data['overall_philo'] = (
-            input_data['methodology_composite'] + 
-            input_data['thinking_composite'] + 
-            input_data['writing_composite']
-        ) / 3
     
     # Default values for missing features
      defaults = {

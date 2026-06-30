@@ -347,11 +347,21 @@ const findClosestStudent = (userInputs) => {
 
     console.log(`✅ Data is loaded! Searching among ${_dfMl.length} students...`);
 
-    // Use Arabic filiere name directly from user input
-    const filiere = userInputs.filiere;
-    console.log(`📚 Searching for filière: "${filiere}"`);
+    // ✅ FIX: Map frontend filiere to dataset filiere
+    const filiereMap = {
+        'sciences_experimentales': 'علوم تجريبية',
+        'maths': 'رياضيات',
+        'techniques_maths': 'تقني رياضي',
+        'gestion_economie': 'تسيير واقتصاد',
+        'langues_etrangeres': 'لغات أجنبية',
+        'lettres_philosophie': 'آداب وفلسفة'
+    };
     
-    // Filter by filière using Arabic name
+    // ✅ Use the mapped Arabic name
+    const filiere = filiereMap[userInputs.filiere] || userInputs.filiere;
+    console.log(`📚 Searching for filière: "${filiere}" (mapped from "${userInputs.filiere}")`);
+    
+    // ✅ Now filter by the Arabic name
     const filtered = _dfMl.filter(s => s.filiere === filiere);
     
     console.log(`📊 Found ${filtered.length} students in filière: ${filiere}`);

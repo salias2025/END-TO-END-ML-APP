@@ -5,6 +5,7 @@ import InputForm from '../components/post_bac/inputForm';
 import Domains from '../components/post_bac/Domains';
 import Top10 from '../components/post_bac/Top10';
 import All from '../components/post_bac/All';
+import IntroToPostBac from '../components/post_bac/intro_to_post_bac';
 
 // ============================================
 // API BASE URL
@@ -23,7 +24,7 @@ const PostBacPage = () => {
     // STATE
     // ============================================
     
-    const [currentStep, setCurrentStep] = useState('form');
+    const [currentStep, setCurrentStep] = useState('intro');
     const [studentData, setStudentData] = useState(null);
     const [apiResponse, setApiResponse] = useState(null);
     const [loading, setLoading] = useState(false);
@@ -33,6 +34,10 @@ const PostBacPage = () => {
     // HANDLERS
     // ============================================
     
+    const handleIntroNext = () => {
+        setCurrentStep('form');
+    };
+
     const handleFormSubmit = async (data) => {
         setStudentData(data);
         setLoading(true);
@@ -93,7 +98,7 @@ const PostBacPage = () => {
     const handleReset = () => {
         setStudentData(null);
         setApiResponse(null);
-        setCurrentStep('form');
+        setCurrentStep('intro');
         setError(null);
     };
 
@@ -102,6 +107,7 @@ const PostBacPage = () => {
     // ============================================
     
     const steps = [
+        { id: 'intro', label: '📖 التعريف', icon: '📖' },
         { id: 'form', label: '📝 الملف الشخصي', icon: '📝' },
         { id: 'domains', label: '📊 المجالات', icon: '📊' },
         { id: 'top10', label: '🏆 أفضل 10', icon: '🏆' },
@@ -173,6 +179,9 @@ const PostBacPage = () => {
     
     const renderStepContent = () => {
         switch (currentStep) {
+            case 'intro':
+                return <IntroToPostBac onNext={handleIntroNext} />;
+            
             case 'form':
                 return <InputForm onSubmit={handleFormSubmit} />;
             
@@ -211,7 +220,7 @@ const PostBacPage = () => {
                 );
             
             default:
-                return <InputForm onSubmit={handleFormSubmit} />;
+                return <IntroToPostBac onNext={handleIntroNext} />;
         }
     };
 
@@ -279,7 +288,7 @@ const PostBacPage = () => {
                 </div>
 
                 {/* Reset button */}
-                {currentStep !== 'form' && (
+                {currentStep !== 'intro' && (
                     <button
                         onClick={handleReset}
                         style={{
@@ -339,8 +348,8 @@ const PostBacPage = () => {
                 </div>
             )}
 
-            {/* Progress Bar */}
-            {renderProgressBar()}
+            {/* Progress Bar - Hide on intro step */}
+            {currentStep !== 'intro' && renderProgressBar()}
 
             {/* Step Content */}
             <div style={{

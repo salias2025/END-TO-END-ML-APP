@@ -22,7 +22,7 @@ const getAuthToken = () => {
 
 // Law (القانون - Droit) - Gestion & Economics Stream
 const subjectData = {
-  id: 'droit',
+  id: 'loi',
   name: '⚖️ القانون',
   nameEn: 'Law',
   icon: '⚖️',
@@ -381,7 +381,7 @@ const subjectData = {
 // ============================================
 // COMPONENT
 // ============================================
-export default function Droit() {
+export default function Loi() {
   const [step, setStep] = useState('exam_structure');
   const [formData, setFormData] = useState(null);
   const [prediction, setPrediction] = useState(null);

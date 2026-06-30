@@ -27,15 +27,15 @@ const getUser = () => {
 };
 
 // ============================================
-// SUBJECTS BY STREAM (for filtering)
+// SUBJECTS BY STREAM (matches resources.json IDs)
 // ============================================
 const STREAM_SUBJECTS = {
-    'sciences_experimentales': ['arabic', 'english', 'french', 'mathematics', 'sciences', 'physics', 'histoire_geo', 'islamia', 'philosophy', 'tamazight'],
-    'maths': ['arabic', 'english', 'french', 'mathematics', 'physics', 'histoire_geo', 'islamia', 'philosophy', 'tamazight', 'sciences'],
-    'techniques_maths': ['arabic', 'english', 'french', 'mathematics', 'physics', 'technology', 'histoire_geo', 'islamia', 'philosophy', 'tamazight'],
-    'gestion_economie': ['arabic', 'english', 'french', 'mathematics', 'histoire_geo', 'islamia', 'philosophy', 'economie', 'droit', 'gestion', 'tamazight'],
-    'langues_etrangeres': ['arabic', 'english', 'french', 'german_spanish', 'mathematics', 'histoire_geo', 'islamia', 'philosophy', 'tamazight'],
-    'lettres_philosophie': ['arabic', 'english', 'french', 'mathematics', 'histoire_geo', 'islamia', 'philosophy', 'tamazight']
+    'sciences_experimentales': ['arabic', 'english', 'french', 'maths', 'science', 'physics', 'his_geo', 'islamia', 'philo', 'tamazight'],
+    'maths': ['arabic', 'english', 'french', 'maths', 'physics', 'science', 'his_geo', 'islamia', 'philo', 'tamazight'],
+    'techniques_maths': ['arabic', 'english', 'french', 'maths', 'physics', 'techno', 'his_geo', 'islamia', 'philo', 'tamazight'],
+    'gestion_economie': ['arabic', 'english', 'french', 'maths', 'his_geo', 'islamia', 'philo', 'economie', 'droit', 'gestion', 'tamazight'],
+    'langues_etrangeres': ['arabic', 'english', 'french', 'foreign_languages', 'maths', 'his_geo', 'islamia', 'philo', 'tamazight'],
+    'lettres_philosophie': ['arabic', 'english', 'french', 'maths', 'his_geo', 'islamia', 'philo', 'tamazight']
 };
 
 // ============================================
@@ -145,7 +145,7 @@ export default function Ressource() {
 
     // ============================================
     // BUILD SUBJECT ENTRIES WITH DYNAMIC DATA
-    // ✅ FILTERED BY FILIERE
+    // ✅ FILTERED BY FILIERE - NO MAPPING NEEDED
     // ============================================
     useEffect(() => {
         const entries = [];
@@ -158,15 +158,20 @@ export default function Ressource() {
 
         console.log('🔍 User filiere:', userFiliere);
         console.log('📚 Subjects for this filiere:', filiereSubjectIds);
+        console.log('📦 Available resources:', Object.keys(RESOURCE_DB));
 
-        Object.entries(RESOURCE_DB).forEach(([id, data]) => {
-            // ✅ Skip if this subject is not in the user's filiere
-            if (!filiereSubjectIds.includes(id)) {
+        filiereSubjectIds.forEach((subjectId) => {
+            // Get resource data from DB directly (IDs already match)
+            const data = RESOURCE_DB[subjectId];
+            
+            // Skip if resource not found
+            if (!data) {
+                console.warn(`⚠️ Resource not found for: ${subjectId}`);
                 return;
             }
 
             // Get user data from API (or use defaults)
-            const userData = userResults[id] || {};
+            const userData = userResults[subjectId] || {};
             const predictedScore = userData.predicted_score || 12;
             const weaknesses = userData.weaknesses || [];
 
@@ -178,7 +183,7 @@ export default function Ressource() {
             const priority = getPriority(predictedScore, weaknessList.length);
 
             entries.push({
-                id: id,
+                id: subjectId,
                 name_ar: data.name_ar,
                 icon: data.icon || '📚',
                 predicted_score: predictedScore,

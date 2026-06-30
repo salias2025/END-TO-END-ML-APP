@@ -67,6 +67,8 @@ export default function InputForm({ onFormSubmit }) {
         as2_hfada: 11,
         
         weekly_study_hours: 15,
+        time_essential_subjects: 10,     
+        time_non_essential_subjects: 5,  
         study_consistency: 0.7,
         sleep_hours: 7,
         stress_level: 3,
@@ -349,6 +351,50 @@ export default function InputForm({ onFormSubmit }) {
                         style={{ width: '100%' }}
                     />
                 </div>
+
+                {/* ✅ Time Allocation - مواد أساسية vs مواد ثانوية */}
+                <div >
+                    <h4 style={{ color: '#333', marginBottom: '10px' }}>⏰ توزيع وقت الدراسة</h4>
+                    
+                    <div>
+                        <label style={{ color: '#333', fontWeight: '500' }}>
+                            📌 مواد أساسية (ساعات/أسبوع): 
+                            <strong style={{ color: '#667eea' }}>{formData.time_essential_subjects} ساعة</strong>
+                        </label>
+                        <p style={{ fontSize: '12px', color: '#666', margin: '2px 0 5px 0' }}>
+                            المواد التي تجد صعوبة فيها (رياضيات، فيزياء، علوم، إلخ)
+                        </p>
+                        <input
+                            type="range"
+                            min="0"
+                            max="20"
+                            step="0.5"
+                            value={formData.time_essential_subjects}
+                            onChange={(e) => handleInputChange('time_essential_subjects', parseFloat(e.target.value))}
+                            style={{ width: '100%' }}
+                        />
+                    </div>
+
+                    <div>
+                        <label style={{ color: '#333', fontWeight: '500' }}>
+                            📌 مواد ثانوية (ساعات/أسبوع): 
+                            <strong style={{ color: '#667eea' }}>{formData.time_non_essential_subjects} ساعة</strong>
+                        </label>
+                        <p style={{ fontSize: '12px', color: '#666', margin: '2px 0 5px 0' }}>
+                            المواد التي تجد سهولة فيها (عربية، لغات، إسلامية، إلخ)
+                        </p>
+                        <input
+                            type="range"
+                            min="0"
+                            max="20"
+                            step="0.5"
+                            value={formData.time_non_essential_subjects}
+                            onChange={(e) => handleInputChange('time_non_essential_subjects', parseFloat(e.target.value))}
+                            style={{ width: '100%' }}
+                        />
+                    </div>
+                </div>
+
                 <div>
                     <label style={{ color: '#333', fontWeight: '500' }}>📅 انتظام الدراسة (0.1=غير منتظم، 1=منتظم جداً): <strong style={{ color: '#667eea' }}>{formData.study_consistency}</strong></label>
                     <input
@@ -361,6 +407,7 @@ export default function InputForm({ onFormSubmit }) {
                         style={{ width: '100%' }}
                     />
                 </div>
+
                 <div>
                     <label style={{ color: '#333', fontWeight: '500' }}>😴 ساعات النوم ليلاً: <strong style={{ color: '#667eea' }}>{formData.sleep_hours} ساعات</strong></label>
                     <input
@@ -372,6 +419,7 @@ export default function InputForm({ onFormSubmit }) {
                         style={{ width: '100%' }}
                     />
                 </div>
+
                 <div>
                     <label style={{ color: '#333', fontWeight: '500' }}>😰 مستوى التوتر (1=منخفض، 5=مرتفع): <strong style={{ color: '#667eea' }}>{formData.stress_level}/5</strong></label>
                     <input
@@ -383,6 +431,7 @@ export default function InputForm({ onFormSubmit }) {
                         style={{ width: '100%' }}
                     />
                 </div>
+
                 <div>
                     <label style={{ color: '#333', fontWeight: '500' }}>😟 قلق الامتحان (1=هادئ، 5=قلق جداً): <strong style={{ color: '#667eea' }}>{formData.exam_anxiety}/5</strong></label>
                     <input
@@ -394,6 +443,7 @@ export default function InputForm({ onFormSubmit }) {
                         style={{ width: '100%' }}
                     />
                 </div>
+
                 <div>
                     <label style={{ color: '#333', fontWeight: '500' }}>👨‍👩‍👧 دعم العائلة (1=ضعيف، 5=قوي): <strong style={{ color: '#667eea' }}>{formData.family_support_score}/5</strong></label>
                     <input
@@ -405,6 +455,7 @@ export default function InputForm({ onFormSubmit }) {
                         style={{ width: '100%' }}
                     />
                 </div>
+
                 <div>
                     <label style={{ color: '#333', fontWeight: '500' }}>📚 دروس خصوصية:</label>
                     <select
@@ -448,6 +499,8 @@ export default function InputForm({ onFormSubmit }) {
                     
                     <h4 style={{ color: '#333' }}>💪 العادات:</h4>
                     <p>ساعات الدراسة/أسبوع: <strong style={{ color: '#667eea' }}>{displayData.weekly_study_hours} ساعة</strong></p>
+                    <p>وقت المواد الأساسية: <strong style={{ color: '#667eea' }}>{displayData.time_essential_subjects} ساعة/أسبوع</strong></p>
+                    <p>وقت المواد الثانوية: <strong style={{ color: '#667eea' }}>{displayData.time_non_essential_subjects} ساعة/أسبوع</strong></p>
                     <p>النوم: <strong style={{ color: '#667eea' }}>{displayData.sleep_hours} ساعة/ليلة</strong></p>
                     <p>مستوى التوتر: <strong style={{ color: '#667eea' }}>{displayData.stress_level}/5</strong></p>
                 </div>

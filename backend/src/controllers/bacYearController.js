@@ -4,6 +4,18 @@ const bacYearService = require('../services/bacYearService');
 const BacYearResult = require('../models/BacYearResult');
 
 // ============================================
+// SUBJECT ALIASES (frontend name → backend name)
+// ============================================
+const SUBJECT_ALIASES = {
+    'loi': 'droit'
+};
+
+// Reverse mapping for responses
+const REVERSE_ALIASES = {
+    'droit': 'loi'
+};
+
+// ============================================
 // HELPER: Get subject display name
 // ============================================
 const getSubjectName = (subject) => {
@@ -21,6 +33,7 @@ const getSubjectName = (subject) => {
         tamazight: 'الأمازيغية',
         foreign_languages: 'اللغات الأجنبية',
         droit: 'القانون',
+        loi: 'القانون',
         eco_management: 'الاقتصاد والتسيير',
         gestion: 'التسيير'
     };
@@ -32,7 +45,10 @@ const getSubjectName = (subject) => {
 // ============================================
 const predict = async (req, res) => {
     try {
-        const { subject } = req.params;
+        let { subject } = req.params;
+        // Apply alias mapping (loi → droit)
+        subject = SUBJECT_ALIASES[subject] || subject;
+        
         const userData = req.body;
         const userId = req.user.id;
         const username = req.user.username || req.user.email || 'user';
@@ -105,7 +121,9 @@ const predict = async (req, res) => {
 // ============================================
 const getWeaknesses = async (req, res) => {
     try {
-        const { subject } = req.params;
+        let { subject } = req.params;
+        subject = SUBJECT_ALIASES[subject] || subject;
+        
         const userData = req.body;
 
         if (!subject) {
@@ -136,7 +154,9 @@ const getWeaknesses = async (req, res) => {
 // ============================================
 const getDerivedFeatures = async (req, res) => {
     try {
-        const { subject } = req.params;
+        let { subject } = req.params;
+        subject = SUBJECT_ALIASES[subject] || subject;
+        
         const userData = req.body;
 
         // PASS THE SUBJECT!
@@ -161,7 +181,9 @@ const getDerivedFeatures = async (req, res) => {
 // ============================================
 const simulate = async (req, res) => {
     try {
-        const { subject } = req.params;
+        let { subject } = req.params;
+        subject = SUBJECT_ALIASES[subject] || subject;
+        
         const userData = req.body;
         const { improvements } = req.body;
         const { prediction } = req.body;
@@ -203,7 +225,8 @@ const simulate = async (req, res) => {
 const getMyResult = async (req, res) => {
     try {
         const userId = req.user.id;
-        const { subject } = req.params;
+        let { subject } = req.params;
+        subject = SUBJECT_ALIASES[subject] || subject;
 
         if (!subject) {
             return res.status(400).json({
@@ -490,7 +513,7 @@ const getMention = (score) => {
 };
 
 // ============================================
-// 11. GET ALL USER RESULTS (NEW!)
+// 11. GET ALL USER RESULTS 
 // ============================================
 const getAllUserResults = async (req, res) => {
     try {
@@ -508,9 +531,11 @@ const getAllUserResults = async (req, res) => {
         }
 
         // Build object with subject_id → prediction data
+        // Map backend subject names back to frontend names
         const results = {};
         result.subjects.forEach(subject => {
-            results[subject.subject] = {
+            const key = REVERSE_ALIASES[subject.subject] || subject.subject;
+            results[key] = {
                 predicted_score: subject.predicted_score,
                 success_probability: subject.success_probability,
                 improvement_potential: subject.improvement_potential,
@@ -544,5 +569,5 @@ module.exports = {
     simulate,
     getMyResult,
     getAllResults,
-     getAllUserResults
+    getAllUserResults
 };

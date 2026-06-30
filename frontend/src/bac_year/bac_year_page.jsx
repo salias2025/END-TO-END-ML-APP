@@ -148,7 +148,9 @@ export default function BacYearPage() {
             }
 
             const subjectsWithScores = filiereData.subjects.map(subject => {
-                const subjectResult = scoresData[subject.path] || null;
+                // Map 'loi' to 'droit' for the API response
+                const apiKey = subject.path === 'loi' ? 'droit' : subject.path;
+                const subjectResult = scoresData[apiKey] || null;
                 return {
                     ...subject,
                     grade: subjectResult?.predicted_score || null,
@@ -177,7 +179,7 @@ export default function BacYearPage() {
                 { name: 'اللغة الفرنسية', coeff: 2, icon: 'french', path: 'french', color: '#4facfe', emoji: '🇫🇷' },
                 { name: 'اللغة الإنجليزية', coeff: 2, icon: 'english', path: 'english', color: '#43e97b', emoji: '🇬🇧' },
                 { name: 'الفلسفة', coeff: 2, icon: 'philo', path: 'philo', color: '#a18cd1', emoji: '💭' },
-                { name: 'التاريخ والجغرافيا', coeff: 2, icon: 'history', path: 'hisgeo', color: '#fbc2eb', emoji: '🗺️' },
+                { name: 'التاريخ والجغرافيا', coeff: 2, icon: 'history', path: 'his_geo', color: '#fbc2eb', emoji: '🗺️' },
                 { name: 'التربية الإسلامية', coeff: 2, icon: 'islamic', path: 'islamia', color: '#f6d365', emoji: '🕌' },
                 { name: 'الأمازيغية', coeff: 2, icon: 'tamazight', path: 'tamazight', color: '#a8edea', emoji: 'ⵣ' },
             ]
@@ -194,7 +196,7 @@ export default function BacYearPage() {
                 { name: 'اللغة الفرنسية', coeff: 2, icon: 'french', path: 'french', color: '#4facfe', emoji: '🇫🇷' },
                 { name: 'اللغة الإنجليزية', coeff: 2, icon: 'english', path: 'english', color: '#43e97b', emoji: '🇬🇧' },
                 { name: 'الفلسفة', coeff: 2, icon: 'philo', path: 'philo', color: '#a18cd1', emoji: '💭' },
-                { name: 'التاريخ والجغرافيا', coeff: 2, icon: 'history', path: 'hisgeo', color: '#fbc2eb', emoji: '🗺️' },
+                { name: 'التاريخ والجغرافيا', coeff: 2, icon: 'history', path: 'his_geo', color: '#fbc2eb', emoji: '🗺️' },
                 { name: 'التربية الإسلامية', coeff: 2, icon: 'islamic', path: 'islamia', color: '#f6d365', emoji: '🕌' },
                 { name: 'الأمازيغية', coeff: 2, icon: 'tamazight', path: 'tamazight', color: '#a8edea', emoji: 'ⵣ' },
             ]
@@ -207,7 +209,7 @@ export default function BacYearPage() {
                 { name: 'الرياضيات', coeff: 6, icon: 'maths', path: 'maths', color: '#667eea', emoji: '📐' },
                 { name: 'الفيزياء', coeff: 6, icon: 'physics', path: 'physics', color: '#f093fb', emoji: '⚡' },
                 { name: 'التكنولوجيا', coeff: 7, icon: 'technology', path: 'techno', color: '#f6d365', emoji: '🔧' },
-        
+                { name: 'التاريخ والجغرافيا', coeff: 2, icon: 'history', path: 'his_geo', color: '#fbc2eb', emoji: '🗺️' },
                 { name: 'اللغة العربية', coeff: 3, icon: 'arabic', path: 'arabic', color: '#fa709a', emoji: '📖' },
                 { name: 'اللغة الفرنسية', coeff: 2, icon: 'french', path: 'french', color: '#4facfe', emoji: '🇫🇷' },
                 { name: 'اللغة الإنجليزية', coeff: 2, icon: 'english', path: 'english', color: '#43e97b', emoji: '🇬🇧' },
@@ -229,7 +231,7 @@ export default function BacYearPage() {
                 { name: 'اللغة الإنجليزية', coeff: 2, icon: 'english', path: 'english', color: '#43e97b', emoji: '🇬🇧' },
                 { name: 'القانون', coeff: 2, icon: 'law', path: 'loi', color: '#a18cd1', emoji: '⚖️' },
                 { name: 'الفلسفة', coeff: 2, icon: 'philo', path: 'philo', color: '#a18cd1', emoji: '💭' },
-                { name: 'التاريخ والجغرافيا', coeff: 2, icon: 'history', path: 'hisgeo', color: '#fbc2eb', emoji: '🗺️' },
+                { name: 'التاريخ والجغرافيا', coeff: 4, icon: 'history', path: 'his_geo', color: '#fbc2eb', emoji: '🗺️' },
                 { name: 'التربية الإسلامية', coeff: 2, icon: 'islamic', path: 'islamia', color: '#f6d365', emoji: '🕌' },
                 { name: 'الأمازيغية', coeff: 2, icon: 'tamazight', path: 'tamazight', color: '#a8edea', emoji: 'ⵣ' },
             ]
@@ -245,7 +247,7 @@ export default function BacYearPage() {
                 { name: 'اللغة الأجنبية', coeff: 4, icon: 'langue_etrangere', path: 'langue_etrangere', color: '#f093fb', emoji: '🌍' },
                 { name: 'الرياضيات', coeff: 2, icon: 'maths', path: 'maths', color: '#667eea', emoji: '📐' },
                 { name: 'الفلسفة', coeff: 2, icon: 'philo', path: 'philo', color: '#a18cd1', emoji: '💭' },
-                { name: 'التاريخ والجغرافيا', coeff: 3, icon: 'history', path: 'hisgeo', color: '#fbc2eb', emoji: '🗺️' },
+                { name: 'التاريخ والجغرافيا', coeff: 3, icon: 'history', path: 'his_geo', color: '#fbc2eb', emoji: '🗺️' },
                 { name: 'التربية الإسلامية', coeff: 2, icon: 'islamic', path: 'islamia', color: '#f6d365', emoji: '🕌' },
                 { name: 'الأمازيغية', coeff: 2, icon: 'tamazight', path: 'tamazight', color: '#a8edea', emoji: 'ⵣ' },
             ]
@@ -259,7 +261,7 @@ export default function BacYearPage() {
                 { name: 'اللغة العربية', coeff: 6, icon: 'arabic', path: 'arabic', color: '#fa709a', emoji: '📖' },
                 { name: 'اللغة الفرنسية', coeff: 3, icon: 'french', path: 'french', color: '#4facfe', emoji: '🇫🇷' },
                 { name: 'اللغة الإنجليزية', coeff: 3, icon: 'english', path: 'english', color: '#43e97b', emoji: '🇬🇧' },
-                { name: 'التاريخ والجغرافيا', coeff: 4, icon: 'history', path: 'hisgeo', color: '#fbc2eb', emoji: '🗺️' },
+                { name: 'التاريخ والجغرافيا', coeff: 4, icon: 'history', path: 'his_geo', color: '#fbc2eb', emoji: '🗺️' },
                 { name: 'الرياضيات', coeff: 2, icon: 'maths', path: 'maths', color: '#667eea', emoji: '📐' },
                 { name: 'التربية الإسلامية', coeff: 2, icon: 'islamic', path: 'islamia', color: '#f6d365', emoji: '🕌' },
                 { name: 'الأمازيغية', coeff: 2, icon: 'tamazight', path: 'tamazight', color: '#a8edea', emoji: 'ⵣ' },
@@ -379,7 +381,7 @@ export default function BacYearPage() {
                 <Route path="subject/loi" element={<Loi />} />
                 <Route path="subject/philo" element={<Philo />} />
                 <Route path="subject/islamia" element={<Islamia />} />
-                <Route path="subject/hisgeo" element={<HisGeo />} />
+                <Route path="subject/his_geo" element={<HisGeo />} />
             </Routes>
         );
     };

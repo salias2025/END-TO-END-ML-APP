@@ -289,7 +289,7 @@ export default function Derived({ studentData, featureValues }) {
     },
     {
       id: 'kabylie_boost',
-      title: '🏔️ تأثير منطقة القبائل (Kabylie Boost)',
+      title: '🏔️ تأثير منطقة القبائل (السبورة السحرية)',
       formula: 'تأثير القبائل = 1 إذا كنت من تيزي وزو أو بجاية، 0 إذا لا',
       example: '',
       meaning: [

@@ -14,12 +14,10 @@ export default function Budget() {
 
   const [totalBudget, setTotalBudget] = useState(500000);
   const [percentages, setPercentages] = useState(categories.map(c => c.percentage));
-  const [saved, setSaved] = useState(false);
 
   const handleBudgetChange = (value) => {
     const numValue = parseInt(value) || 0;
     setTotalBudget(numValue);
-    setSaved(false);
   };
 
   const handleSliderChange = (index, value) => {
@@ -34,18 +32,11 @@ export default function Budget() {
     }
     
     setPercentages(newPercentages);
-    setSaved(false);
   };
 
   const resetPercentages = () => {
     setPercentages(categories.map(c => c.percentage));
     setTotalBudget(500000);
-    setSaved(false);
-  };
-
-  const saveBudget = () => {
-    setSaved(true);
-    setTimeout(() => setSaved(false), 3000);
   };
 
   const exportBudget = () => {
@@ -337,33 +328,6 @@ ${'='.repeat(50)}
           }}
         >
           🔄 إعادة تعيين النسب
-        </button>
-
-        <button
-          onClick={saveBudget}
-          style={{
-            padding: '12px 24px',
-            borderRadius: '12px',
-            border: 'none',
-            background: 'linear-gradient(135deg, #2ecc71, #27ae60)',
-            color: 'white',
-            fontSize: '14px',
-            fontWeight: '600',
-            cursor: 'pointer',
-            transition: 'all 0.3s',
-            fontFamily: 'inherit',
-            position: 'relative'
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.transform = 'scale(1.05)';
-            e.currentTarget.style.boxShadow = '0 4px 20px rgba(46,204,113,0.4)';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.transform = 'scale(1)';
-            e.currentTarget.style.boxShadow = 'none';
-          }}
-        >
-          {saved ? '✅ تم الحفظ!' : '💾 حفظ التوزيع'}
         </button>
 
         <button

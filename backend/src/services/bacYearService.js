@@ -1718,7 +1718,7 @@ else if (subject === 'islamia') {
     const quran_ex = userData.quran_exercises || 0;
     const hadith_ex = userData.hadith_exercises || 0;
     const fiqh_cases = userData.fiqh_cases || 0;
-    const past_exams = userData.past_exams || 0;
+    const past_exams = userData.exams_practiced || 0;  // ← CHANGED: was past_exams, now exams_practiced
     const confidence = userData.confidence || 5;
     const stress = userData.stress_level || 5;
     

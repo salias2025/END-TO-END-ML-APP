@@ -135,6 +135,265 @@ export default function IntroductionToPreBac() {
         </div>
       </div>
 
+      {/* ============================================ */}
+      {/* CLUSTERING SECTION - ML TECHNIQUE EXPLANATION */}
+      {/* ============================================ */}
+      <div style={{
+        background: 'white',
+        borderRadius: '20px',
+        padding: '30px',
+        marginBottom: '25px',
+        boxShadow: '0 5px 20px rgba(0,0,0,0.05)',
+        borderRight: '5px solid #667eea',
+        color: '#333'
+      }}>
+        <h2 style={{ color: '#667eea', fontSize: '28px', marginBottom: '15px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+          🏷️ التجميع الذكي (Clustering) - كيف نقارنك بطلاب آخرين؟
+        </h2>
+        
+        <p>
+          <strong>التجميع (Clustering)</strong> هو تقنية من تقنيات <strong>التعلم الآلي (Machine Learning)</strong> غير الموجهة (Unsupervised Learning) التي تهدف إلى تقسيم البيانات إلى مجموعات متجانسة. في نظامنا، نستخدم هذه التقنية لتجميع الطلاب في <strong>مجموعات (Clusters)</strong> بناءً على تشابه أدائهم وعاداتهم الدراسية، مما يتيح لنا:
+        </p>
+        
+        <ul style={{ fontSize: '18px', lineHeight: '1.8' }}>
+          <li>✅ مقارنتك بطلاب <strong>مشابهين لك</strong> (نفس المستوى تقريباً)</li>
+          <li>✅ إعطائك نصائح <strong>مخصصة</strong> بناءً على من هم أفضل منك في نفس المجموعة</li>
+          <li>✅ معرفة إذا كنت <strong>تتقدم</strong> بشكل طبيعي مقارنة بزملائك</li>
+        </ul>
+
+        <h3 style={{ color: '#764ba2', fontSize: '22px', margin: '20px 0 10px 0' }}>
+          🔬 كيف يعمل التجميع (Clustering) في نظامنا؟
+        </h3>
+        
+        <p>
+          نستخدم خوارزمية <strong>K-Means Clustering</strong>، وهي واحدة من أشهر خوارزميات التجميع في علم البيانات. تعمل الخوارزمية على النحو التالي:
+        </p>
+
+        <div style={{
+          background: '#f0f4ff',
+          padding: '20px',
+          borderRadius: '15px',
+          margin: '15px 0'
+        }}>
+          <ol style={{ fontSize: '16px', lineHeight: '2' }}>
+            <li><strong>📊 تحليل البيانات:</strong> نأخذ جميع بيانات الطلاب (العلامات، العادات، العوامل النفسية)</li>
+            <li><strong>🎯 تحديد المجموعات:</strong> تقوم الخوارزمية بتحديد عدد المجموعات المثالي لكل شعبة</li>
+            <li><strong>🤖 التصنيف التلقائي:</strong> يتم وضع كل طالب تلقائياً في المجموعة الأقرب له</li>
+            <li><strong>📈 حساب المتوسطات:</strong> لكل مجموعة، نحسب متوسط المعدل والمهارات</li>
+            <li><strong>🏷️ التسمية:</strong> نعطي كل مجموعة اسماً يدل على مستواها (ممتاز، جيد، الخ)</li>
+          </ol>
+        </div>
+
+        <h3 style={{ color: '#764ba2', fontSize: '22px', margin: '20px 0 10px 0' }}>
+          📊 عدد المجموعات حسب الشعبة
+        </h3>
+
+        <p>
+          عدد المجموعات يختلف حسب الشعبة، لأن توزيع العلامات يختلف من شعبة لأخرى:
+        </p>
+
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+          gap: '15px',
+          margin: '20px 0'
+        }}>
+          <div style={{
+            background: '#e8f4f8',
+            padding: '15px',
+            borderRadius: '12px',
+            borderRight: '4px solid #3498db',
+            textAlign: 'center'
+          }}>
+            <div style={{ fontSize: '28px' }}>🔬</div>
+            <strong>العلوم التجريبية</strong>
+            <p style={{ fontSize: '14px', color: '#555', margin: '5px 0 0 0' }}>6 مجموعات</p>
+          </div>
+
+          <div style={{
+            background: '#e8f4f8',
+            padding: '15px',
+            borderRadius: '12px',
+            borderRight: '4px solid #e67e22',
+            textAlign: 'center'
+          }}>
+            <div style={{ fontSize: '28px' }}>📐</div>
+            <strong>الرياضيات</strong>
+            <p style={{ fontSize: '14px', color: '#555', margin: '5px 0 0 0' }}>3 مجموعات</p>
+          </div>
+
+          <div style={{
+            background: '#e8f4f8',
+            padding: '15px',
+            borderRadius: '12px',
+            borderRight: '4px solid #2ecc71',
+            textAlign: 'center'
+          }}>
+            <div style={{ fontSize: '28px' }}>⚙️</div>
+            <strong>تقني رياضي</strong>
+            <p style={{ fontSize: '14px', color: '#555', margin: '5px 0 0 0' }}>3 مجموعات</p>
+          </div>
+
+          <div style={{
+            background: '#e8f4f8',
+            padding: '15px',
+            borderRadius: '12px',
+            borderRight: '4px solid #9b59b6',
+            textAlign: 'center'
+          }}>
+            <div style={{ fontSize: '28px' }}>📊</div>
+            <strong>تسيير واقتصاد</strong>
+            <p style={{ fontSize: '14px', color: '#555', margin: '5px 0 0 0' }}>3 مجموعات</p>
+          </div>
+
+          <div style={{
+            background: '#e8f4f8',
+            padding: '15px',
+            borderRadius: '12px',
+            borderRight: '4px solid #f39c12',
+            textAlign: 'center'
+          }}>
+            <div style={{ fontSize: '28px' }}>🌍</div>
+            <strong>لغات أجنبية</strong>
+            <p style={{ fontSize: '14px', color: '#555', margin: '5px 0 0 0' }}>3 مجموعات</p>
+          </div>
+
+          <div style={{
+            background: '#e8f4f8',
+            padding: '15px',
+            borderRadius: '12px',
+            borderRight: '4px solid #e74c3c',
+            textAlign: 'center'
+          }}>
+            <div style={{ fontSize: '28px' }}>📖</div>
+            <strong>آداب وفلسفة</strong>
+            <p style={{ fontSize: '14px', color: '#555', margin: '5px 0 0 0' }}>3 مجموعات</p>
+          </div>
+        </div>
+
+        <h3 style={{ color: '#764ba2', fontSize: '22px', margin: '20px 0 10px 0' }}>
+          🏷️ ماذا تعني مجموعتك؟
+        </h3>
+
+        <p>
+          كل مجموعة لها <strong>اسم ووصف</strong> يساعدك على فهم مستواك. إليك مثال على مجموعات شعبة العلوم التجريبية:
+        </p>
+
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+          gap: '10px',
+          margin: '15px 0'
+        }}>
+          <div style={{ background: '#d4edda', padding: '15px', borderRadius: '12px', textAlign: 'center' }}>
+            <div style={{ fontSize: '28px' }}>🟢</div>
+            <strong style={{ color: '#28a745' }}>ممتاز</strong>
+            <p style={{ fontSize: '13px', margin: '5px 0 0 0', color: '#555' }}>17 - 20 نقطة</p>
+            <p style={{ fontSize: '12px', color: '#666', marginTop: '5px' }}>أفضل 15% من الطلاب</p>
+          </div>
+          <div style={{ background: '#d1ecf1', padding: '15px', borderRadius: '12px', textAlign: 'center' }}>
+            <div style={{ fontSize: '28px' }}>🔵</div>
+            <strong style={{ color: '#17a2b8' }}>جيد جداً</strong>
+            <p style={{ fontSize: '13px', margin: '5px 0 0 0', color: '#555' }}>15.5 - 17 نقطة</p>
+            <p style={{ fontSize: '12px', color: '#666', marginTop: '5px' }}>أفضل 35% من الطلاب</p>
+          </div>
+          <div style={{ background: '#fff3cd', padding: '15px', borderRadius: '12px', textAlign: 'center' }}>
+            <div style={{ fontSize: '28px' }}>🟡</div>
+            <strong style={{ color: '#856404' }}>جيد</strong>
+            <p style={{ fontSize: '13px', margin: '5px 0 0 0', color: '#555' }}>13.5 - 15.5 نقطة</p>
+            <p style={{ fontSize: '12px', color: '#666', marginTop: '5px' }}>المجموعة المتوسطة</p>
+          </div>
+          <div style={{ background: '#f8d7da', padding: '15px', borderRadius: '12px', textAlign: 'center' }}>
+            <div style={{ fontSize: '28px' }}>🟠</div>
+            <strong style={{ color: '#721c24' }}>مقبول</strong>
+            <p style={{ fontSize: '13px', margin: '5px 0 0 0', color: '#555' }}>11.5 - 13.5 نقطة</p>
+            <p style={{ fontSize: '12px', color: '#666', marginTop: '5px' }}>بحاجة إلى تحسين</p>
+          </div>
+          <div style={{ background: '#f5c6cb', padding: '15px', borderRadius: '12px', textAlign: 'center' }}>
+            <div style={{ fontSize: '28px' }}>🔴</div>
+            <strong style={{ color: '#721c24' }}>راسب</strong>
+            <p style={{ fontSize: '13px', margin: '5px 0 0 0', color: '#555' }}>9 - 11.5 نقطة</p>
+            <p style={{ fontSize: '12px', color: '#666', marginTop: '5px' }}>خطر الرسوب</p>
+          </div>
+          <div style={{ background: '#e2e3e5', padding: '15px', borderRadius: '12px', textAlign: 'center' }}>
+            <div style={{ fontSize: '28px' }}>⚫</div>
+            <strong style={{ color: '#383d41' }}>ضعيف جداً</strong>
+            <p style={{ fontSize: '13px', margin: '5px 0 0 0', color: '#555' }}>أقل من 9 نقاط</p>
+            <p style={{ fontSize: '12px', color: '#666', marginTop: '5px' }}>تدخل عاجل مطلوب</p>
+          </div>
+        </div>
+
+        <div style={{
+          background: '#d4edda',
+          borderRight: '4px solid #28a745',
+          padding: '15px',
+          borderRadius: '10px',
+          margin: '20px 0',
+          textAlign: 'center'
+        }}>
+          <p style={{ fontSize: '18px', margin: 0 }}>
+            💡 <strong>تذكر:</strong> التواجد في مجموعة "راسب" لا يعني أنك فاشل! بل يعني أنك تحتاج إلى خطة عمل مختلفة. مع التوجيه الصحيح، الكثير من الطلاب يرتفعون إلى مجموعات أعلى!
+          </p>
+        </div>
+
+        <h3 style={{ color: '#764ba2', fontSize: '22px', margin: '20px 0 10px 0' }}>
+          🎯 كيف تفيدك معرفة مجموعتك؟
+        </h3>
+
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+          gap: '15px',
+          margin: '15px 0'
+        }}>
+          <div style={{
+            background: '#f8f9fa',
+            padding: '15px',
+            borderRadius: '12px'
+          }}>
+            <div style={{ fontSize: '28px', textAlign: 'center' }}>🎯</div>
+            <p style={{ textAlign: 'center' }}>
+              <strong>أهداف واقعية</strong><br />
+              تعرف على المعدل الذي يمكنك تحقيقه هذا العام
+            </p>
+          </div>
+          <div style={{
+            background: '#f8f9fa',
+            padding: '15px',
+            borderRadius: '12px'
+          }}>
+            <div style={{ fontSize: '28px', textAlign: 'center' }}>💪</div>
+            <p style={{ textAlign: 'center' }}>
+              <strong>نقاط القوة والضعف</strong><br />
+              اعرف بالضبط ما الذي يميزك وما الذي تحتاج إلى العمل عليه
+            </p>
+          </div>
+          <div style={{
+            background: '#f8f9fa',
+            padding: '15px',
+            borderRadius: '12px'
+          }}>
+            <div style={{ fontSize: '28px', textAlign: 'center' }}>📊</div>
+            <p style={{ textAlign: 'center' }}>
+              <strong>مقارنة عادلة</strong><br />
+              قارن نفسك بطلاب في نفس مستواك، ليس بكل الطلاب
+            </p>
+          </div>
+        </div>
+
+        <div style={{
+          background: '#e8f4f8',
+          borderRight: '4px solid #3498db',
+          padding: '15px',
+          borderRadius: '10px',
+          margin: '20px 0'
+        }}>
+          <p style={{ fontSize: '14px', color: '#555', margin: 0 }}>
+            🔬 <strong>ملاحظة تقنية:</strong> خوارزمية K-Means المستخدمة تعمل على تقليل التباين داخل كل مجموعة (Intra-cluster Variance) وتعظيم التباين بين المجموعات (Inter-cluster Variance)، مما يضمن أن الطلاب داخل نفس المجموعة متشابهين قدر الإمكان، ومختلفين عن الطلاب في المجموعات الأخرى.
+          </p>
+        </div>
+      </div>
+
       {/* Key Features Explained */}
       <div style={{
         background: 'white',

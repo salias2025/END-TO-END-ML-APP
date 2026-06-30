@@ -126,10 +126,12 @@ const subjectData = {
       description: 'يقيس كمية التمارين التي تحلها. تأثيرها محدود في العلوم الإسلامية - الأهم هو فهم المنهجية.',
       improvement: 'حل 3-4 امتحانات سابقة للتعود على نمط الأسئلة',
       calculate: (data) => {
-        return (data.quran_exercises || 3 + 
-                data.hadith_exercises || 3 + 
-                data.fiqh_cases || 3 + 
-                data.past_exams || 3) / 40 * 10;
+        const quran = data.quran_exercises || 0;
+        const hadith = data.hadith_exercises || 0;
+        const fiqh = data.fiqh_cases || 0;
+        const past = data.exams_practiced || 0;
+        const total = quran + hadith + fiqh + past;
+        return Math.min(10, (total / 40) * 10);
       },
       target: 6.0,
       max: 10,
@@ -363,9 +365,35 @@ const subjectData = {
   },
   
   // ============================================
-  // HABITS (LOW IMPACT)
+  // HABITS (UPDATED with behavioral features)
   // ============================================
   habits: {
+    // STUDY HABITS (Behavioral)
+    study_consistency: {
+      name: '📅 الانتظام في الدراسة',
+      nameEn: 'Study Consistency',
+      target: 7,
+      max: 10,
+      category: 'study',
+      impact: 0.04
+    },
+    study_hours: {
+      name: '⏰ ساعات الدراسة الأسبوعية',
+      nameEn: 'Study Hours per Week',
+      target: 4,
+      max: 10,
+      category: 'study',
+      impact: 0.03
+    },
+    memorization_frequency: {
+      name: '📚 وتيرة الحفظ والمراجعة',
+      nameEn: 'Memorization Frequency',
+      target: 6,
+      max: 10,
+      category: 'study',
+      impact: 0.03
+    },
+    // PRACTICE HABITS (Lower impact)
     quran_exercises: {
       name: '🕌 تمارين قرآنية',
       nameEn: 'Quran Exercises',
@@ -390,9 +418,9 @@ const subjectData = {
       category: 'practice',
       impact: 0.01
     },
-    past_exams: {
-      name: '📝 امتحانات سابقة',
-      nameEn: 'Past Exams',
+    exams_practiced: {
+      name: '📝 امتحانات سابقة محلولة',
+      nameEn: 'Past Exams Solved',
       target: 5,
       max: 10,
       category: 'practice',
@@ -433,7 +461,9 @@ const subjectData = {
     '⚖️ فقه المعاملات (البيع، الربا، الشركة) يأتي بكثرة في الجزء الثاني',
     '📖 استخدم الأدلة (آيات وأحاديث) في إجاباتك',
     '📝 حل 3-4 امتحانات سابقة للتعود على نمط الأسئلة',
-    '😌 التوتر تأثيره ضعيف جداً - هذه المادة ليست مرهقة'
+    '😌 التوتر تأثيره ضعيف جداً - هذه المادة ليست مرهقة',
+    '📅 انتظامك في الدراسة أهم من المذاكرة المكثفة قبل الامتحان',
+    '⏰ خصص وقتاً أسبوعياً للمراجعة المستمرة بدلاً من الحفظ المكثف'
   ],
   
   // ============================================
@@ -514,11 +544,18 @@ export default function Islamia() {
                   data.fiqh_muamalat || 5 + 
                   data.riba_understanding || 5) / 3;
     
-    // Practice (LOW impact)
-    const practice = (data.quran_exercises || 3 + 
-                      data.hadith_exercises || 3 + 
-                      data.fiqh_cases || 3 + 
-                      data.past_exams || 3) / 40 * 10;
+    // Study habits (NEW - behavioral)
+    const studyHabits = (data.study_consistency || 5 + 
+                         data.study_hours || 5 + 
+                         data.memorization_frequency || 5) / 3;
+    
+    // Practice (LOW impact) - FIXED with correct field name
+    const quranEx = data.quran_exercises || 0;
+    const hadithEx = data.hadith_exercises || 0;
+    const fiqhEx = data.fiqh_cases || 0;
+    const pastEx = data.exams_practiced || 0;
+    const totalPractice = quranEx + hadithEx + fiqhEx + pastEx;
+    const practice = Math.min(10, (totalPractice / 40) * 10);
     
     // Psychological (VERY LOW impact)
     const psych = (data.confidence || 7 + 
@@ -535,20 +572,22 @@ export default function Islamia() {
       overall_islamia: Math.round(((analysis + methodology + quran + hadith + fiqh) / 5) * 100) / 100
     };
     
-    // Weights
-    const analysisWeight = 0.35;
-    const methodWeight = 0.25;
-    const contentWeight = 0.20;
+    // Weights (Updated with study habits)
+    const analysisWeight = 0.30;
+    const methodWeight = 0.22;
+    const contentWeight = 0.18;
+    const studyWeight = 0.10;
     const practiceWeight = 0.08;
     const psychWeight = 0.04;
     const gradeWeight = 0.08;
     
-    const totalWeight = analysisWeight + methodWeight + contentWeight + practiceWeight + psychWeight + gradeWeight;
+    const totalWeight = analysisWeight + methodWeight + contentWeight + studyWeight + practiceWeight + psychWeight + gradeWeight;
     
     const weightedScore = 
       analysis * analysisWeight +
       methodology * methodWeight +
       (quran + hadith + fiqh) / 3 * contentWeight +
+      studyHabits * studyWeight +
       practice * practiceWeight +
       psych * psychWeight +
       avgGrade / 2 * gradeWeight;
