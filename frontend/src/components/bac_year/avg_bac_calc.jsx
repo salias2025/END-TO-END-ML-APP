@@ -129,6 +129,7 @@ export default function AvgBacCalc() {
   }, [average]);
 
   const handleGradeChange = (subjectIndex, value) => {
+    // ✅ Allow empty, dot, and negative sign for typing
     if (value === '' || value === '-' || value === '.') {
       setGrades(prev => ({
         ...prev,
@@ -138,6 +139,7 @@ export default function AvgBacCalc() {
       return;
     }
     
+    // ✅ Allow numbers with one decimal point
     const numValue = parseFloat(value);
     if (!isNaN(numValue) && numValue >= 0 && numValue <= 20) {
       setGrades(prev => ({
