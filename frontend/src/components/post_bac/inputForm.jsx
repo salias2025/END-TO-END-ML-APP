@@ -107,7 +107,7 @@ const InputForm = ({ onSubmit }) => {
     // STATE
     // ============================================
     
-    const [filiere] = useState(filiereDisplay); // ← NO DROPDOWN, read from localStorage
+    const [filiere] = useState(filiereDisplay);
     const [notes, setNotes] = useState({});
     const [bacAvg, setBacAvg] = useState(0);
     const [softSkills, setSoftSkills] = useState({
@@ -373,7 +373,7 @@ const InputForm = ({ onSubmit }) => {
                                         border-radius: 50%;
                                         background: white;
                                         border: 3px solid #667eea;
-                                        cursor: pointer;
+                                        cursor: pointer !important;
                                         box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
                                     }
                                     input[type="range"]::-moz-range-thumb {
@@ -382,7 +382,7 @@ const InputForm = ({ onSubmit }) => {
                                         border-radius: 50%;
                                         background: white;
                                         border: 3px solid #667eea;
-                                        cursor: pointer;
+                                        cursor: pointer !important;
                                     }
                                 `}</style>
                             </div>
@@ -453,7 +453,7 @@ const InputForm = ({ onSubmit }) => {
                                         border-radius: 50%;
                                         background: white;
                                         border: 3px solid #f5576c;
-                                        cursor: pointer;
+                                        cursor: pointer !important;
                                         box-shadow: 0 2px 8px rgba(245, 87, 108, 0.3);
                                     }
                                     input[type="range"]::-moz-range-thumb {
@@ -462,7 +462,7 @@ const InputForm = ({ onSubmit }) => {
                                         border-radius: 50%;
                                         background: white;
                                         border: 3px solid #f5576c;
-                                        cursor: pointer;
+                                        cursor: pointer !important;
                                     }
                                 `}</style>
                             </div>
