@@ -361,11 +361,15 @@ const InputForm = ({ onSubmit }) => {
                                         borderRadius: '3px',
                                         background: 'linear-gradient(90deg, #667eea, #764ba2)',
                                         outline: 'none',
-                                        cursor: 'pointer',
-                                        WebkitAppearance: 'none'
+                                        WebkitAppearance: 'none',
+                                        cursor: 'pointer'
                                     }}
                                 />
                                 <style>{`
+                                    /* Fix cursor disappearing on sliders */
+                                    input[type="range"] {
+                                        cursor: pointer;
+                                    }
                                     input[type="range"]::-webkit-slider-thumb {
                                         -webkit-appearance: none;
                                         width: 18px;
@@ -382,6 +386,17 @@ const InputForm = ({ onSubmit }) => {
                                         border-radius: 50%;
                                         background: white;
                                         border: 3px solid #667eea;
+                                        cursor: pointer !important;
+                                    }
+                                    /* Ensure cursor stays visible on all elements */
+                                    * {
+                                        cursor: default;
+                                    }
+                                    input, button, select, label, a {
+                                        cursor: pointer;
+                                    }
+                                    input[type="range"]::-webkit-slider-thumb,
+                                    input[type="range"]::-moz-range-thumb {
                                         cursor: pointer !important;
                                     }
                                 `}</style>
@@ -441,11 +456,15 @@ const InputForm = ({ onSubmit }) => {
                                         borderRadius: '3px',
                                         background: 'linear-gradient(90deg, #f093fb, #f5576c)',
                                         outline: 'none',
-                                        cursor: 'pointer',
-                                        WebkitAppearance: 'none'
+                                        WebkitAppearance: 'none',
+                                        cursor: 'pointer'
                                     }}
                                 />
                                 <style>{`
+                                    /* Fix cursor disappearing on sliders */
+                                    input[type="range"] {
+                                        cursor: pointer;
+                                    }
                                     input[type="range"]::-webkit-slider-thumb {
                                         -webkit-appearance: none;
                                         width: 18px;
